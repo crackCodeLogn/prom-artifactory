@@ -1,0 +1,12 @@
+syntax = "proto3";
+package com.vv.personal.prom.artifactory.proto;
+
+option java_multiple_files = true;
+option java_outer_classname = "CustomerProto";
+
+message Customer {
+  string customerId = 1;
+  string firstName = 2;
+  string secondName = 3;
+  repeated string contactNumbers = 4;
+}
