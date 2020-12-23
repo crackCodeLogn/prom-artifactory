@@ -8,15 +8,13 @@ public interface CustomerOrBuilder extends
         com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string customerId = 1;</code>
+     * <pre>
+     * assuming that there'll never be need to go to long
+     * </pre>
+     *
+     * <code>int32 customerId = 1;</code>
      */
-    java.lang.String getCustomerId();
-
-    /**
-     * <code>string customerId = 1;</code>
-     */
-    com.google.protobuf.ByteString
-    getCustomerIdBytes();
+    int getCustomerId();
 
     /**
      * <code>string firstName = 2;</code>
@@ -30,15 +28,15 @@ public interface CustomerOrBuilder extends
     getFirstNameBytes();
 
     /**
-     * <code>string secondName = 3;</code>
+     * <code>string lastName = 3;</code>
      */
-    java.lang.String getSecondName();
+    java.lang.String getLastName();
 
     /**
-     * <code>string secondName = 3;</code>
+     * <code>string lastName = 3;</code>
      */
     com.google.protobuf.ByteString
-    getSecondNameBytes();
+    getLastNameBytes();
 
     /**
      * <code>repeated string contactNumbers = 4;</code>

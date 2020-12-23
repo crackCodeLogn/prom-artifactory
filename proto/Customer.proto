@@ -5,8 +5,8 @@ option java_multiple_files = true;
 option java_outer_classname = "CustomerProto";
 
 message Customer {
-  string customerId = 1;
+  int32 customerId = 1; //assuming that there'll never be need to go to long
   string firstName = 2;
-  string secondName = 3;
+  string lastName = 3;
   repeated string contactNumbers = 4;
 }

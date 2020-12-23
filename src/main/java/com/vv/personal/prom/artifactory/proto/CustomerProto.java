@@ -15,10 +15,10 @@ public final class CustomerProto {
   static {
     java.lang.String[] descriptorData = {
             "\n\016Customer.proto\022&com.vv.personal.prom.a" +
-                    "rtifactory.proto\"]\n\010Customer\022\022\n\ncustomer" +
-                    "Id\030\001 \001(\t\022\021\n\tfirstName\030\002 \001(\t\022\022\n\nsecondNam" +
-                    "e\030\003 \001(\t\022\026\n\016contactNumbers\030\004 \003(\tB\021B\rCusto" +
-                    "merProtoP\001b\006proto3"
+                    "rtifactory.proto\"[\n\010Customer\022\022\n\ncustomer" +
+                    "Id\030\001 \001(\005\022\021\n\tfirstName\030\002 \001(\t\022\020\n\010lastName\030" +
+                    "\003 \001(\t\022\026\n\016contactNumbers\030\004 \003(\tB\021B\rCustome" +
+                    "rProtoP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
             new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -37,7 +37,7 @@ public final class CustomerProto {
     internal_static_com_vv_personal_prom_artifactory_proto_Customer_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_com_vv_personal_prom_artifactory_proto_Customer_descriptor,
-            new java.lang.String[]{"CustomerId", "FirstName", "SecondName", "ContactNumbers",});
+            new java.lang.String[]{"CustomerId", "FirstName", "LastName", "ContactNumbers",});
   }
 
   private CustomerProto() {
