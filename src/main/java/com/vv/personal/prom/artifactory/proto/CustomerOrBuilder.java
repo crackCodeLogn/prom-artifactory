@@ -59,4 +59,20 @@ public interface CustomerOrBuilder extends
      */
     com.google.protobuf.ByteString
     getContactNumbersBytes(int index);
+
+    /**
+     * <code>int32 companyId = 5;</code>
+     */
+    int getCompanyId();
+
+    /**
+     * <code>string companyName = 6;</code>
+     */
+    java.lang.String getCompanyName();
+
+    /**
+     * <code>string companyName = 6;</code>
+     */
+    com.google.protobuf.ByteString
+    getCompanyNameBytes();
 }

@@ -9,4 +9,7 @@ message Customer {
   string firstName = 2;
   string lastName = 3;
   repeated string contactNumbers = 4;
+
+  int32 companyId = 5;
+  string companyName = 6;
 }
