@@ -9,7 +9,10 @@ message Customer {
   string firstName = 2;
   string lastName = 3;
   repeated string contactNumbers = 4;
+  Company company = 5; //usually the need for this use-case is 121 => customer to company
+}
 
-  int32 companyId = 5;
-  string companyName = 6;
+message Company {
+  int32 companyId = 1;
+  string companyName = 2;
 }

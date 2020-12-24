@@ -1,0 +1,18 @@
+syntax = "proto3";
+package com.vv.personal.prom.artifactory.proto;
+
+option java_multiple_files = true;
+option java_outer_classname = "ComponentProto";
+
+message Component {
+  SupportedComponents supportedComponents = 1;
+}
+
+enum SupportedComponents {
+  LT = 0; //LAPTOP
+  MB = 1; //MOTHERBOARD
+  SP = 2; //SMPS
+  SV = 3; //SERVER
+  SW = 4; //SWITCH
+  RD = 5; //RADAR
+}

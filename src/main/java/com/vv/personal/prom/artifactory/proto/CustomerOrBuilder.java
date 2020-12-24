@@ -61,18 +61,17 @@ public interface CustomerOrBuilder extends
     getContactNumbersBytes(int index);
 
     /**
-     * <code>int32 companyId = 5;</code>
+     * <code>.com.vv.personal.prom.artifactory.proto.Company company = 5;</code>
      */
-    int getCompanyId();
+    boolean hasCompany();
 
     /**
-     * <code>string companyName = 6;</code>
+     * <code>.com.vv.personal.prom.artifactory.proto.Company company = 5;</code>
      */
-    java.lang.String getCompanyName();
+    com.vv.personal.prom.artifactory.proto.Company getCompany();
 
     /**
-     * <code>string companyName = 6;</code>
+     * <code>.com.vv.personal.prom.artifactory.proto.Company company = 5;</code>
      */
-    com.google.protobuf.ByteString
-    getCompanyNameBytes();
+    com.vv.personal.prom.artifactory.proto.CompanyOrBuilder getCompanyOrBuilder();
 }
