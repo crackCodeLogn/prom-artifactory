@@ -15,4 +15,6 @@ message Customer {
 message Company {
   int32 companyId = 1;
   string companyName = 2;
+  string companyContactPerson = 3; //could be the owner as well, but can be left empty.
+  repeated string contactNumbers = 4; //can be left empty.
 }
