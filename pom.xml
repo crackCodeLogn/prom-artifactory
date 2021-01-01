@@ -11,8 +11,8 @@
     <name>Artifactory for all shared across classes and proto POJOs</name>
 
     <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
         <apache-commons.version>3.11</apache-commons.version>
         <google-gson.version>2.8.6</google-gson.version>
         <google-protobuf.version>3.14.0</google-protobuf.version>
@@ -25,8 +25,8 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>11</source>
-                    <target>11</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
             </plugin>
         </plugins>
