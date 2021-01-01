@@ -11,6 +11,16 @@ public final class Component extends
         // @@protoc_insertion_point(message_implements:com.vv.personal.prom.artifactory.proto.Component)
         ComponentOrBuilder {
   public static final int SUPPORTEDCOMPONENTS_FIELD_NUMBER = 1;
+
+  // Use Component.newBuilder() to construct.
+  private Component(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    super(builder);
+  }
+
+  private Component() {
+    supportedComponents_ = 0;
+  }
+
   private static final long serialVersionUID = 0L;
   // @@protoc_insertion_point(class_scope:com.vv.personal.prom.artifactory.proto.Component)
   private static final com.vv.personal.prom.artifactory.proto.Component DEFAULT_INSTANCE;
@@ -32,13 +42,20 @@ public final class Component extends
   private int supportedComponents_;
   private byte memoizedIsInitialized = -1;
 
-  // Use Component.newBuilder() to construct.
-  private Component(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-    super(builder);
+  /**
+   * <code>.com.vv.personal.prom.artifactory.proto.SupportedComponents supportedComponents = 1;</code>
+   */
+  public int getSupportedComponentsValue() {
+    return supportedComponents_;
   }
 
-  private Component() {
-    supportedComponents_ = 0;
+  /**
+   * <code>.com.vv.personal.prom.artifactory.proto.SupportedComponents supportedComponents = 1;</code>
+   */
+  public com.vv.personal.prom.artifactory.proto.SupportedComponents getSupportedComponents() {
+    @SuppressWarnings("deprecation")
+    com.vv.personal.prom.artifactory.proto.SupportedComponents result = com.vv.personal.prom.artifactory.proto.SupportedComponents.valueOf(supportedComponents_);
+    return result == null ? com.vv.personal.prom.artifactory.proto.SupportedComponents.UNRECOGNIZED : result;
   }
 
   private Component(
@@ -86,6 +103,16 @@ public final class Component extends
     }
   }
 
+  @java.lang.Override
+  public final boolean isInitialized() {
+    byte isInitialized = memoizedIsInitialized;
+    if (isInitialized == 1) return true;
+    if (isInitialized == 0) return false;
+
+    memoizedIsInitialized = 1;
+    return true;
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor
   getDescriptor() {
     return com.vv.personal.prom.artifactory.proto.ComponentProto.internal_static_com_vv_personal_prom_artifactory_proto_Component_descriptor;
@@ -102,6 +129,20 @@ public final class Component extends
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
+  }
+
+  @java.lang.Override
+  public int hashCode() {
+    if (memoizedHashCode != 0) {
+      return memoizedHashCode;
+    }
+    int hash = 41;
+    hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + SUPPORTEDCOMPONENTS_FIELD_NUMBER;
+    hash = (53 * hash) + supportedComponents_;
+    hash = (29 * hash) + unknownFields.hashCode();
+    memoizedHashCode = hash;
+    return hash;
   }
 
   public static com.vv.personal.prom.artifactory.proto.Component parseFrom(
@@ -202,32 +243,6 @@ public final class Component extends
                     com.vv.personal.prom.artifactory.proto.Component.class, com.vv.personal.prom.artifactory.proto.Component.Builder.class);
   }
 
-  /**
-   * <code>.com.vv.personal.prom.artifactory.proto.SupportedComponents supportedComponents = 1;</code>
-   */
-  public int getSupportedComponentsValue() {
-    return supportedComponents_;
-  }
-
-  /**
-   * <code>.com.vv.personal.prom.artifactory.proto.SupportedComponents supportedComponents = 1;</code>
-   */
-  public com.vv.personal.prom.artifactory.proto.SupportedComponents getSupportedComponents() {
-    @SuppressWarnings("deprecation")
-    com.vv.personal.prom.artifactory.proto.SupportedComponents result = com.vv.personal.prom.artifactory.proto.SupportedComponents.valueOf(supportedComponents_);
-    return result == null ? com.vv.personal.prom.artifactory.proto.SupportedComponents.UNRECOGNIZED : result;
-  }
-
-  @java.lang.Override
-  public final boolean isInitialized() {
-    byte isInitialized = memoizedIsInitialized;
-    if (isInitialized == 1) return true;
-    if (isInitialized == 0) return false;
-
-    memoizedIsInitialized = 1;
-    return true;
-  }
-
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
           throws java.io.IOException {
@@ -269,23 +284,8 @@ public final class Component extends
   }
 
   @java.lang.Override
-  public int hashCode() {
-    if (memoizedHashCode != 0) {
-      return memoizedHashCode;
-    }
-    int hash = 41;
-    hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + SUPPORTEDCOMPONENTS_FIELD_NUMBER;
-    hash = (53 * hash) + supportedComponents_;
-    hash = (29 * hash) + unknownFields.hashCode();
-    memoizedHashCode = hash;
-    return hash;
-  }
-
-  @java.lang.Override
   public Builder newBuilderForType() {
-    return newBuilder();
-  }
+    return newBuilder(); }
 
   @java.lang.Override
   public Builder toBuilder() {
@@ -335,20 +335,11 @@ public final class Component extends
       return com.vv.personal.prom.artifactory.proto.ComponentProto.internal_static_com_vv_personal_prom_artifactory_proto_Component_descriptor;
     }
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-    internalGetFieldAccessorTable() {
-      return com.vv.personal.prom.artifactory.proto.ComponentProto.internal_static_com_vv_personal_prom_artifactory_proto_Component_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                      com.vv.personal.prom.artifactory.proto.Component.class, com.vv.personal.prom.artifactory.proto.Component.Builder.class);
-    }
-
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
       }
     }
-
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -358,9 +349,11 @@ public final class Component extends
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-    getDescriptorForType() {
-      return com.vv.personal.prom.artifactory.proto.ComponentProto.internal_static_com_vv_personal_prom_artifactory_proto_Component_descriptor;
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    internalGetFieldAccessorTable() {
+      return com.vv.personal.prom.artifactory.proto.ComponentProto.internal_static_com_vv_personal_prom_artifactory_proto_Component_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                      com.vv.personal.prom.artifactory.proto.Component.class, com.vv.personal.prom.artifactory.proto.Component.Builder.class);
     }
 
     @java.lang.Override
@@ -388,6 +381,12 @@ public final class Component extends
     @java.lang.Override
     public Builder clone() {
       return super.clone();
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor
+    getDescriptorForType() {
+      return com.vv.personal.prom.artifactory.proto.ComponentProto.internal_static_com_vv_personal_prom_artifactory_proto_Component_descriptor;
     }
 
     @java.lang.Override
@@ -423,16 +422,6 @@ public final class Component extends
       return super.addRepeatedField(field, value);
     }
 
-    @java.lang.Override
-    public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.vv.personal.prom.artifactory.proto.Component) {
-        return mergeFrom((com.vv.personal.prom.artifactory.proto.Component) other);
-      } else {
-        super.mergeFrom(other);
-        return this;
-      }
-    }
-
     public Builder mergeFrom(com.vv.personal.prom.artifactory.proto.Component other) {
       if (other == com.vv.personal.prom.artifactory.proto.Component.getDefaultInstance()) return this;
       if (other.supportedComponents_ != 0) {
@@ -446,6 +435,16 @@ public final class Component extends
     @java.lang.Override
     public final boolean isInitialized() {
       return true;
+    }
+
+    @java.lang.Override
+    public Builder mergeFrom(com.google.protobuf.Message other) {
+      if (other instanceof com.vv.personal.prom.artifactory.proto.Component) {
+        return mergeFrom((com.vv.personal.prom.artifactory.proto.Component) other);
+      } else {
+        super.mergeFrom(other);
+        return this;
+      }
     }
 
     @java.lang.Override
@@ -466,14 +465,12 @@ public final class Component extends
       }
       return this;
     }
-
     /**
      * <code>.com.vv.personal.prom.artifactory.proto.SupportedComponents supportedComponents = 1;</code>
      */
     public int getSupportedComponentsValue() {
       return supportedComponents_;
     }
-
     /**
      * <code>.com.vv.personal.prom.artifactory.proto.SupportedComponents supportedComponents = 1;</code>
      */
@@ -482,7 +479,6 @@ public final class Component extends
       onChanged();
       return this;
     }
-
     /**
      * <code>.com.vv.personal.prom.artifactory.proto.SupportedComponents supportedComponents = 1;</code>
      */

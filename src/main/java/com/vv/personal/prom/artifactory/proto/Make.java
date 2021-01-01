@@ -11,6 +11,17 @@ public final class Make extends
         // @@protoc_insertion_point(message_implements:com.vv.personal.prom.artifactory.proto.Make)
         MakeOrBuilder {
   public static final int MAKEID_FIELD_NUMBER = 1;
+
+  // Use Make.newBuilder() to construct.
+  private Make(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    super(builder);
+  }
+
+  private Make() {
+    makeId_ = 0;
+    makeName_ = "";
+  }
+
   public static final int MAKENAME_FIELD_NUMBER = 2;
   private static final long serialVersionUID = 0L;
   // @@protoc_insertion_point(class_scope:com.vv.personal.prom.artifactory.proto.Make)
@@ -33,16 +44,6 @@ public final class Make extends
   private int makeId_;
   private volatile java.lang.Object makeName_;
   private byte memoizedIsInitialized = -1;
-
-  // Use Make.newBuilder() to construct.
-  private Make(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-    super(builder);
-  }
-
-  private Make() {
-    makeId_ = 0;
-    makeName_ = "";
-  }
 
   private Make(
           com.google.protobuf.CodedInputStream input,
@@ -112,6 +113,16 @@ public final class Make extends
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
+  @java.lang.Override
+  public final boolean isInitialized() {
+    byte isInitialized = memoizedIsInitialized;
+    if (isInitialized == 1) return true;
+    if (isInitialized == 0) return false;
+
+    memoizedIsInitialized = 1;
+    return true;
+  }
+
   public static com.vv.personal.prom.artifactory.proto.Make parseFrom(
           com.google.protobuf.ByteString data)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -128,6 +139,22 @@ public final class Make extends
   public static com.vv.personal.prom.artifactory.proto.Make parseFrom(byte[] data)
           throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
+  }
+
+  @java.lang.Override
+  public int hashCode() {
+    if (memoizedHashCode != 0) {
+      return memoizedHashCode;
+    }
+    int hash = 41;
+    hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + MAKEID_FIELD_NUMBER;
+    hash = (53 * hash) + getMakeId();
+    hash = (37 * hash) + MAKENAME_FIELD_NUMBER;
+    hash = (53 * hash) + getMakeName().hashCode();
+    hash = (29 * hash) + unknownFields.hashCode();
+    memoizedHashCode = hash;
+    return hash;
   }
 
   public static com.vv.personal.prom.artifactory.proto.Make parseFrom(
@@ -255,16 +282,6 @@ public final class Make extends
   }
 
   @java.lang.Override
-  public final boolean isInitialized() {
-    byte isInitialized = memoizedIsInitialized;
-    if (isInitialized == 1) return true;
-    if (isInitialized == 0) return false;
-
-    memoizedIsInitialized = 1;
-    return true;
-  }
-
-  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
           throws java.io.IOException {
     if (makeId_ != 0) {
@@ -314,25 +331,8 @@ public final class Make extends
   }
 
   @java.lang.Override
-  public int hashCode() {
-    if (memoizedHashCode != 0) {
-      return memoizedHashCode;
-    }
-    int hash = 41;
-    hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + MAKEID_FIELD_NUMBER;
-    hash = (53 * hash) + getMakeId();
-    hash = (37 * hash) + MAKENAME_FIELD_NUMBER;
-    hash = (53 * hash) + getMakeName().hashCode();
-    hash = (29 * hash) + unknownFields.hashCode();
-    memoizedHashCode = hash;
-    return hash;
-  }
-
-  @java.lang.Override
   public Builder newBuilderForType() {
-    return newBuilder();
-  }
+    return newBuilder(); }
 
   @java.lang.Override
   public Builder toBuilder() {
@@ -378,19 +378,6 @@ public final class Make extends
       maybeForceBuilderInitialization();
     }
 
-    public static final com.google.protobuf.Descriptors.Descriptor
-    getDescriptor() {
-      return com.vv.personal.prom.artifactory.proto.MakeProto.internal_static_com_vv_personal_prom_artifactory_proto_Make_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-    internalGetFieldAccessorTable() {
-      return com.vv.personal.prom.artifactory.proto.MakeProto.internal_static_com_vv_personal_prom_artifactory_proto_Make_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                      com.vv.personal.prom.artifactory.proto.Make.class, com.vv.personal.prom.artifactory.proto.Make.Builder.class);
-    }
-
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
@@ -407,9 +394,8 @@ public final class Make extends
       return this;
     }
 
-    @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-    getDescriptorForType() {
+    public static final com.google.protobuf.Descriptors.Descriptor
+    getDescriptor() {
       return com.vv.personal.prom.artifactory.proto.MakeProto.internal_static_com_vv_personal_prom_artifactory_proto_Make_descriptor;
     }
 
@@ -442,6 +428,20 @@ public final class Make extends
     }
 
     @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    internalGetFieldAccessorTable() {
+      return com.vv.personal.prom.artifactory.proto.MakeProto.internal_static_com_vv_personal_prom_artifactory_proto_Make_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                      com.vv.personal.prom.artifactory.proto.Make.class, com.vv.personal.prom.artifactory.proto.Make.Builder.class);
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor
+    getDescriptorForType() {
+      return com.vv.personal.prom.artifactory.proto.MakeProto.internal_static_com_vv_personal_prom_artifactory_proto_Make_descriptor;
+    }
+
+    @java.lang.Override
     public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
@@ -467,23 +467,6 @@ public final class Make extends
       return super.setRepeatedField(field, index, value);
     }
 
-    @java.lang.Override
-    public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
-      return super.addRepeatedField(field, value);
-    }
-
-    @java.lang.Override
-    public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.vv.personal.prom.artifactory.proto.Make) {
-        return mergeFrom((com.vv.personal.prom.artifactory.proto.Make) other);
-      } else {
-        super.mergeFrom(other);
-        return this;
-      }
-    }
-
     public Builder mergeFrom(com.vv.personal.prom.artifactory.proto.Make other) {
       if (other == com.vv.personal.prom.artifactory.proto.Make.getDefaultInstance()) return this;
       if (other.getMakeId() != 0) {
@@ -501,6 +484,23 @@ public final class Make extends
     @java.lang.Override
     public final boolean isInitialized() {
       return true;
+    }
+
+    @java.lang.Override
+    public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+      return super.addRepeatedField(field, value);
+    }
+
+    @java.lang.Override
+    public Builder mergeFrom(com.google.protobuf.Message other) {
+      if (other instanceof com.vv.personal.prom.artifactory.proto.Make) {
+        return mergeFrom((com.vv.personal.prom.artifactory.proto.Make) other);
+      } else {
+        super.mergeFrom(other);
+        return this;
+      }
     }
 
     @java.lang.Override
@@ -524,7 +524,7 @@ public final class Make extends
 
     /**
      * <pre>
-     * assuming that there'll never be need to go to long
+     *assuming that there'll never be need to go to long
      * </pre>
      *
      * <code>int32 makeId = 1;</code>
@@ -535,7 +535,7 @@ public final class Make extends
 
     /**
      * <pre>
-     * assuming that there'll never be need to go to long
+     *assuming that there'll never be need to go to long
      * </pre>
      *
      * <code>int32 makeId = 1;</code>
@@ -549,7 +549,7 @@ public final class Make extends
 
     /**
      * <pre>
-     * assuming that there'll never be need to go to long
+     *assuming that there'll never be need to go to long
      * </pre>
      *
      * <code>int32 makeId = 1;</code>

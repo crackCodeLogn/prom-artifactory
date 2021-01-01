@@ -11,6 +11,17 @@ public final class Problem extends
         // @@protoc_insertion_point(message_implements:com.vv.personal.prom.artifactory.proto.Problem)
         ProblemOrBuilder {
   public static final int PROBLEMID_FIELD_NUMBER = 1;
+
+  // Use Problem.newBuilder() to construct.
+  private Problem(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    super(builder);
+  }
+
+  private Problem() {
+    problemId_ = 0;
+    problemName_ = "";
+  }
+
   public static final int PROBLEMNAME_FIELD_NUMBER = 2;
   private static final long serialVersionUID = 0L;
   // @@protoc_insertion_point(class_scope:com.vv.personal.prom.artifactory.proto.Problem)
@@ -33,16 +44,6 @@ public final class Problem extends
   private int problemId_;
   private volatile java.lang.Object problemName_;
   private byte memoizedIsInitialized = -1;
-
-  // Use Problem.newBuilder() to construct.
-  private Problem(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-    super(builder);
-  }
-
-  private Problem() {
-    problemId_ = 0;
-    problemName_ = "";
-  }
 
   private Problem(
           com.google.protobuf.CodedInputStream input,
@@ -112,6 +113,16 @@ public final class Problem extends
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
+  @java.lang.Override
+  public final boolean isInitialized() {
+    byte isInitialized = memoizedIsInitialized;
+    if (isInitialized == 1) return true;
+    if (isInitialized == 0) return false;
+
+    memoizedIsInitialized = 1;
+    return true;
+  }
+
   public static com.vv.personal.prom.artifactory.proto.Problem parseFrom(
           com.google.protobuf.ByteString data)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -128,6 +139,22 @@ public final class Problem extends
   public static com.vv.personal.prom.artifactory.proto.Problem parseFrom(byte[] data)
           throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
+  }
+
+  @java.lang.Override
+  public int hashCode() {
+    if (memoizedHashCode != 0) {
+      return memoizedHashCode;
+    }
+    int hash = 41;
+    hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + PROBLEMID_FIELD_NUMBER;
+    hash = (53 * hash) + getProblemId();
+    hash = (37 * hash) + PROBLEMNAME_FIELD_NUMBER;
+    hash = (53 * hash) + getProblemName().hashCode();
+    hash = (29 * hash) + unknownFields.hashCode();
+    memoizedHashCode = hash;
+    return hash;
   }
 
   public static com.vv.personal.prom.artifactory.proto.Problem parseFrom(
@@ -255,16 +282,6 @@ public final class Problem extends
   }
 
   @java.lang.Override
-  public final boolean isInitialized() {
-    byte isInitialized = memoizedIsInitialized;
-    if (isInitialized == 1) return true;
-    if (isInitialized == 0) return false;
-
-    memoizedIsInitialized = 1;
-    return true;
-  }
-
-  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
           throws java.io.IOException {
     if (problemId_ != 0) {
@@ -314,25 +331,8 @@ public final class Problem extends
   }
 
   @java.lang.Override
-  public int hashCode() {
-    if (memoizedHashCode != 0) {
-      return memoizedHashCode;
-    }
-    int hash = 41;
-    hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + PROBLEMID_FIELD_NUMBER;
-    hash = (53 * hash) + getProblemId();
-    hash = (37 * hash) + PROBLEMNAME_FIELD_NUMBER;
-    hash = (53 * hash) + getProblemName().hashCode();
-    hash = (29 * hash) + unknownFields.hashCode();
-    memoizedHashCode = hash;
-    return hash;
-  }
-
-  @java.lang.Override
   public Builder newBuilderForType() {
-    return newBuilder();
-  }
+    return newBuilder(); }
 
   @java.lang.Override
   public Builder toBuilder() {
@@ -378,19 +378,6 @@ public final class Problem extends
       maybeForceBuilderInitialization();
     }
 
-    public static final com.google.protobuf.Descriptors.Descriptor
-    getDescriptor() {
-      return com.vv.personal.prom.artifactory.proto.ProblemProto.internal_static_com_vv_personal_prom_artifactory_proto_Problem_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-    internalGetFieldAccessorTable() {
-      return com.vv.personal.prom.artifactory.proto.ProblemProto.internal_static_com_vv_personal_prom_artifactory_proto_Problem_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                      com.vv.personal.prom.artifactory.proto.Problem.class, com.vv.personal.prom.artifactory.proto.Problem.Builder.class);
-    }
-
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
@@ -407,9 +394,8 @@ public final class Problem extends
       return this;
     }
 
-    @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-    getDescriptorForType() {
+    public static final com.google.protobuf.Descriptors.Descriptor
+    getDescriptor() {
       return com.vv.personal.prom.artifactory.proto.ProblemProto.internal_static_com_vv_personal_prom_artifactory_proto_Problem_descriptor;
     }
 
@@ -442,6 +428,20 @@ public final class Problem extends
     }
 
     @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    internalGetFieldAccessorTable() {
+      return com.vv.personal.prom.artifactory.proto.ProblemProto.internal_static_com_vv_personal_prom_artifactory_proto_Problem_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                      com.vv.personal.prom.artifactory.proto.Problem.class, com.vv.personal.prom.artifactory.proto.Problem.Builder.class);
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor
+    getDescriptorForType() {
+      return com.vv.personal.prom.artifactory.proto.ProblemProto.internal_static_com_vv_personal_prom_artifactory_proto_Problem_descriptor;
+    }
+
+    @java.lang.Override
     public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
@@ -467,23 +467,6 @@ public final class Problem extends
       return super.setRepeatedField(field, index, value);
     }
 
-    @java.lang.Override
-    public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
-      return super.addRepeatedField(field, value);
-    }
-
-    @java.lang.Override
-    public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.vv.personal.prom.artifactory.proto.Problem) {
-        return mergeFrom((com.vv.personal.prom.artifactory.proto.Problem) other);
-      } else {
-        super.mergeFrom(other);
-        return this;
-      }
-    }
-
     public Builder mergeFrom(com.vv.personal.prom.artifactory.proto.Problem other) {
       if (other == com.vv.personal.prom.artifactory.proto.Problem.getDefaultInstance()) return this;
       if (other.getProblemId() != 0) {
@@ -501,6 +484,23 @@ public final class Problem extends
     @java.lang.Override
     public final boolean isInitialized() {
       return true;
+    }
+
+    @java.lang.Override
+    public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+      return super.addRepeatedField(field, value);
+    }
+
+    @java.lang.Override
+    public Builder mergeFrom(com.google.protobuf.Message other) {
+      if (other instanceof com.vv.personal.prom.artifactory.proto.Problem) {
+        return mergeFrom((com.vv.personal.prom.artifactory.proto.Problem) other);
+      } else {
+        super.mergeFrom(other);
+        return this;
+      }
     }
 
     @java.lang.Override
@@ -524,7 +524,7 @@ public final class Problem extends
 
     /**
      * <pre>
-     * assuming that there'll never be need to go to long
+     *assuming that there'll never be need to go to long
      * </pre>
      *
      * <code>int32 problemId = 1;</code>
@@ -535,7 +535,7 @@ public final class Problem extends
 
     /**
      * <pre>
-     * assuming that there'll never be need to go to long
+     *assuming that there'll never be need to go to long
      * </pre>
      *
      * <code>int32 problemId = 1;</code>
@@ -549,7 +549,7 @@ public final class Problem extends
 
     /**
      * <pre>
-     * assuming that there'll never be need to go to long
+     *assuming that there'll never be need to go to long
      * </pre>
      *
      * <code>int32 problemId = 1;</code>

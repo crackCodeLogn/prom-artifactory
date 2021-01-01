@@ -61,16 +61,28 @@ public interface CustomerOrBuilder extends
     getContactNumbersBytes(int index);
 
     /**
+     * <pre>
+     * usually the need for this use-case is 121 =&gt; customer to company
+     * </pre>
+     *
      * <code>.com.vv.personal.prom.artifactory.proto.Company company = 5;</code>
      */
     boolean hasCompany();
 
     /**
+     * <pre>
+     * usually the need for this use-case is 121 =&gt; customer to company
+     * </pre>
+     *
      * <code>.com.vv.personal.prom.artifactory.proto.Company company = 5;</code>
      */
     com.vv.personal.prom.artifactory.proto.Company getCompany();
 
     /**
+     * <pre>
+     * usually the need for this use-case is 121 =&gt; customer to company
+     * </pre>
+     *
      * <code>.com.vv.personal.prom.artifactory.proto.Company company = 5;</code>
      */
     com.vv.personal.prom.artifactory.proto.CompanyOrBuilder getCompanyOrBuilder();

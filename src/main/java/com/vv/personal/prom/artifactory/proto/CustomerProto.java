@@ -24,9 +24,10 @@ public final class CustomerProto {
                     "rId\030\001 \001(\005\022\021\n\tfirstName\030\002 \001(\t\022\020\n\010lastName" +
                     "\030\003 \001(\t\022\026\n\016contactNumbers\030\004 \003(\t\022@\n\007compan" +
                     "y\030\005 \001(\0132/.com.vv.personal.prom.artifacto" +
-                    "ry.proto.Company\"1\n\007Company\022\021\n\tcompanyId" +
-                    "\030\001 \001(\005\022\023\n\013companyName\030\002 \001(\tB\021B\rCustomerP" +
-                    "rotoP\001b\006proto3"
+                    "ry.proto.Company\"g\n\007Company\022\021\n\tcompanyId" +
+                    "\030\001 \001(\005\022\023\n\013companyName\030\002 \001(\t\022\034\n\024companyCo" +
+                    "ntactPerson\030\003 \001(\t\022\026\n\016contactNumbers\030\004 \003(" +
+                    "\tB\021B\rCustomerProtoP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
             new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -51,7 +52,7 @@ public final class CustomerProto {
     internal_static_com_vv_personal_prom_artifactory_proto_Company_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_com_vv_personal_prom_artifactory_proto_Company_descriptor,
-            new java.lang.String[]{"CompanyId", "CompanyName",});
+            new java.lang.String[]{"CompanyId", "CompanyName", "CompanyContactPerson", "ContactNumbers",});
   }
 
   private CustomerProto() {

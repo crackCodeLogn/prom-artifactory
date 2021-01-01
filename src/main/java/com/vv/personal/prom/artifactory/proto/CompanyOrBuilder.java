@@ -22,4 +22,61 @@ public interface CompanyOrBuilder extends
      */
     com.google.protobuf.ByteString
     getCompanyNameBytes();
+
+    /**
+     * <pre>
+     * could be the owner as well, but can be left empty.
+     * </pre>
+     *
+     * <code>string companyContactPerson = 3;</code>
+     */
+    java.lang.String getCompanyContactPerson();
+
+    /**
+     * <pre>
+     * could be the owner as well, but can be left empty.
+     * </pre>
+     *
+     * <code>string companyContactPerson = 3;</code>
+     */
+    com.google.protobuf.ByteString
+    getCompanyContactPersonBytes();
+
+    /**
+     * <pre>
+     * can be left empty.
+     * </pre>
+     *
+     * <code>repeated string contactNumbers = 4;</code>
+     */
+    java.util.List<java.lang.String>
+    getContactNumbersList();
+
+    /**
+     * <pre>
+     * can be left empty.
+     * </pre>
+     *
+     * <code>repeated string contactNumbers = 4;</code>
+     */
+    int getContactNumbersCount();
+
+    /**
+     * <pre>
+     * can be left empty.
+     * </pre>
+     *
+     * <code>repeated string contactNumbers = 4;</code>
+     */
+    java.lang.String getContactNumbers(int index);
+
+    /**
+     * <pre>
+     * can be left empty.
+     * </pre>
+     *
+     * <code>repeated string contactNumbers = 4;</code>
+     */
+    com.google.protobuf.ByteString
+    getContactNumbersBytes(int index);
 }
