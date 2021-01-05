@@ -22,3 +22,7 @@ message Company {
 message CustomerList {
   repeated Customer customers = 1;
 }
+
+message CompanyList {
+  repeated Company companies = 1;
+}

@@ -23,7 +23,6 @@ public final class Company extends
     companyContactPerson_ = "";
     contactNumbers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
-
   public static final int COMPANYNAME_FIELD_NUMBER = 2;
   public static final int COMPANYCONTACTPERSON_FIELD_NUMBER = 3;
   public static final int CONTACTNUMBERS_FIELD_NUMBER = 4;
@@ -43,6 +42,13 @@ public final class Company extends
 
   static {
     DEFAULT_INSTANCE = new com.vv.personal.prom.artifactory.proto.Company();
+  }
+
+  /**
+   * <code>int32 companyId = 1;</code>
+   */
+  public int getCompanyId() {
+    return companyId_;
   }
 
   private int bitField0_;
@@ -144,6 +150,28 @@ public final class Company extends
     return PARSER.parseFrom(data);
   }
 
+  /**
+   * <pre>
+   * can be left empty.
+   * </pre>
+   *
+   * <code>repeated string contactNumbers = 4;</code>
+   */
+  public int getContactNumbersCount() {
+    return contactNumbers_.size();
+  }
+
+  /**
+   * <pre>
+   * can be left empty.
+   * </pre>
+   *
+   * <code>repeated string contactNumbers = 4;</code>
+   */
+  public java.lang.String getContactNumbers(int index) {
+    return contactNumbers_.get(index);
+  }
+
   public static com.vv.personal.prom.artifactory.proto.Company parseFrom(
           com.google.protobuf.ByteString data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -156,11 +184,50 @@ public final class Company extends
     return PARSER.parseFrom(data);
   }
 
+  @java.lang.Override
+  public final boolean isInitialized() {
+    byte isInitialized = memoizedIsInitialized;
+    if (isInitialized == 1) return true;
+    if (isInitialized == 0) return false;
+
+    memoizedIsInitialized = 1;
+    return true;
+  }
+
   public static com.vv.personal.prom.artifactory.proto.Company parseFrom(
           byte[] data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
+  }
+
+  @java.lang.Override
+  public int getSerializedSize() {
+    int size = memoizedSize;
+    if (size != -1) return size;
+
+    size = 0;
+    if (companyId_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+              .computeInt32Size(1, companyId_);
+    }
+    if (!getCompanyNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, companyName_);
+    }
+    if (!getCompanyContactPersonBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, companyContactPerson_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < contactNumbers_.size(); i++) {
+        dataSize += computeStringSizeNoTag(contactNumbers_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getContactNumbersList().size();
+    }
+    size += unknownFields.getSerializedSize();
+    memoizedSize = size;
+    return size;
   }
 
   public static com.vv.personal.prom.artifactory.proto.Company parseFrom(java.io.InputStream input)
@@ -206,28 +273,6 @@ public final class Company extends
             .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @java.lang.Override
-  public int hashCode() {
-    if (memoizedHashCode != 0) {
-      return memoizedHashCode;
-    }
-    int hash = 41;
-    hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + COMPANYID_FIELD_NUMBER;
-    hash = (53 * hash) + getCompanyId();
-    hash = (37 * hash) + COMPANYNAME_FIELD_NUMBER;
-    hash = (53 * hash) + getCompanyName().hashCode();
-    hash = (37 * hash) + COMPANYCONTACTPERSON_FIELD_NUMBER;
-    hash = (53 * hash) + getCompanyContactPerson().hashCode();
-    if (getContactNumbersCount() > 0) {
-      hash = (37 * hash) + CONTACTNUMBERS_FIELD_NUMBER;
-      hash = (53 * hash) + getContactNumbersList().hashCode();
-    }
-    hash = (29 * hash) + unknownFields.hashCode();
-    memoizedHashCode = hash;
-    return hash;
-  }
-
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
@@ -256,13 +301,6 @@ public final class Company extends
     return com.vv.personal.prom.artifactory.proto.CustomerProto.internal_static_com_vv_personal_prom_artifactory_proto_Company_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                     com.vv.personal.prom.artifactory.proto.Company.class, com.vv.personal.prom.artifactory.proto.Company.Builder.class);
-  }
-
-  /**
-   * <code>int32 companyId = 1;</code>
-   */
-  public int getCompanyId() {
-    return companyId_;
   }
 
   /**
@@ -298,9 +336,14 @@ public final class Company extends
     }
   }
 
+  @java.lang.Override
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   /**
    * <pre>
-   *could be the owner as well, but can be left empty.
+   * could be the owner as well, but can be left empty.
    * </pre>
    *
    * <code>string companyContactPerson = 3;</code>
@@ -353,28 +396,6 @@ public final class Company extends
 
   /**
    * <pre>
-   *can be left empty.
-   * </pre>
-   *
-   * <code>repeated string contactNumbers = 4;</code>
-   */
-  public int getContactNumbersCount() {
-    return contactNumbers_.size();
-  }
-
-  /**
-   * <pre>
-   *can be left empty.
-   * </pre>
-   *
-   * <code>repeated string contactNumbers = 4;</code>
-   */
-  public java.lang.String getContactNumbers(int index) {
-    return contactNumbers_.get(index);
-  }
-
-  /**
-   * <pre>
    * can be left empty.
    * </pre>
    *
@@ -383,16 +404,6 @@ public final class Company extends
   public com.google.protobuf.ByteString
   getContactNumbersBytes(int index) {
     return contactNumbers_.getByteString(index);
-  }
-
-  @java.lang.Override
-  public final boolean isInitialized() {
-    byte isInitialized = memoizedIsInitialized;
-    if (isInitialized == 1) return true;
-    if (isInitialized == 0) return false;
-
-    memoizedIsInitialized = 1;
-    return true;
   }
 
   @java.lang.Override
@@ -411,35 +422,6 @@ public final class Company extends
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, contactNumbers_.getRaw(i));
     }
     unknownFields.writeTo(output);
-  }
-
-  @java.lang.Override
-  public int getSerializedSize() {
-    int size = memoizedSize;
-    if (size != -1) return size;
-
-    size = 0;
-    if (companyId_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(1, companyId_);
-    }
-    if (!getCompanyNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, companyName_);
-    }
-    if (!getCompanyContactPersonBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, companyContactPerson_);
-    }
-    {
-      int dataSize = 0;
-      for (int i = 0; i < contactNumbers_.size(); i++) {
-        dataSize += computeStringSizeNoTag(contactNumbers_.getRaw(i));
-      }
-      size += dataSize;
-      size += 1 * getContactNumbersList().size();
-    }
-    size += unknownFields.getSerializedSize();
-    memoizedSize = size;
-    return size;
   }
 
   @java.lang.Override
@@ -466,7 +448,26 @@ public final class Company extends
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public int hashCode() {
+    if (memoizedHashCode != 0) {
+      return memoizedHashCode;
+    }
+    int hash = 41;
+    hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + COMPANYID_FIELD_NUMBER;
+    hash = (53 * hash) + getCompanyId();
+    hash = (37 * hash) + COMPANYNAME_FIELD_NUMBER;
+    hash = (53 * hash) + getCompanyName().hashCode();
+    hash = (37 * hash) + COMPANYCONTACTPERSON_FIELD_NUMBER;
+    hash = (53 * hash) + getCompanyContactPerson().hashCode();
+    if (getContactNumbersCount() > 0) {
+      hash = (37 * hash) + CONTACTNUMBERS_FIELD_NUMBER;
+      hash = (53 * hash) + getContactNumbersList().hashCode();
+    }
+    hash = (29 * hash) + unknownFields.hashCode();
+    memoizedHashCode = hash;
+    return hash;
+  }
 
   @java.lang.Override
   public Builder toBuilder() {
@@ -592,13 +593,10 @@ public final class Company extends
     }
 
     @java.lang.Override
-    public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.vv.personal.prom.artifactory.proto.Company) {
-        return mergeFrom((com.vv.personal.prom.artifactory.proto.Company) other);
-      } else {
-        super.mergeFrom(other);
-        return this;
-      }
+    public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+      return super.setField(field, value);
     }
 
     public Builder mergeFrom(com.vv.personal.prom.artifactory.proto.Company other) {
@@ -630,10 +628,8 @@ public final class Company extends
     }
 
     @java.lang.Override
-    public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
-      return super.setField(field, value);
+    public final boolean isInitialized() {
+      return true;
     }
 
     @java.lang.Override
@@ -655,6 +651,13 @@ public final class Company extends
       return super.setRepeatedField(field, index, value);
     }
 
+    /**
+     * <code>int32 companyId = 1;</code>
+     */
+    public int getCompanyId() {
+      return companyId_;
+    }
+
     @java.lang.Override
     public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
@@ -663,8 +666,13 @@ public final class Company extends
     }
 
     @java.lang.Override
-    public final boolean isInitialized() {
-      return true;
+    public Builder mergeFrom(com.google.protobuf.Message other) {
+      if (other instanceof com.vv.personal.prom.artifactory.proto.Company) {
+        return mergeFrom((com.vv.personal.prom.artifactory.proto.Company) other);
+      } else {
+        super.mergeFrom(other);
+        return this;
+      }
     }
 
     @java.lang.Override
@@ -684,13 +692,6 @@ public final class Company extends
         }
       }
       return this;
-    }
-
-    /**
-     * <code>int32 companyId = 1;</code>
-     */
-    public int getCompanyId() {
-      return companyId_;
     }
 
     /**
@@ -720,7 +721,7 @@ public final class Company extends
       java.lang.Object ref = companyName_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
+            (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         companyName_ = s;
         return s;
@@ -767,8 +768,8 @@ public final class Company extends
             com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
+  }
+  checkByteStringIsUtf8(value);
 
       companyName_ = value;
       onChanged();
@@ -796,7 +797,7 @@ public final class Company extends
       java.lang.Object ref = companyContactPerson_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
+            (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         companyContactPerson_ = s;
         return s;
@@ -854,9 +855,9 @@ public final class Company extends
     public Builder setCompanyContactPersonBytes(
             com.google.protobuf.ByteString value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
 
       companyContactPerson_ = value;
       onChanged();
@@ -977,7 +978,7 @@ public final class Company extends
             java.lang.Iterable<java.lang.String> values) {
       ensureContactNumbersIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, contactNumbers_);
+          values, contactNumbers_);
       onChanged();
       return this;
     }
@@ -998,17 +999,17 @@ public final class Company extends
 
     /**
      * <pre>
-     * can be left empty.
+     *can be left empty.
      * </pre>
      *
      * <code>repeated string contactNumbers = 4;</code>
      */
     public Builder addContactNumbersBytes(
-            com.google.protobuf.ByteString value) {
+        com.google.protobuf.ByteString value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
       ensureContactNumbersIsMutable();
       contactNumbers_.add(value);
       onChanged();

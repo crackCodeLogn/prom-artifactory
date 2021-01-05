@@ -11,6 +11,16 @@ public final class CustomerList extends
         // @@protoc_insertion_point(message_implements:com.vv.personal.prom.artifactory.proto.CustomerList)
         CustomerListOrBuilder {
   public static final int CUSTOMERS_FIELD_NUMBER = 1;
+
+  // Use CustomerList.newBuilder() to construct.
+  private CustomerList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    super(builder);
+  }
+
+  private CustomerList() {
+    customers_ = java.util.Collections.emptyList();
+  }
+
   private static final long serialVersionUID = 0L;
   // @@protoc_insertion_point(class_scope:com.vv.personal.prom.artifactory.proto.CustomerList)
   private static final com.vv.personal.prom.artifactory.proto.CustomerList DEFAULT_INSTANCE;
@@ -32,13 +42,11 @@ public final class CustomerList extends
   private java.util.List<com.vv.personal.prom.artifactory.proto.Customer> customers_;
   private byte memoizedIsInitialized = -1;
 
-  // Use CustomerList.newBuilder() to construct.
-  private CustomerList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-    super(builder);
-  }
-
-  private CustomerList() {
-    customers_ = java.util.Collections.emptyList();
+  /**
+   * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customers = 1;</code>
+   */
+  public java.util.List<com.vv.personal.prom.artifactory.proto.Customer> getCustomersList() {
+    return customers_;
   }
 
   private CustomerList(
@@ -92,6 +100,20 @@ public final class CustomerList extends
     }
   }
 
+  /**
+   * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customers = 1;</code>
+   */
+  public int getCustomersCount() {
+    return customers_.size();
+  }
+
+  /**
+   * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customers = 1;</code>
+   */
+  public com.vv.personal.prom.artifactory.proto.Customer getCustomers(int index) {
+    return customers_.get(index);
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor
   getDescriptor() {
     return com.vv.personal.prom.artifactory.proto.CustomerProto.internal_static_com_vv_personal_prom_artifactory_proto_CustomerList_descriptor;
@@ -101,6 +123,16 @@ public final class CustomerList extends
           java.nio.ByteBuffer data)
           throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
+  }
+
+  @java.lang.Override
+  public final boolean isInitialized() {
+    byte isInitialized = memoizedIsInitialized;
+    if (isInitialized == 1) return true;
+    if (isInitialized == 0) return false;
+
+    memoizedIsInitialized = 1;
+    return true;
   }
 
   public static com.vv.personal.prom.artifactory.proto.CustomerList parseFrom(
@@ -121,6 +153,22 @@ public final class CustomerList extends
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
+  }
+
+  @java.lang.Override
+  public int hashCode() {
+    if (memoizedHashCode != 0) {
+      return memoizedHashCode;
+    }
+    int hash = 41;
+    hash = (19 * hash) + getDescriptor().hashCode();
+    if (getCustomersCount() > 0) {
+      hash = (37 * hash) + CUSTOMERS_FIELD_NUMBER;
+      hash = (53 * hash) + getCustomersList().hashCode();
+    }
+    hash = (29 * hash) + unknownFields.hashCode();
+    memoizedHashCode = hash;
+    return hash;
   }
 
   public static com.vv.personal.prom.artifactory.proto.CustomerList parseFrom(byte[] data)
@@ -211,13 +259,6 @@ public final class CustomerList extends
   /**
    * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customers = 1;</code>
    */
-  public java.util.List<com.vv.personal.prom.artifactory.proto.Customer> getCustomersList() {
-    return customers_;
-  }
-
-  /**
-   * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customers = 1;</code>
-   */
   public java.util.List<? extends com.vv.personal.prom.artifactory.proto.CustomerOrBuilder>
   getCustomersOrBuilderList() {
     return customers_;
@@ -226,33 +267,9 @@ public final class CustomerList extends
   /**
    * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customers = 1;</code>
    */
-  public int getCustomersCount() {
-    return customers_.size();
-  }
-
-  /**
-   * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customers = 1;</code>
-   */
-  public com.vv.personal.prom.artifactory.proto.Customer getCustomers(int index) {
-    return customers_.get(index);
-  }
-
-  /**
-   * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customers = 1;</code>
-   */
   public com.vv.personal.prom.artifactory.proto.CustomerOrBuilder getCustomersOrBuilder(
           int index) {
     return customers_.get(index);
-  }
-
-  @java.lang.Override
-  public final boolean isInitialized() {
-    byte isInitialized = memoizedIsInitialized;
-    if (isInitialized == 1) return true;
-    if (isInitialized == 0) return false;
-
-    memoizedIsInitialized = 1;
-    return true;
   }
 
   @java.lang.Override
@@ -282,7 +299,7 @@ public final class CustomerList extends
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-      return true;
+     return true;
     }
     if (!(obj instanceof com.vv.personal.prom.artifactory.proto.CustomerList)) {
       return super.equals(obj);
@@ -297,25 +314,8 @@ public final class CustomerList extends
   }
 
   @java.lang.Override
-  public int hashCode() {
-    if (memoizedHashCode != 0) {
-      return memoizedHashCode;
-    }
-    int hash = 41;
-    hash = (19 * hash) + getDescriptor().hashCode();
-    if (getCustomersCount() > 0) {
-      hash = (37 * hash) + CUSTOMERS_FIELD_NUMBER;
-      hash = (53 * hash) + getCustomersList().hashCode();
-    }
-    hash = (29 * hash) + unknownFields.hashCode();
-    memoizedHashCode = hash;
-    return hash;
-  }
-
-  @java.lang.Override
   public Builder newBuilderForType() {
-    return newBuilder();
-  }
+    return newBuilder(); }
 
   @java.lang.Override
   public Builder toBuilder() {
@@ -357,33 +357,12 @@ public final class CustomerList extends
     private Builder() {
       maybeForceBuilderInitialization();
     }
-
-    private Builder(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    public static final com.google.protobuf.Descriptors.Descriptor
-    getDescriptor() {
-      return com.vv.personal.prom.artifactory.proto.CustomerProto.internal_static_com_vv_personal_prom_artifactory_proto_CustomerList_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-    internalGetFieldAccessorTable() {
-      return com.vv.personal.prom.artifactory.proto.CustomerProto.internal_static_com_vv_personal_prom_artifactory_proto_CustomerList_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                      com.vv.personal.prom.artifactory.proto.CustomerList.class, com.vv.personal.prom.artifactory.proto.CustomerList.Builder.class);
-    }
-
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
         getCustomersFieldBuilder();
       }
     }
-
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -396,10 +375,10 @@ public final class CustomerList extends
       return this;
     }
 
-    @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-    getDescriptorForType() {
-      return com.vv.personal.prom.artifactory.proto.CustomerProto.internal_static_com_vv_personal_prom_artifactory_proto_CustomerList_descriptor;
+    private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      super(parent);
+      maybeForceBuilderInitialization();
     }
 
     @java.lang.Override
@@ -438,6 +417,25 @@ public final class CustomerList extends
       return super.clone();
     }
 
+    public static final com.google.protobuf.Descriptors.Descriptor
+    getDescriptor() {
+      return com.vv.personal.prom.artifactory.proto.CustomerProto.internal_static_com_vv_personal_prom_artifactory_proto_CustomerList_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    internalGetFieldAccessorTable() {
+      return com.vv.personal.prom.artifactory.proto.CustomerProto.internal_static_com_vv_personal_prom_artifactory_proto_CustomerList_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                      com.vv.personal.prom.artifactory.proto.CustomerList.class, com.vv.personal.prom.artifactory.proto.CustomerList.Builder.class);
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor
+    getDescriptorForType() {
+      return com.vv.personal.prom.artifactory.proto.CustomerProto.internal_static_com_vv_personal_prom_artifactory_proto_CustomerList_descriptor;
+    }
+
     @java.lang.Override
     public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
@@ -465,6 +463,11 @@ public final class CustomerList extends
     }
 
     @java.lang.Override
+    public final boolean isInitialized() {
+      return true;
+    }
+
+    @java.lang.Override
     public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
@@ -474,7 +477,7 @@ public final class CustomerList extends
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.vv.personal.prom.artifactory.proto.CustomerList) {
-        return mergeFrom((com.vv.personal.prom.artifactory.proto.CustomerList) other);
+        return mergeFrom((com.vv.personal.prom.artifactory.proto.CustomerList)other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -515,11 +518,6 @@ public final class CustomerList extends
     }
 
     @java.lang.Override
-    public final boolean isInitialized() {
-      return true;
-    }
-
-    @java.lang.Override
     public Builder mergeFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -542,7 +540,7 @@ public final class CustomerList extends
       if (!((bitField0_ & 0x00000001) == 0x00000001)) {
         customers_ = new java.util.ArrayList<com.vv.personal.prom.artifactory.proto.Customer>(customers_);
         bitField0_ |= 0x00000001;
-      }
+       }
     }
 
     /**
@@ -555,7 +553,6 @@ public final class CustomerList extends
         return customersBuilder_.getMessageList();
       }
     }
-
     /**
      * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customers = 1;</code>
      */
@@ -566,7 +563,6 @@ public final class CustomerList extends
         return customersBuilder_.getCount();
       }
     }
-
     /**
      * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customers = 1;</code>
      */
@@ -610,7 +606,6 @@ public final class CustomerList extends
       }
       return this;
     }
-
     /**
      * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customers = 1;</code>
      */
@@ -691,7 +686,6 @@ public final class CustomerList extends
       }
       return this;
     }
-
     /**
      * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customers = 1;</code>
      */
@@ -705,7 +699,6 @@ public final class CustomerList extends
       }
       return this;
     }
-
     /**
      * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customers = 1;</code>
      */
