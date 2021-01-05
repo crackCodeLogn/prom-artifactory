@@ -16,3 +16,7 @@ enum SupportedComponents {
   SW = 4; //SWITCH
   RD = 5; //RADAR
 }
+
+message ComponentList {
+  repeated Component components = 1;
+}

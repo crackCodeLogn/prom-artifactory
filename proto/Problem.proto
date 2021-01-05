@@ -9,6 +9,6 @@ message Problem {
   string problemName = 2;
 }
 
-message Problems {//to bulk send problems
+message ProblemList {//to bulk send problems
   repeated Problem problems = 1;
 }

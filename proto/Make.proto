@@ -8,3 +8,7 @@ message Make {
   int32 makeId = 1; //assuming that there'll never be need to go to long
   string makeName = 2;
 }
+
+message MakeList {
+  repeated Make makes = 1;
+}
