@@ -8,30 +8,30 @@ public interface ComponentListOrBuilder extends
         com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Component components = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Component component = 1;</code>
      */
     java.util.List<com.vv.personal.prom.artifactory.proto.Component>
-    getComponentsList();
+    getComponentList();
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Component components = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Component component = 1;</code>
      */
-    com.vv.personal.prom.artifactory.proto.Component getComponents(int index);
+    com.vv.personal.prom.artifactory.proto.Component getComponent(int index);
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Component components = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Component component = 1;</code>
      */
-    int getComponentsCount();
+    int getComponentCount();
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Component components = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Component component = 1;</code>
      */
     java.util.List<? extends com.vv.personal.prom.artifactory.proto.ComponentOrBuilder>
-    getComponentsOrBuilderList();
+    getComponentOrBuilderList();
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Component components = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Component component = 1;</code>
      */
-    com.vv.personal.prom.artifactory.proto.ComponentOrBuilder getComponentsOrBuilder(
+    com.vv.personal.prom.artifactory.proto.ComponentOrBuilder getComponentOrBuilder(
             int index);
 }

@@ -37,11 +37,11 @@ public final class CustomerProto {
                     "ry.proto.Company\"g\n\007Company\022\021\n\tcompanyId" +
                     "\030\001 \001(\005\022\023\n\013companyName\030\002 \001(\t\022\034\n\024companyCo" +
                     "ntactPerson\030\003 \001(\t\022\026\n\016contactNumbers\030\004 \003(" +
-                    "\t\"S\n\014CustomerList\022C\n\tcustomers\030\001 \003(\01320.c" +
-                    "om.vv.personal.prom.artifactory.proto.Cu" +
-                    "stomer\"Q\n\013CompanyList\022B\n\tcompanies\030\001 \003(\013" +
-                    "2/.com.vv.personal.prom.artifactory.prot" +
-                    "o.CompanyB\021B\rCustomerProtoP\001b\006proto3"
+                    "\t\"R\n\014CustomerList\022B\n\010customer\030\001 \003(\01320.co" +
+                    "m.vv.personal.prom.artifactory.proto.Cus" +
+                    "tomer\"O\n\013CompanyList\022@\n\007company\030\001 \003(\0132/." +
+                    "com.vv.personal.prom.artifactory.proto.C" +
+                    "ompanyB\021B\rCustomerProtoP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
             new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -72,13 +72,13 @@ public final class CustomerProto {
     internal_static_com_vv_personal_prom_artifactory_proto_CustomerList_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_com_vv_personal_prom_artifactory_proto_CustomerList_descriptor,
-            new java.lang.String[]{"Customers",});
+            new java.lang.String[]{"Customer",});
     internal_static_com_vv_personal_prom_artifactory_proto_CompanyList_descriptor =
             getDescriptor().getMessageTypes().get(3);
     internal_static_com_vv_personal_prom_artifactory_proto_CompanyList_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_com_vv_personal_prom_artifactory_proto_CompanyList_descriptor,
-            new java.lang.String[]{"Companies",});
+            new java.lang.String[]{"Company",});
   }
 
   private CustomerProto() {

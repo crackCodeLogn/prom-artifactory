@@ -10,5 +10,5 @@ message Make {
 }
 
 message MakeList {
-  repeated Make makes = 1;
+  repeated Make make = 1;
 }

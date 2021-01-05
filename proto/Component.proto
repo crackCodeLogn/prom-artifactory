@@ -18,5 +18,5 @@ enum SupportedComponents {
 }
 
 message ComponentList {
-  repeated Component components = 1;
+  repeated Component component = 1;
 }

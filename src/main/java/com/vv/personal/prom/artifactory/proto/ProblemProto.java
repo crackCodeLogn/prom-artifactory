@@ -21,10 +21,10 @@ public final class ProblemProto {
     java.lang.String[] descriptorData = {
             "\n\rProblem.proto\022&com.vv.personal.prom.ar" +
                     "tifactory.proto\"1\n\007Problem\022\021\n\tproblemId\030" +
-                    "\001 \001(\005\022\023\n\013problemName\030\002 \001(\t\"P\n\013ProblemLis" +
-                    "t\022A\n\010problems\030\001 \003(\0132/.com.vv.personal.pr" +
-                    "om.artifactory.proto.ProblemB\020B\014ProblemP" +
-                    "rotoP\001b\006proto3"
+                    "\001 \001(\005\022\023\n\013problemName\030\002 \001(\t\"O\n\013ProblemLis" +
+                    "t\022@\n\007problem\030\001 \003(\0132/.com.vv.personal.pro" +
+                    "m.artifactory.proto.ProblemB\020B\014ProblemPr" +
+                    "otoP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
             new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -49,7 +49,7 @@ public final class ProblemProto {
     internal_static_com_vv_personal_prom_artifactory_proto_ProblemList_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_com_vv_personal_prom_artifactory_proto_ProblemList_descriptor,
-            new java.lang.String[]{"Problems",});
+            new java.lang.String[]{"Problem",});
   }
 
   private ProblemProto() {

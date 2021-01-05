@@ -10,5 +10,5 @@ message Problem {
 }
 
 message ProblemList {//to bulk send problems
-  repeated Problem problems = 1;
+  repeated Problem problem = 1;
 }

@@ -10,7 +10,13 @@ public final class MakeList extends
         com.google.protobuf.GeneratedMessageV3 implements
         // @@protoc_insertion_point(message_implements:com.vv.personal.prom.artifactory.proto.MakeList)
         MakeListOrBuilder {
-  public static final int MAKES_FIELD_NUMBER = 1;
+  public static final int MAKE_FIELD_NUMBER = 1;
+
+  // Use MakeList.newBuilder() to construct.
+  private MakeList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    super(builder);
+  }
+
   private static final long serialVersionUID = 0L;
   // @@protoc_insertion_point(class_scope:com.vv.personal.prom.artifactory.proto.MakeList)
   private static final com.vv.personal.prom.artifactory.proto.MakeList DEFAULT_INSTANCE;
@@ -29,16 +35,11 @@ public final class MakeList extends
     DEFAULT_INSTANCE = new com.vv.personal.prom.artifactory.proto.MakeList();
   }
 
-  private java.util.List<com.vv.personal.prom.artifactory.proto.Make> makes_;
+  private java.util.List<com.vv.personal.prom.artifactory.proto.Make> make_;
   private byte memoizedIsInitialized = -1;
 
-  // Use MakeList.newBuilder() to construct.
-  private MakeList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-    super(builder);
-  }
-
   private MakeList() {
-    makes_ = java.util.Collections.emptyList();
+    make_ = java.util.Collections.emptyList();
   }
 
   private MakeList(
@@ -62,10 +63,10 @@ public final class MakeList extends
             break;
           case 10: {
             if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-              makes_ = new java.util.ArrayList<com.vv.personal.prom.artifactory.proto.Make>();
+              make_ = new java.util.ArrayList<com.vv.personal.prom.artifactory.proto.Make>();
               mutable_bitField0_ |= 0x00000001;
             }
-            makes_.add(
+            make_.add(
                     input.readMessage(com.vv.personal.prom.artifactory.proto.Make.parser(), extensionRegistry));
             break;
           }
@@ -85,7 +86,7 @@ public final class MakeList extends
               e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-        makes_ = java.util.Collections.unmodifiableList(makes_);
+        make_ = java.util.Collections.unmodifiableList(make_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -178,14 +179,6 @@ public final class MakeList extends
             .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-
-  public static Builder newBuilder(com.vv.personal.prom.artifactory.proto.MakeList prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-
   public static com.vv.personal.prom.artifactory.proto.MakeList getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
@@ -209,40 +202,40 @@ public final class MakeList extends
   }
 
   /**
-   * <code>repeated .com.vv.personal.prom.artifactory.proto.Make makes = 1;</code>
+   * <code>repeated .com.vv.personal.prom.artifactory.proto.Make make = 1;</code>
    */
-  public java.util.List<com.vv.personal.prom.artifactory.proto.Make> getMakesList() {
-    return makes_;
+  public java.util.List<com.vv.personal.prom.artifactory.proto.Make> getMakeList() {
+    return make_;
   }
 
   /**
-   * <code>repeated .com.vv.personal.prom.artifactory.proto.Make makes = 1;</code>
+   * <code>repeated .com.vv.personal.prom.artifactory.proto.Make make = 1;</code>
    */
   public java.util.List<? extends com.vv.personal.prom.artifactory.proto.MakeOrBuilder>
-  getMakesOrBuilderList() {
-    return makes_;
+  getMakeOrBuilderList() {
+    return make_;
   }
 
   /**
-   * <code>repeated .com.vv.personal.prom.artifactory.proto.Make makes = 1;</code>
+   * <code>repeated .com.vv.personal.prom.artifactory.proto.Make make = 1;</code>
    */
-  public int getMakesCount() {
-    return makes_.size();
+  public int getMakeCount() {
+    return make_.size();
   }
 
   /**
-   * <code>repeated .com.vv.personal.prom.artifactory.proto.Make makes = 1;</code>
+   * <code>repeated .com.vv.personal.prom.artifactory.proto.Make make = 1;</code>
    */
-  public com.vv.personal.prom.artifactory.proto.Make getMakes(int index) {
-    return makes_.get(index);
+  public com.vv.personal.prom.artifactory.proto.Make getMake(int index) {
+    return make_.get(index);
   }
 
   /**
-   * <code>repeated .com.vv.personal.prom.artifactory.proto.Make makes = 1;</code>
+   * <code>repeated .com.vv.personal.prom.artifactory.proto.Make make = 1;</code>
    */
-  public com.vv.personal.prom.artifactory.proto.MakeOrBuilder getMakesOrBuilder(
+  public com.vv.personal.prom.artifactory.proto.MakeOrBuilder getMakeOrBuilder(
           int index) {
-    return makes_.get(index);
+    return make_.get(index);
   }
 
   @java.lang.Override
@@ -255,11 +248,19 @@ public final class MakeList extends
     return true;
   }
 
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(com.vv.personal.prom.artifactory.proto.MakeList prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
           throws java.io.IOException {
-    for (int i = 0; i < makes_.size(); i++) {
-      output.writeMessage(1, makes_.get(i));
+    for (int i = 0; i < make_.size(); i++) {
+      output.writeMessage(1, make_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -270,9 +271,9 @@ public final class MakeList extends
     if (size != -1) return size;
 
     size = 0;
-    for (int i = 0; i < makes_.size(); i++) {
+    for (int i = 0; i < make_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-              .computeMessageSize(1, makes_.get(i));
+              .computeMessageSize(1, make_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -290,8 +291,8 @@ public final class MakeList extends
     com.vv.personal.prom.artifactory.proto.MakeList other = (com.vv.personal.prom.artifactory.proto.MakeList) obj;
 
     boolean result = true;
-    result = result && getMakesList()
-            .equals(other.getMakesList());
+    result = result && getMakeList()
+            .equals(other.getMakeList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -303,9 +304,9 @@ public final class MakeList extends
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (getMakesCount() > 0) {
-      hash = (37 * hash) + MAKES_FIELD_NUMBER;
-      hash = (53 * hash) + getMakesList().hashCode();
+    if (getMakeCount() > 0) {
+      hash = (37 * hash) + MAKE_FIELD_NUMBER;
+      hash = (53 * hash) + getMakeList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -314,8 +315,7 @@ public final class MakeList extends
 
   @java.lang.Override
   public Builder newBuilderForType() {
-    return newBuilder();
-  }
+    return newBuilder(); }
 
   @java.lang.Override
   public Builder toBuilder() {
@@ -348,10 +348,10 @@ public final class MakeList extends
           // @@protoc_insertion_point(builder_implements:com.vv.personal.prom.artifactory.proto.MakeList)
           com.vv.personal.prom.artifactory.proto.MakeListOrBuilder {
     private int bitField0_;
-    private java.util.List<com.vv.personal.prom.artifactory.proto.Make> makes_ =
+    private java.util.List<com.vv.personal.prom.artifactory.proto.Make> make_ =
             java.util.Collections.emptyList();
     private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.vv.personal.prom.artifactory.proto.Make, com.vv.personal.prom.artifactory.proto.Make.Builder, com.vv.personal.prom.artifactory.proto.MakeOrBuilder> makesBuilder_;
+            com.vv.personal.prom.artifactory.proto.Make, com.vv.personal.prom.artifactory.proto.Make.Builder, com.vv.personal.prom.artifactory.proto.MakeOrBuilder> makeBuilder_;
 
     // Construct using com.vv.personal.prom.artifactory.proto.MakeList.newBuilder()
     private Builder() {
@@ -377,31 +377,6 @@ public final class MakeList extends
                       com.vv.personal.prom.artifactory.proto.MakeList.class, com.vv.personal.prom.artifactory.proto.MakeList.Builder.class);
     }
 
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-        getMakesFieldBuilder();
-      }
-    }
-
-    @java.lang.Override
-    public Builder clear() {
-      super.clear();
-      if (makesBuilder_ == null) {
-        makes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      } else {
-        makesBuilder_.clear();
-      }
-      return this;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-    getDescriptorForType() {
-      return com.vv.personal.prom.artifactory.proto.MakeProto.internal_static_com_vv_personal_prom_artifactory_proto_MakeList_descriptor;
-    }
-
     @java.lang.Override
     public com.vv.personal.prom.artifactory.proto.MakeList getDefaultInstanceForType() {
       return com.vv.personal.prom.artifactory.proto.MakeList.getDefaultInstance();
@@ -416,26 +391,51 @@ public final class MakeList extends
       return result;
     }
 
-    @java.lang.Override
-    public com.vv.personal.prom.artifactory.proto.MakeList buildPartial() {
-      com.vv.personal.prom.artifactory.proto.MakeList result = new com.vv.personal.prom.artifactory.proto.MakeList(this);
-      int from_bitField0_ = bitField0_;
-      if (makesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          makes_ = java.util.Collections.unmodifiableList(makes_);
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.makes_ = makes_;
-      } else {
-        result.makes_ = makesBuilder_.build();
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3
+              .alwaysUseFieldBuilders) {
+        getMakeFieldBuilder();
       }
-      onBuilt();
-      return result;
     }
 
     @java.lang.Override
     public Builder clone() {
       return super.clone();
+    }
+
+    @java.lang.Override
+    public Builder clear() {
+      super.clear();
+      if (makeBuilder_ == null) {
+        make_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      } else {
+        makeBuilder_.clear();
+      }
+      return this;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor
+    getDescriptorForType() {
+      return com.vv.personal.prom.artifactory.proto.MakeProto.internal_static_com_vv_personal_prom_artifactory_proto_MakeList_descriptor;
+    }
+
+    @java.lang.Override
+    public com.vv.personal.prom.artifactory.proto.MakeList buildPartial() {
+      com.vv.personal.prom.artifactory.proto.MakeList result = new com.vv.personal.prom.artifactory.proto.MakeList(this);
+      int from_bitField0_ = bitField0_;
+      if (makeBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          make_ = java.util.Collections.unmodifiableList(make_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.make_ = make_;
+      } else {
+        result.make_ = makeBuilder_.build();
+      }
+      onBuilt();
+      return result;
     }
 
     @java.lang.Override
@@ -465,6 +465,11 @@ public final class MakeList extends
     }
 
     @java.lang.Override
+    public final boolean isInitialized() {
+      return true;
+    }
+
+    @java.lang.Override
     public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
@@ -474,7 +479,7 @@ public final class MakeList extends
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.vv.personal.prom.artifactory.proto.MakeList) {
-        return mergeFrom((com.vv.personal.prom.artifactory.proto.MakeList) other);
+        return mergeFrom((com.vv.personal.prom.artifactory.proto.MakeList)other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -483,40 +488,35 @@ public final class MakeList extends
 
     public Builder mergeFrom(com.vv.personal.prom.artifactory.proto.MakeList other) {
       if (other == com.vv.personal.prom.artifactory.proto.MakeList.getDefaultInstance()) return this;
-      if (makesBuilder_ == null) {
-        if (!other.makes_.isEmpty()) {
-          if (makes_.isEmpty()) {
-            makes_ = other.makes_;
+      if (makeBuilder_ == null) {
+        if (!other.make_.isEmpty()) {
+          if (make_.isEmpty()) {
+            make_ = other.make_;
             bitField0_ = (bitField0_ & ~0x00000001);
           } else {
-            ensureMakesIsMutable();
-            makes_.addAll(other.makes_);
+            ensureMakeIsMutable();
+            make_.addAll(other.make_);
           }
           onChanged();
         }
       } else {
-        if (!other.makes_.isEmpty()) {
-          if (makesBuilder_.isEmpty()) {
-            makesBuilder_.dispose();
-            makesBuilder_ = null;
-            makes_ = other.makes_;
+        if (!other.make_.isEmpty()) {
+          if (makeBuilder_.isEmpty()) {
+            makeBuilder_.dispose();
+            makeBuilder_ = null;
+            make_ = other.make_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            makesBuilder_ =
+            makeBuilder_ =
                     com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                            getMakesFieldBuilder() : null;
+                            getMakeFieldBuilder() : null;
           } else {
-            makesBuilder_.addAllMessages(other.makes_);
+            makeBuilder_.addAllMessages(other.make_);
           }
         }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
-    }
-
-    @java.lang.Override
-    public final boolean isInitialized() {
-      return true;
     }
 
     @java.lang.Override
@@ -538,258 +538,258 @@ public final class MakeList extends
       return this;
     }
 
-    private void ensureMakesIsMutable() {
+    private void ensureMakeIsMutable() {
       if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-        makes_ = new java.util.ArrayList<com.vv.personal.prom.artifactory.proto.Make>(makes_);
+        make_ = new java.util.ArrayList<com.vv.personal.prom.artifactory.proto.Make>(make_);
         bitField0_ |= 0x00000001;
       }
     }
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Make makes = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Make make = 1;</code>
      */
-    public java.util.List<com.vv.personal.prom.artifactory.proto.Make> getMakesList() {
-      if (makesBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(makes_);
+    public java.util.List<com.vv.personal.prom.artifactory.proto.Make> getMakeList() {
+      if (makeBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(make_);
       } else {
-        return makesBuilder_.getMessageList();
+        return makeBuilder_.getMessageList();
       }
     }
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Make makes = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Make make = 1;</code>
      */
-    public int getMakesCount() {
-      if (makesBuilder_ == null) {
-        return makes_.size();
+    public int getMakeCount() {
+      if (makeBuilder_ == null) {
+        return make_.size();
       } else {
-        return makesBuilder_.getCount();
+        return makeBuilder_.getCount();
       }
     }
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Make makes = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Make make = 1;</code>
      */
-    public com.vv.personal.prom.artifactory.proto.Make getMakes(int index) {
-      if (makesBuilder_ == null) {
-        return makes_.get(index);
+    public com.vv.personal.prom.artifactory.proto.Make getMake(int index) {
+      if (makeBuilder_ == null) {
+        return make_.get(index);
       } else {
-        return makesBuilder_.getMessage(index);
+        return makeBuilder_.getMessage(index);
       }
     }
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Make makes = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Make make = 1;</code>
      */
-    public Builder setMakes(
+    public Builder setMake(
             int index, com.vv.personal.prom.artifactory.proto.Make value) {
-      if (makesBuilder_ == null) {
+      if (makeBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureMakesIsMutable();
-        makes_.set(index, value);
+        ensureMakeIsMutable();
+        make_.set(index, value);
         onChanged();
       } else {
-        makesBuilder_.setMessage(index, value);
+        makeBuilder_.setMessage(index, value);
       }
       return this;
     }
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Make makes = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Make make = 1;</code>
      */
-    public Builder setMakes(
+    public Builder setMake(
             int index, com.vv.personal.prom.artifactory.proto.Make.Builder builderForValue) {
-      if (makesBuilder_ == null) {
-        ensureMakesIsMutable();
-        makes_.set(index, builderForValue.build());
+      if (makeBuilder_ == null) {
+        ensureMakeIsMutable();
+        make_.set(index, builderForValue.build());
         onChanged();
       } else {
-        makesBuilder_.setMessage(index, builderForValue.build());
+        makeBuilder_.setMessage(index, builderForValue.build());
       }
       return this;
     }
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Make makes = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Make make = 1;</code>
      */
-    public Builder addMakes(com.vv.personal.prom.artifactory.proto.Make value) {
-      if (makesBuilder_ == null) {
+    public Builder addMake(com.vv.personal.prom.artifactory.proto.Make value) {
+      if (makeBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureMakesIsMutable();
-        makes_.add(value);
+        ensureMakeIsMutable();
+        make_.add(value);
         onChanged();
       } else {
-        makesBuilder_.addMessage(value);
+        makeBuilder_.addMessage(value);
       }
       return this;
     }
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Make makes = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Make make = 1;</code>
      */
-    public Builder addMakes(
+    public Builder addMake(
             int index, com.vv.personal.prom.artifactory.proto.Make value) {
-      if (makesBuilder_ == null) {
+      if (makeBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureMakesIsMutable();
-        makes_.add(index, value);
+        ensureMakeIsMutable();
+        make_.add(index, value);
         onChanged();
       } else {
-        makesBuilder_.addMessage(index, value);
+        makeBuilder_.addMessage(index, value);
       }
       return this;
     }
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Make makes = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Make make = 1;</code>
      */
-    public Builder addMakes(
+    public Builder addMake(
             com.vv.personal.prom.artifactory.proto.Make.Builder builderForValue) {
-      if (makesBuilder_ == null) {
-        ensureMakesIsMutable();
-        makes_.add(builderForValue.build());
+      if (makeBuilder_ == null) {
+        ensureMakeIsMutable();
+        make_.add(builderForValue.build());
         onChanged();
       } else {
-        makesBuilder_.addMessage(builderForValue.build());
+        makeBuilder_.addMessage(builderForValue.build());
       }
       return this;
     }
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Make makes = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Make make = 1;</code>
      */
-    public Builder addMakes(
+    public Builder addMake(
             int index, com.vv.personal.prom.artifactory.proto.Make.Builder builderForValue) {
-      if (makesBuilder_ == null) {
-        ensureMakesIsMutable();
-        makes_.add(index, builderForValue.build());
+      if (makeBuilder_ == null) {
+        ensureMakeIsMutable();
+        make_.add(index, builderForValue.build());
         onChanged();
       } else {
-        makesBuilder_.addMessage(index, builderForValue.build());
+        makeBuilder_.addMessage(index, builderForValue.build());
       }
       return this;
     }
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Make makes = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Make make = 1;</code>
      */
-    public Builder addAllMakes(
+    public Builder addAllMake(
             java.lang.Iterable<? extends com.vv.personal.prom.artifactory.proto.Make> values) {
-      if (makesBuilder_ == null) {
-        ensureMakesIsMutable();
+      if (makeBuilder_ == null) {
+        ensureMakeIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-                values, makes_);
+                values, make_);
         onChanged();
       } else {
-        makesBuilder_.addAllMessages(values);
+        makeBuilder_.addAllMessages(values);
       }
       return this;
     }
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Make makes = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Make make = 1;</code>
      */
-    public Builder clearMakes() {
-      if (makesBuilder_ == null) {
-        makes_ = java.util.Collections.emptyList();
+    public Builder clearMake() {
+      if (makeBuilder_ == null) {
+        make_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
-        makesBuilder_.clear();
+        makeBuilder_.clear();
       }
       return this;
     }
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Make makes = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Make make = 1;</code>
      */
-    public Builder removeMakes(int index) {
-      if (makesBuilder_ == null) {
-        ensureMakesIsMutable();
-        makes_.remove(index);
+    public Builder removeMake(int index) {
+      if (makeBuilder_ == null) {
+        ensureMakeIsMutable();
+        make_.remove(index);
         onChanged();
       } else {
-        makesBuilder_.remove(index);
+        makeBuilder_.remove(index);
       }
       return this;
     }
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Make makes = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Make make = 1;</code>
      */
-    public com.vv.personal.prom.artifactory.proto.Make.Builder getMakesBuilder(
+    public com.vv.personal.prom.artifactory.proto.Make.Builder getMakeBuilder(
             int index) {
-      return getMakesFieldBuilder().getBuilder(index);
+      return getMakeFieldBuilder().getBuilder(index);
     }
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Make makes = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Make make = 1;</code>
      */
-    public com.vv.personal.prom.artifactory.proto.MakeOrBuilder getMakesOrBuilder(
+    public com.vv.personal.prom.artifactory.proto.MakeOrBuilder getMakeOrBuilder(
             int index) {
-      if (makesBuilder_ == null) {
-        return makes_.get(index);
+      if (makeBuilder_ == null) {
+        return make_.get(index);
       } else {
-        return makesBuilder_.getMessageOrBuilder(index);
+        return makeBuilder_.getMessageOrBuilder(index);
       }
     }
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Make makes = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Make make = 1;</code>
      */
     public java.util.List<? extends com.vv.personal.prom.artifactory.proto.MakeOrBuilder>
-    getMakesOrBuilderList() {
-      if (makesBuilder_ != null) {
-        return makesBuilder_.getMessageOrBuilderList();
+    getMakeOrBuilderList() {
+      if (makeBuilder_ != null) {
+        return makeBuilder_.getMessageOrBuilderList();
       } else {
-        return java.util.Collections.unmodifiableList(makes_);
+        return java.util.Collections.unmodifiableList(make_);
       }
     }
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Make makes = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Make make = 1;</code>
      */
-    public com.vv.personal.prom.artifactory.proto.Make.Builder addMakesBuilder() {
-      return getMakesFieldBuilder().addBuilder(
+    public com.vv.personal.prom.artifactory.proto.Make.Builder addMakeBuilder() {
+      return getMakeFieldBuilder().addBuilder(
               com.vv.personal.prom.artifactory.proto.Make.getDefaultInstance());
     }
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Make makes = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Make make = 1;</code>
      */
-    public com.vv.personal.prom.artifactory.proto.Make.Builder addMakesBuilder(
+    public com.vv.personal.prom.artifactory.proto.Make.Builder addMakeBuilder(
             int index) {
-      return getMakesFieldBuilder().addBuilder(
+      return getMakeFieldBuilder().addBuilder(
               index, com.vv.personal.prom.artifactory.proto.Make.getDefaultInstance());
     }
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Make makes = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Make make = 1;</code>
      */
     public java.util.List<com.vv.personal.prom.artifactory.proto.Make.Builder>
-    getMakesBuilderList() {
-      return getMakesFieldBuilder().getBuilderList();
+    getMakeBuilderList() {
+      return getMakeFieldBuilder().getBuilderList();
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
             com.vv.personal.prom.artifactory.proto.Make, com.vv.personal.prom.artifactory.proto.Make.Builder, com.vv.personal.prom.artifactory.proto.MakeOrBuilder>
-    getMakesFieldBuilder() {
-      if (makesBuilder_ == null) {
-        makesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+    getMakeFieldBuilder() {
+      if (makeBuilder_ == null) {
+        makeBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
                 com.vv.personal.prom.artifactory.proto.Make, com.vv.personal.prom.artifactory.proto.Make.Builder, com.vv.personal.prom.artifactory.proto.MakeOrBuilder>(
-                makes_,
+                make_,
                 ((bitField0_ & 0x00000001) == 0x00000001),
                 getParentForChildren(),
                 isClean());
-        makes_ = null;
+        make_ = null;
       }
-      return makesBuilder_;
+      return makeBuilder_;
     }
 
     @java.lang.Override
@@ -800,7 +800,7 @@ public final class MakeList extends
 
     @java.lang.Override
     public final Builder mergeUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
+        final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
 

@@ -10,15 +10,11 @@ public final class CustomerList extends
         com.google.protobuf.GeneratedMessageV3 implements
         // @@protoc_insertion_point(message_implements:com.vv.personal.prom.artifactory.proto.CustomerList)
         CustomerListOrBuilder {
-  public static final int CUSTOMERS_FIELD_NUMBER = 1;
+  public static final int CUSTOMER_FIELD_NUMBER = 1;
 
   // Use CustomerList.newBuilder() to construct.
   private CustomerList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
-  }
-
-  private CustomerList() {
-    customers_ = java.util.Collections.emptyList();
   }
 
   private static final long serialVersionUID = 0L;
@@ -39,14 +35,11 @@ public final class CustomerList extends
     DEFAULT_INSTANCE = new com.vv.personal.prom.artifactory.proto.CustomerList();
   }
 
-  private java.util.List<com.vv.personal.prom.artifactory.proto.Customer> customers_;
+  private java.util.List<com.vv.personal.prom.artifactory.proto.Customer> customer_;
   private byte memoizedIsInitialized = -1;
 
-  /**
-   * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customers = 1;</code>
-   */
-  public java.util.List<com.vv.personal.prom.artifactory.proto.Customer> getCustomersList() {
-    return customers_;
+  private CustomerList() {
+    customer_ = java.util.Collections.emptyList();
   }
 
   private CustomerList(
@@ -70,10 +63,10 @@ public final class CustomerList extends
             break;
           case 10: {
             if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-              customers_ = new java.util.ArrayList<com.vv.personal.prom.artifactory.proto.Customer>();
+              customer_ = new java.util.ArrayList<com.vv.personal.prom.artifactory.proto.Customer>();
               mutable_bitField0_ |= 0x00000001;
             }
-            customers_.add(
+            customer_.add(
                     input.readMessage(com.vv.personal.prom.artifactory.proto.Customer.parser(), extensionRegistry));
             break;
           }
@@ -93,25 +86,11 @@ public final class CustomerList extends
               e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-        customers_ = java.util.Collections.unmodifiableList(customers_);
+        customer_ = java.util.Collections.unmodifiableList(customer_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
-  }
-
-  /**
-   * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customers = 1;</code>
-   */
-  public int getCustomersCount() {
-    return customers_.size();
-  }
-
-  /**
-   * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customers = 1;</code>
-   */
-  public com.vv.personal.prom.artifactory.proto.Customer getCustomers(int index) {
-    return customers_.get(index);
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
@@ -123,16 +102,6 @@ public final class CustomerList extends
           java.nio.ByteBuffer data)
           throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
-  }
-
-  @java.lang.Override
-  public final boolean isInitialized() {
-    byte isInitialized = memoizedIsInitialized;
-    if (isInitialized == 1) return true;
-    if (isInitialized == 0) return false;
-
-    memoizedIsInitialized = 1;
-    return true;
   }
 
   public static com.vv.personal.prom.artifactory.proto.CustomerList parseFrom(
@@ -156,19 +125,13 @@ public final class CustomerList extends
   }
 
   @java.lang.Override
-  public int hashCode() {
-    if (memoizedHashCode != 0) {
-      return memoizedHashCode;
-    }
-    int hash = 41;
-    hash = (19 * hash) + getDescriptor().hashCode();
-    if (getCustomersCount() > 0) {
-      hash = (37 * hash) + CUSTOMERS_FIELD_NUMBER;
-      hash = (53 * hash) + getCustomersList().hashCode();
-    }
-    hash = (29 * hash) + unknownFields.hashCode();
-    memoizedHashCode = hash;
-    return hash;
+  public final boolean isInitialized() {
+    byte isInitialized = memoizedIsInitialized;
+    if (isInitialized == 1) return true;
+    if (isInitialized == 0) return false;
+
+    memoizedIsInitialized = 1;
+    return true;
   }
 
   public static com.vv.personal.prom.artifactory.proto.CustomerList parseFrom(byte[] data)
@@ -226,14 +189,6 @@ public final class CustomerList extends
             .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-
-  public static Builder newBuilder(com.vv.personal.prom.artifactory.proto.CustomerList prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-
   public static com.vv.personal.prom.artifactory.proto.CustomerList getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
@@ -257,26 +212,55 @@ public final class CustomerList extends
   }
 
   /**
-   * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customers = 1;</code>
+   * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customer = 1;</code>
    */
-  public java.util.List<? extends com.vv.personal.prom.artifactory.proto.CustomerOrBuilder>
-  getCustomersOrBuilderList() {
-    return customers_;
+  public java.util.List<com.vv.personal.prom.artifactory.proto.Customer> getCustomerList() {
+    return customer_;
   }
 
   /**
-   * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customers = 1;</code>
+   * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customer = 1;</code>
    */
-  public com.vv.personal.prom.artifactory.proto.CustomerOrBuilder getCustomersOrBuilder(
+  public java.util.List<? extends com.vv.personal.prom.artifactory.proto.CustomerOrBuilder>
+  getCustomerOrBuilderList() {
+    return customer_;
+  }
+
+  /**
+   * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customer = 1;</code>
+   */
+  public int getCustomerCount() {
+    return customer_.size();
+  }
+
+  /**
+   * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customer = 1;</code>
+   */
+  public com.vv.personal.prom.artifactory.proto.Customer getCustomer(int index) {
+    return customer_.get(index);
+  }
+
+  /**
+   * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customer = 1;</code>
+   */
+  public com.vv.personal.prom.artifactory.proto.CustomerOrBuilder getCustomerOrBuilder(
           int index) {
-    return customers_.get(index);
+    return customer_.get(index);
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(com.vv.personal.prom.artifactory.proto.CustomerList prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
           throws java.io.IOException {
-    for (int i = 0; i < customers_.size(); i++) {
-      output.writeMessage(1, customers_.get(i));
+    for (int i = 0; i < customer_.size(); i++) {
+      output.writeMessage(1, customer_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -287,9 +271,9 @@ public final class CustomerList extends
     if (size != -1) return size;
 
     size = 0;
-    for (int i = 0; i < customers_.size(); i++) {
+    for (int i = 0; i < customer_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-              .computeMessageSize(1, customers_.get(i));
+              .computeMessageSize(1, customer_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -299,7 +283,7 @@ public final class CustomerList extends
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.vv.personal.prom.artifactory.proto.CustomerList)) {
       return super.equals(obj);
@@ -307,15 +291,32 @@ public final class CustomerList extends
     com.vv.personal.prom.artifactory.proto.CustomerList other = (com.vv.personal.prom.artifactory.proto.CustomerList) obj;
 
     boolean result = true;
-    result = result && getCustomersList()
-            .equals(other.getCustomersList());
+    result = result && getCustomerList()
+            .equals(other.getCustomerList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
 
   @java.lang.Override
+  public int hashCode() {
+    if (memoizedHashCode != 0) {
+      return memoizedHashCode;
+    }
+    int hash = 41;
+    hash = (19 * hash) + getDescriptor().hashCode();
+    if (getCustomerCount() > 0) {
+      hash = (37 * hash) + CUSTOMER_FIELD_NUMBER;
+      hash = (53 * hash) + getCustomerList().hashCode();
+    }
+    hash = (29 * hash) + unknownFields.hashCode();
+    memoizedHashCode = hash;
+    return hash;
+  }
+
+  @java.lang.Override
   public Builder newBuilderForType() {
-    return newBuilder(); }
+    return newBuilder();
+  }
 
   @java.lang.Override
   public Builder toBuilder() {
@@ -348,73 +349,21 @@ public final class CustomerList extends
           // @@protoc_insertion_point(builder_implements:com.vv.personal.prom.artifactory.proto.CustomerList)
           com.vv.personal.prom.artifactory.proto.CustomerListOrBuilder {
     private int bitField0_;
-    private java.util.List<com.vv.personal.prom.artifactory.proto.Customer> customers_ =
+    private java.util.List<com.vv.personal.prom.artifactory.proto.Customer> customer_ =
             java.util.Collections.emptyList();
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.vv.personal.prom.artifactory.proto.Customer, com.vv.personal.prom.artifactory.proto.Customer.Builder, com.vv.personal.prom.artifactory.proto.CustomerOrBuilder> customersBuilder_;
 
     // Construct using com.vv.personal.prom.artifactory.proto.CustomerList.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-        getCustomersFieldBuilder();
-      }
-    }
-    @java.lang.Override
-    public Builder clear() {
-      super.clear();
-      if (customersBuilder_ == null) {
-        customers_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      } else {
-        customersBuilder_.clear();
-      }
-      return this;
-    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.vv.personal.prom.artifactory.proto.Customer, com.vv.personal.prom.artifactory.proto.Customer.Builder, com.vv.personal.prom.artifactory.proto.CustomerOrBuilder> customerBuilder_;
 
     private Builder(
             com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
-    }
-
-    @java.lang.Override
-    public com.vv.personal.prom.artifactory.proto.CustomerList getDefaultInstanceForType() {
-      return com.vv.personal.prom.artifactory.proto.CustomerList.getDefaultInstance();
-    }
-
-    @java.lang.Override
-    public com.vv.personal.prom.artifactory.proto.CustomerList build() {
-      com.vv.personal.prom.artifactory.proto.CustomerList result = buildPartial();
-      if (!result.isInitialized()) {
-        throw newUninitializedMessageException(result);
-      }
-      return result;
-    }
-
-    @java.lang.Override
-    public com.vv.personal.prom.artifactory.proto.CustomerList buildPartial() {
-      com.vv.personal.prom.artifactory.proto.CustomerList result = new com.vv.personal.prom.artifactory.proto.CustomerList(this);
-      int from_bitField0_ = bitField0_;
-      if (customersBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          customers_ = java.util.Collections.unmodifiableList(customers_);
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.customers_ = customers_;
-      } else {
-        result.customers_ = customersBuilder_.build();
-      }
-      onBuilt();
-      return result;
-    }
-
-    @java.lang.Override
-    public Builder clone() {
-      return super.clone();
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -431,9 +380,64 @@ public final class CustomerList extends
     }
 
     @java.lang.Override
+    public com.vv.personal.prom.artifactory.proto.CustomerList getDefaultInstanceForType() {
+      return com.vv.personal.prom.artifactory.proto.CustomerList.getDefaultInstance();
+    }
+
+    @java.lang.Override
+    public com.vv.personal.prom.artifactory.proto.CustomerList build() {
+      com.vv.personal.prom.artifactory.proto.CustomerList result = buildPartial();
+      if (!result.isInitialized()) {
+        throw newUninitializedMessageException(result);
+      }
+      return result;
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3
+              .alwaysUseFieldBuilders) {
+        getCustomerFieldBuilder();
+      }
+    }
+
+    @java.lang.Override
+    public Builder clone() {
+      return super.clone();
+    }
+
+    @java.lang.Override
+    public Builder clear() {
+      super.clear();
+      if (customerBuilder_ == null) {
+        customer_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      } else {
+        customerBuilder_.clear();
+      }
+      return this;
+    }
+
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
     getDescriptorForType() {
       return com.vv.personal.prom.artifactory.proto.CustomerProto.internal_static_com_vv_personal_prom_artifactory_proto_CustomerList_descriptor;
+    }
+
+    @java.lang.Override
+    public com.vv.personal.prom.artifactory.proto.CustomerList buildPartial() {
+      com.vv.personal.prom.artifactory.proto.CustomerList result = new com.vv.personal.prom.artifactory.proto.CustomerList(this);
+      int from_bitField0_ = bitField0_;
+      if (customerBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          customer_ = java.util.Collections.unmodifiableList(customer_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.customer_ = customer_;
+      } else {
+        result.customer_ = customerBuilder_.build();
+      }
+      onBuilt();
+      return result;
     }
 
     @java.lang.Override
@@ -450,6 +454,16 @@ public final class CustomerList extends
     }
 
     @java.lang.Override
+    public Builder mergeFrom(com.google.protobuf.Message other) {
+      if (other instanceof com.vv.personal.prom.artifactory.proto.CustomerList) {
+        return mergeFrom((com.vv.personal.prom.artifactory.proto.CustomerList) other);
+      } else {
+        super.mergeFrom(other);
+        return this;
+      }
+    }
+
+    @java.lang.Override
     public Builder clearOneof(
             com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
@@ -463,58 +477,48 @@ public final class CustomerList extends
     }
 
     @java.lang.Override
-    public final boolean isInitialized() {
-      return true;
-    }
-
-    @java.lang.Override
     public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
       return super.addRepeatedField(field, value);
     }
 
-    @java.lang.Override
-    public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.vv.personal.prom.artifactory.proto.CustomerList) {
-        return mergeFrom((com.vv.personal.prom.artifactory.proto.CustomerList)other);
-      } else {
-        super.mergeFrom(other);
-        return this;
-      }
-    }
-
     public Builder mergeFrom(com.vv.personal.prom.artifactory.proto.CustomerList other) {
       if (other == com.vv.personal.prom.artifactory.proto.CustomerList.getDefaultInstance()) return this;
-      if (customersBuilder_ == null) {
-        if (!other.customers_.isEmpty()) {
-          if (customers_.isEmpty()) {
-            customers_ = other.customers_;
+      if (customerBuilder_ == null) {
+        if (!other.customer_.isEmpty()) {
+          if (customer_.isEmpty()) {
+            customer_ = other.customer_;
             bitField0_ = (bitField0_ & ~0x00000001);
           } else {
-            ensureCustomersIsMutable();
-            customers_.addAll(other.customers_);
+            ensureCustomerIsMutable();
+            customer_.addAll(other.customer_);
           }
           onChanged();
         }
       } else {
-        if (!other.customers_.isEmpty()) {
-          if (customersBuilder_.isEmpty()) {
-            customersBuilder_.dispose();
-            customersBuilder_ = null;
-            customers_ = other.customers_;
+        if (!other.customer_.isEmpty()) {
+          if (customerBuilder_.isEmpty()) {
+            customerBuilder_.dispose();
+            customerBuilder_ = null;
+            customer_ = other.customer_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            customersBuilder_ =
+            customerBuilder_ =
                     com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                            getCustomersFieldBuilder() : null;
+                            getCustomerFieldBuilder() : null;
           } else {
-            customersBuilder_.addAllMessages(other.customers_);
+            customerBuilder_.addAllMessages(other.customer_);
           }
         }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
+    }
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      return true;
     }
 
     @java.lang.Override
@@ -536,253 +540,258 @@ public final class CustomerList extends
       return this;
     }
 
-    private void ensureCustomersIsMutable() {
+    private void ensureCustomerIsMutable() {
       if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-        customers_ = new java.util.ArrayList<com.vv.personal.prom.artifactory.proto.Customer>(customers_);
+        customer_ = new java.util.ArrayList<com.vv.personal.prom.artifactory.proto.Customer>(customer_);
         bitField0_ |= 0x00000001;
-       }
-    }
-
-    /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customers = 1;</code>
-     */
-    public java.util.List<com.vv.personal.prom.artifactory.proto.Customer> getCustomersList() {
-      if (customersBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(customers_);
-      } else {
-        return customersBuilder_.getMessageList();
-      }
-    }
-    /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customers = 1;</code>
-     */
-    public int getCustomersCount() {
-      if (customersBuilder_ == null) {
-        return customers_.size();
-      } else {
-        return customersBuilder_.getCount();
-      }
-    }
-    /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customers = 1;</code>
-     */
-    public com.vv.personal.prom.artifactory.proto.Customer getCustomers(int index) {
-      if (customersBuilder_ == null) {
-        return customers_.get(index);
-      } else {
-        return customersBuilder_.getMessage(index);
       }
     }
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customers = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customer = 1;</code>
      */
-    public Builder setCustomers(
+    public java.util.List<com.vv.personal.prom.artifactory.proto.Customer> getCustomerList() {
+      if (customerBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(customer_);
+      } else {
+        return customerBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customer = 1;</code>
+     */
+    public int getCustomerCount() {
+      if (customerBuilder_ == null) {
+        return customer_.size();
+      } else {
+        return customerBuilder_.getCount();
+      }
+    }
+
+    /**
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customer = 1;</code>
+     */
+    public com.vv.personal.prom.artifactory.proto.Customer getCustomer(int index) {
+      if (customerBuilder_ == null) {
+        return customer_.get(index);
+      } else {
+        return customerBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customer = 1;</code>
+     */
+    public Builder setCustomer(
             int index, com.vv.personal.prom.artifactory.proto.Customer value) {
-      if (customersBuilder_ == null) {
+      if (customerBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureCustomersIsMutable();
-        customers_.set(index, value);
+        ensureCustomerIsMutable();
+        customer_.set(index, value);
         onChanged();
       } else {
-        customersBuilder_.setMessage(index, value);
+        customerBuilder_.setMessage(index, value);
       }
       return this;
     }
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customers = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customer = 1;</code>
      */
-    public Builder setCustomers(
+    public Builder setCustomer(
             int index, com.vv.personal.prom.artifactory.proto.Customer.Builder builderForValue) {
-      if (customersBuilder_ == null) {
-        ensureCustomersIsMutable();
-        customers_.set(index, builderForValue.build());
+      if (customerBuilder_ == null) {
+        ensureCustomerIsMutable();
+        customer_.set(index, builderForValue.build());
         onChanged();
       } else {
-        customersBuilder_.setMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customers = 1;</code>
-     */
-    public Builder addCustomers(com.vv.personal.prom.artifactory.proto.Customer value) {
-      if (customersBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureCustomersIsMutable();
-        customers_.add(value);
-        onChanged();
-      } else {
-        customersBuilder_.addMessage(value);
+        customerBuilder_.setMessage(index, builderForValue.build());
       }
       return this;
     }
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customers = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customer = 1;</code>
      */
-    public Builder addCustomers(
+    public Builder addCustomer(com.vv.personal.prom.artifactory.proto.Customer value) {
+      if (customerBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCustomerIsMutable();
+        customer_.add(value);
+        onChanged();
+      } else {
+        customerBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customer = 1;</code>
+     */
+    public Builder addCustomer(
             int index, com.vv.personal.prom.artifactory.proto.Customer value) {
-      if (customersBuilder_ == null) {
+      if (customerBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureCustomersIsMutable();
-        customers_.add(index, value);
+        ensureCustomerIsMutable();
+        customer_.add(index, value);
         onChanged();
       } else {
-        customersBuilder_.addMessage(index, value);
+        customerBuilder_.addMessage(index, value);
       }
       return this;
     }
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customers = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customer = 1;</code>
      */
-    public Builder addCustomers(
+    public Builder addCustomer(
             com.vv.personal.prom.artifactory.proto.Customer.Builder builderForValue) {
-      if (customersBuilder_ == null) {
-        ensureCustomersIsMutable();
-        customers_.add(builderForValue.build());
+      if (customerBuilder_ == null) {
+        ensureCustomerIsMutable();
+        customer_.add(builderForValue.build());
         onChanged();
       } else {
-        customersBuilder_.addMessage(builderForValue.build());
+        customerBuilder_.addMessage(builderForValue.build());
       }
       return this;
     }
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customers = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customer = 1;</code>
      */
-    public Builder addCustomers(
+    public Builder addCustomer(
             int index, com.vv.personal.prom.artifactory.proto.Customer.Builder builderForValue) {
-      if (customersBuilder_ == null) {
-        ensureCustomersIsMutable();
-        customers_.add(index, builderForValue.build());
+      if (customerBuilder_ == null) {
+        ensureCustomerIsMutable();
+        customer_.add(index, builderForValue.build());
         onChanged();
       } else {
-        customersBuilder_.addMessage(index, builderForValue.build());
+        customerBuilder_.addMessage(index, builderForValue.build());
       }
       return this;
     }
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customers = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customer = 1;</code>
      */
-    public Builder addAllCustomers(
+    public Builder addAllCustomer(
             java.lang.Iterable<? extends com.vv.personal.prom.artifactory.proto.Customer> values) {
-      if (customersBuilder_ == null) {
-        ensureCustomersIsMutable();
+      if (customerBuilder_ == null) {
+        ensureCustomerIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-                values, customers_);
+                values, customer_);
         onChanged();
       } else {
-        customersBuilder_.addAllMessages(values);
+        customerBuilder_.addAllMessages(values);
       }
       return this;
     }
+
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customers = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customer = 1;</code>
      */
-    public Builder clearCustomers() {
-      if (customersBuilder_ == null) {
-        customers_ = java.util.Collections.emptyList();
+    public Builder clearCustomer() {
+      if (customerBuilder_ == null) {
+        customer_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
-        customersBuilder_.clear();
+        customerBuilder_.clear();
       }
       return this;
     }
+
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customers = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customer = 1;</code>
      */
-    public Builder removeCustomers(int index) {
-      if (customersBuilder_ == null) {
-        ensureCustomersIsMutable();
-        customers_.remove(index);
+    public Builder removeCustomer(int index) {
+      if (customerBuilder_ == null) {
+        ensureCustomerIsMutable();
+        customer_.remove(index);
         onChanged();
       } else {
-        customersBuilder_.remove(index);
+        customerBuilder_.remove(index);
       }
       return this;
     }
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customers = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customer = 1;</code>
      */
-    public com.vv.personal.prom.artifactory.proto.Customer.Builder getCustomersBuilder(
+    public com.vv.personal.prom.artifactory.proto.Customer.Builder getCustomerBuilder(
             int index) {
-      return getCustomersFieldBuilder().getBuilder(index);
+      return getCustomerFieldBuilder().getBuilder(index);
     }
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customers = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customer = 1;</code>
      */
-    public com.vv.personal.prom.artifactory.proto.CustomerOrBuilder getCustomersOrBuilder(
+    public com.vv.personal.prom.artifactory.proto.CustomerOrBuilder getCustomerOrBuilder(
             int index) {
-      if (customersBuilder_ == null) {
-        return customers_.get(index);
+      if (customerBuilder_ == null) {
+        return customer_.get(index);
       } else {
-        return customersBuilder_.getMessageOrBuilder(index);
+        return customerBuilder_.getMessageOrBuilder(index);
       }
     }
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customers = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customer = 1;</code>
      */
     public java.util.List<? extends com.vv.personal.prom.artifactory.proto.CustomerOrBuilder>
-    getCustomersOrBuilderList() {
-      if (customersBuilder_ != null) {
-        return customersBuilder_.getMessageOrBuilderList();
+    getCustomerOrBuilderList() {
+      if (customerBuilder_ != null) {
+        return customerBuilder_.getMessageOrBuilderList();
       } else {
-        return java.util.Collections.unmodifiableList(customers_);
+        return java.util.Collections.unmodifiableList(customer_);
       }
     }
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customers = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customer = 1;</code>
      */
-    public com.vv.personal.prom.artifactory.proto.Customer.Builder addCustomersBuilder() {
-      return getCustomersFieldBuilder().addBuilder(
+    public com.vv.personal.prom.artifactory.proto.Customer.Builder addCustomerBuilder() {
+      return getCustomerFieldBuilder().addBuilder(
               com.vv.personal.prom.artifactory.proto.Customer.getDefaultInstance());
     }
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customers = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customer = 1;</code>
      */
-    public com.vv.personal.prom.artifactory.proto.Customer.Builder addCustomersBuilder(
+    public com.vv.personal.prom.artifactory.proto.Customer.Builder addCustomerBuilder(
             int index) {
-      return getCustomersFieldBuilder().addBuilder(
+      return getCustomerFieldBuilder().addBuilder(
               index, com.vv.personal.prom.artifactory.proto.Customer.getDefaultInstance());
     }
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customers = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customer = 1;</code>
      */
     public java.util.List<com.vv.personal.prom.artifactory.proto.Customer.Builder>
-    getCustomersBuilderList() {
-      return getCustomersFieldBuilder().getBuilderList();
+    getCustomerBuilderList() {
+      return getCustomerFieldBuilder().getBuilderList();
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
             com.vv.personal.prom.artifactory.proto.Customer, com.vv.personal.prom.artifactory.proto.Customer.Builder, com.vv.personal.prom.artifactory.proto.CustomerOrBuilder>
-    getCustomersFieldBuilder() {
-      if (customersBuilder_ == null) {
-        customersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+    getCustomerFieldBuilder() {
+      if (customerBuilder_ == null) {
+        customerBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
                 com.vv.personal.prom.artifactory.proto.Customer, com.vv.personal.prom.artifactory.proto.Customer.Builder, com.vv.personal.prom.artifactory.proto.CustomerOrBuilder>(
-                customers_,
+                customer_,
                 ((bitField0_ & 0x00000001) == 0x00000001),
                 getParentForChildren(),
                 isClean());
-        customers_ = null;
+        customer_ = null;
       }
-      return customersBuilder_;
+      return customerBuilder_;
     }
 
     @java.lang.Override
@@ -793,7 +802,7 @@ public final class CustomerList extends
 
     @java.lang.Override
     public final Builder mergeUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
+        final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
 

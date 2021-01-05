@@ -8,30 +8,30 @@ public interface MakeListOrBuilder extends
         com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Make makes = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Make make = 1;</code>
      */
     java.util.List<com.vv.personal.prom.artifactory.proto.Make>
-    getMakesList();
+    getMakeList();
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Make makes = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Make make = 1;</code>
      */
-    com.vv.personal.prom.artifactory.proto.Make getMakes(int index);
+    com.vv.personal.prom.artifactory.proto.Make getMake(int index);
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Make makes = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Make make = 1;</code>
      */
-    int getMakesCount();
+    int getMakeCount();
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Make makes = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Make make = 1;</code>
      */
     java.util.List<? extends com.vv.personal.prom.artifactory.proto.MakeOrBuilder>
-    getMakesOrBuilderList();
+    getMakeOrBuilderList();
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Make makes = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Make make = 1;</code>
      */
-    com.vv.personal.prom.artifactory.proto.MakeOrBuilder getMakesOrBuilder(
+    com.vv.personal.prom.artifactory.proto.MakeOrBuilder getMakeOrBuilder(
             int index);
 }

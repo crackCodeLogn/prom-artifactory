@@ -23,11 +23,11 @@ public final class ComponentProto {
                     "artifactory.proto\"e\n\tComponent\022X\n\023suppor" +
                     "tedComponents\030\001 \001(\0162;.com.vv.personal.pr" +
                     "om.artifactory.proto.SupportedComponents" +
-                    "\"V\n\rComponentList\022E\n\ncomponents\030\001 \003(\01321." +
-                    "com.vv.personal.prom.artifactory.proto.C" +
-                    "omponent*E\n\023SupportedComponents\022\006\n\002LT\020\000\022" +
-                    "\006\n\002MB\020\001\022\006\n\002SP\020\002\022\006\n\002SV\020\003\022\006\n\002SW\020\004\022\006\n\002RD\020\005B" +
-                    "\022B\016ComponentProtoP\001b\006proto3"
+                    "\"U\n\rComponentList\022D\n\tcomponent\030\001 \003(\01321.c" +
+                    "om.vv.personal.prom.artifactory.proto.Co" +
+                    "mponent*E\n\023SupportedComponents\022\006\n\002LT\020\000\022\006" +
+                    "\n\002MB\020\001\022\006\n\002SP\020\002\022\006\n\002SV\020\003\022\006\n\002SW\020\004\022\006\n\002RD\020\005B\022" +
+                    "B\016ComponentProtoP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
             new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -52,7 +52,7 @@ public final class ComponentProto {
     internal_static_com_vv_personal_prom_artifactory_proto_ComponentList_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_com_vv_personal_prom_artifactory_proto_ComponentList_descriptor,
-            new java.lang.String[]{"Components",});
+            new java.lang.String[]{"Component",});
   }
 
   private ComponentProto() {

@@ -20,9 +20,9 @@ message Company {
 }
 
 message CustomerList {
-  repeated Customer customers = 1;
+  repeated Customer customer = 1;
 }
 
 message CompanyList {
-  repeated Company companies = 1;
+  repeated Company company = 1;
 }

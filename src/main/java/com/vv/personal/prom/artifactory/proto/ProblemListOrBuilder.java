@@ -8,30 +8,30 @@ public interface ProblemListOrBuilder extends
         com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Problem problems = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Problem problem = 1;</code>
      */
     java.util.List<com.vv.personal.prom.artifactory.proto.Problem>
-    getProblemsList();
+    getProblemList();
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Problem problems = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Problem problem = 1;</code>
      */
-    com.vv.personal.prom.artifactory.proto.Problem getProblems(int index);
+    com.vv.personal.prom.artifactory.proto.Problem getProblem(int index);
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Problem problems = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Problem problem = 1;</code>
      */
-    int getProblemsCount();
+    int getProblemCount();
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Problem problems = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Problem problem = 1;</code>
      */
     java.util.List<? extends com.vv.personal.prom.artifactory.proto.ProblemOrBuilder>
-    getProblemsOrBuilderList();
+    getProblemOrBuilderList();
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Problem problems = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Problem problem = 1;</code>
      */
-    com.vv.personal.prom.artifactory.proto.ProblemOrBuilder getProblemsOrBuilder(
+    com.vv.personal.prom.artifactory.proto.ProblemOrBuilder getProblemOrBuilder(
             int index);
 }

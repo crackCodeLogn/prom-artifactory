@@ -10,7 +10,13 @@ public final class CompanyList extends
         com.google.protobuf.GeneratedMessageV3 implements
         // @@protoc_insertion_point(message_implements:com.vv.personal.prom.artifactory.proto.CompanyList)
         CompanyListOrBuilder {
-  public static final int COMPANIES_FIELD_NUMBER = 1;
+  public static final int COMPANY_FIELD_NUMBER = 1;
+
+  // Use CompanyList.newBuilder() to construct.
+  private CompanyList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    super(builder);
+  }
+
   private static final long serialVersionUID = 0L;
   // @@protoc_insertion_point(class_scope:com.vv.personal.prom.artifactory.proto.CompanyList)
   private static final com.vv.personal.prom.artifactory.proto.CompanyList DEFAULT_INSTANCE;
@@ -29,16 +35,11 @@ public final class CompanyList extends
     DEFAULT_INSTANCE = new com.vv.personal.prom.artifactory.proto.CompanyList();
   }
 
-  private java.util.List<com.vv.personal.prom.artifactory.proto.Company> companies_;
+  private java.util.List<com.vv.personal.prom.artifactory.proto.Company> company_;
   private byte memoizedIsInitialized = -1;
 
-  // Use CompanyList.newBuilder() to construct.
-  private CompanyList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-    super(builder);
-  }
-
   private CompanyList() {
-    companies_ = java.util.Collections.emptyList();
+    company_ = java.util.Collections.emptyList();
   }
 
   private CompanyList(
@@ -62,10 +63,10 @@ public final class CompanyList extends
             break;
           case 10: {
             if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-              companies_ = new java.util.ArrayList<com.vv.personal.prom.artifactory.proto.Company>();
+              company_ = new java.util.ArrayList<com.vv.personal.prom.artifactory.proto.Company>();
               mutable_bitField0_ |= 0x00000001;
             }
-            companies_.add(
+            company_.add(
                     input.readMessage(com.vv.personal.prom.artifactory.proto.Company.parser(), extensionRegistry));
             break;
           }
@@ -85,7 +86,7 @@ public final class CompanyList extends
               e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-        companies_ = java.util.Collections.unmodifiableList(companies_);
+        company_ = java.util.Collections.unmodifiableList(company_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -178,14 +179,6 @@ public final class CompanyList extends
             .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-
-  public static Builder newBuilder(com.vv.personal.prom.artifactory.proto.CompanyList prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-
   public static com.vv.personal.prom.artifactory.proto.CompanyList getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
@@ -209,40 +202,40 @@ public final class CompanyList extends
   }
 
   /**
-   * <code>repeated .com.vv.personal.prom.artifactory.proto.Company companies = 1;</code>
+   * <code>repeated .com.vv.personal.prom.artifactory.proto.Company company = 1;</code>
    */
-  public java.util.List<com.vv.personal.prom.artifactory.proto.Company> getCompaniesList() {
-    return companies_;
+  public java.util.List<com.vv.personal.prom.artifactory.proto.Company> getCompanyList() {
+    return company_;
   }
 
   /**
-   * <code>repeated .com.vv.personal.prom.artifactory.proto.Company companies = 1;</code>
+   * <code>repeated .com.vv.personal.prom.artifactory.proto.Company company = 1;</code>
    */
   public java.util.List<? extends com.vv.personal.prom.artifactory.proto.CompanyOrBuilder>
-  getCompaniesOrBuilderList() {
-    return companies_;
+  getCompanyOrBuilderList() {
+    return company_;
   }
 
   /**
-   * <code>repeated .com.vv.personal.prom.artifactory.proto.Company companies = 1;</code>
+   * <code>repeated .com.vv.personal.prom.artifactory.proto.Company company = 1;</code>
    */
-  public int getCompaniesCount() {
-    return companies_.size();
+  public int getCompanyCount() {
+    return company_.size();
   }
 
   /**
-   * <code>repeated .com.vv.personal.prom.artifactory.proto.Company companies = 1;</code>
+   * <code>repeated .com.vv.personal.prom.artifactory.proto.Company company = 1;</code>
    */
-  public com.vv.personal.prom.artifactory.proto.Company getCompanies(int index) {
-    return companies_.get(index);
+  public com.vv.personal.prom.artifactory.proto.Company getCompany(int index) {
+    return company_.get(index);
   }
 
   /**
-   * <code>repeated .com.vv.personal.prom.artifactory.proto.Company companies = 1;</code>
+   * <code>repeated .com.vv.personal.prom.artifactory.proto.Company company = 1;</code>
    */
-  public com.vv.personal.prom.artifactory.proto.CompanyOrBuilder getCompaniesOrBuilder(
+  public com.vv.personal.prom.artifactory.proto.CompanyOrBuilder getCompanyOrBuilder(
           int index) {
-    return companies_.get(index);
+    return company_.get(index);
   }
 
   @java.lang.Override
@@ -255,11 +248,19 @@ public final class CompanyList extends
     return true;
   }
 
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(com.vv.personal.prom.artifactory.proto.CompanyList prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
           throws java.io.IOException {
-    for (int i = 0; i < companies_.size(); i++) {
-      output.writeMessage(1, companies_.get(i));
+    for (int i = 0; i < company_.size(); i++) {
+      output.writeMessage(1, company_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -270,9 +271,9 @@ public final class CompanyList extends
     if (size != -1) return size;
 
     size = 0;
-    for (int i = 0; i < companies_.size(); i++) {
+    for (int i = 0; i < company_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-              .computeMessageSize(1, companies_.get(i));
+              .computeMessageSize(1, company_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -290,8 +291,8 @@ public final class CompanyList extends
     com.vv.personal.prom.artifactory.proto.CompanyList other = (com.vv.personal.prom.artifactory.proto.CompanyList) obj;
 
     boolean result = true;
-    result = result && getCompaniesList()
-            .equals(other.getCompaniesList());
+    result = result && getCompanyList()
+            .equals(other.getCompanyList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -303,9 +304,9 @@ public final class CompanyList extends
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (getCompaniesCount() > 0) {
-      hash = (37 * hash) + COMPANIES_FIELD_NUMBER;
-      hash = (53 * hash) + getCompaniesList().hashCode();
+    if (getCompanyCount() > 0) {
+      hash = (37 * hash) + COMPANY_FIELD_NUMBER;
+      hash = (53 * hash) + getCompanyList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -314,8 +315,7 @@ public final class CompanyList extends
 
   @java.lang.Override
   public Builder newBuilderForType() {
-    return newBuilder();
-  }
+    return newBuilder(); }
 
   @java.lang.Override
   public Builder toBuilder() {
@@ -348,10 +348,10 @@ public final class CompanyList extends
           // @@protoc_insertion_point(builder_implements:com.vv.personal.prom.artifactory.proto.CompanyList)
           com.vv.personal.prom.artifactory.proto.CompanyListOrBuilder {
     private int bitField0_;
-    private java.util.List<com.vv.personal.prom.artifactory.proto.Company> companies_ =
+    private java.util.List<com.vv.personal.prom.artifactory.proto.Company> company_ =
             java.util.Collections.emptyList();
     private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.vv.personal.prom.artifactory.proto.Company, com.vv.personal.prom.artifactory.proto.Company.Builder, com.vv.personal.prom.artifactory.proto.CompanyOrBuilder> companiesBuilder_;
+            com.vv.personal.prom.artifactory.proto.Company, com.vv.personal.prom.artifactory.proto.Company.Builder, com.vv.personal.prom.artifactory.proto.CompanyOrBuilder> companyBuilder_;
 
     // Construct using com.vv.personal.prom.artifactory.proto.CompanyList.newBuilder()
     private Builder() {
@@ -377,31 +377,6 @@ public final class CompanyList extends
                       com.vv.personal.prom.artifactory.proto.CompanyList.class, com.vv.personal.prom.artifactory.proto.CompanyList.Builder.class);
     }
 
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-        getCompaniesFieldBuilder();
-      }
-    }
-
-    @java.lang.Override
-    public Builder clear() {
-      super.clear();
-      if (companiesBuilder_ == null) {
-        companies_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      } else {
-        companiesBuilder_.clear();
-      }
-      return this;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-    getDescriptorForType() {
-      return com.vv.personal.prom.artifactory.proto.CustomerProto.internal_static_com_vv_personal_prom_artifactory_proto_CompanyList_descriptor;
-    }
-
     @java.lang.Override
     public com.vv.personal.prom.artifactory.proto.CompanyList getDefaultInstanceForType() {
       return com.vv.personal.prom.artifactory.proto.CompanyList.getDefaultInstance();
@@ -416,26 +391,51 @@ public final class CompanyList extends
       return result;
     }
 
-    @java.lang.Override
-    public com.vv.personal.prom.artifactory.proto.CompanyList buildPartial() {
-      com.vv.personal.prom.artifactory.proto.CompanyList result = new com.vv.personal.prom.artifactory.proto.CompanyList(this);
-      int from_bitField0_ = bitField0_;
-      if (companiesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          companies_ = java.util.Collections.unmodifiableList(companies_);
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.companies_ = companies_;
-      } else {
-        result.companies_ = companiesBuilder_.build();
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3
+              .alwaysUseFieldBuilders) {
+        getCompanyFieldBuilder();
       }
-      onBuilt();
-      return result;
     }
 
     @java.lang.Override
     public Builder clone() {
       return super.clone();
+    }
+
+    @java.lang.Override
+    public Builder clear() {
+      super.clear();
+      if (companyBuilder_ == null) {
+        company_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      } else {
+        companyBuilder_.clear();
+      }
+      return this;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor
+    getDescriptorForType() {
+      return com.vv.personal.prom.artifactory.proto.CustomerProto.internal_static_com_vv_personal_prom_artifactory_proto_CompanyList_descriptor;
+    }
+
+    @java.lang.Override
+    public com.vv.personal.prom.artifactory.proto.CompanyList buildPartial() {
+      com.vv.personal.prom.artifactory.proto.CompanyList result = new com.vv.personal.prom.artifactory.proto.CompanyList(this);
+      int from_bitField0_ = bitField0_;
+      if (companyBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          company_ = java.util.Collections.unmodifiableList(company_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.company_ = company_;
+      } else {
+        result.company_ = companyBuilder_.build();
+      }
+      onBuilt();
+      return result;
     }
 
     @java.lang.Override
@@ -465,6 +465,11 @@ public final class CompanyList extends
     }
 
     @java.lang.Override
+    public final boolean isInitialized() {
+      return true;
+    }
+
+    @java.lang.Override
     public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
@@ -474,7 +479,7 @@ public final class CompanyList extends
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.vv.personal.prom.artifactory.proto.CompanyList) {
-        return mergeFrom((com.vv.personal.prom.artifactory.proto.CompanyList) other);
+        return mergeFrom((com.vv.personal.prom.artifactory.proto.CompanyList)other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -483,40 +488,35 @@ public final class CompanyList extends
 
     public Builder mergeFrom(com.vv.personal.prom.artifactory.proto.CompanyList other) {
       if (other == com.vv.personal.prom.artifactory.proto.CompanyList.getDefaultInstance()) return this;
-      if (companiesBuilder_ == null) {
-        if (!other.companies_.isEmpty()) {
-          if (companies_.isEmpty()) {
-            companies_ = other.companies_;
+      if (companyBuilder_ == null) {
+        if (!other.company_.isEmpty()) {
+          if (company_.isEmpty()) {
+            company_ = other.company_;
             bitField0_ = (bitField0_ & ~0x00000001);
           } else {
-            ensureCompaniesIsMutable();
-            companies_.addAll(other.companies_);
+            ensureCompanyIsMutable();
+            company_.addAll(other.company_);
           }
           onChanged();
         }
       } else {
-        if (!other.companies_.isEmpty()) {
-          if (companiesBuilder_.isEmpty()) {
-            companiesBuilder_.dispose();
-            companiesBuilder_ = null;
-            companies_ = other.companies_;
+        if (!other.company_.isEmpty()) {
+          if (companyBuilder_.isEmpty()) {
+            companyBuilder_.dispose();
+            companyBuilder_ = null;
+            company_ = other.company_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            companiesBuilder_ =
+            companyBuilder_ =
                     com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                            getCompaniesFieldBuilder() : null;
+                            getCompanyFieldBuilder() : null;
           } else {
-            companiesBuilder_.addAllMessages(other.companies_);
+            companyBuilder_.addAllMessages(other.company_);
           }
         }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
-    }
-
-    @java.lang.Override
-    public final boolean isInitialized() {
-      return true;
     }
 
     @java.lang.Override
@@ -538,258 +538,258 @@ public final class CompanyList extends
       return this;
     }
 
-    private void ensureCompaniesIsMutable() {
+    private void ensureCompanyIsMutable() {
       if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-        companies_ = new java.util.ArrayList<com.vv.personal.prom.artifactory.proto.Company>(companies_);
+        company_ = new java.util.ArrayList<com.vv.personal.prom.artifactory.proto.Company>(company_);
         bitField0_ |= 0x00000001;
       }
     }
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Company companies = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Company company = 1;</code>
      */
-    public java.util.List<com.vv.personal.prom.artifactory.proto.Company> getCompaniesList() {
-      if (companiesBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(companies_);
+    public java.util.List<com.vv.personal.prom.artifactory.proto.Company> getCompanyList() {
+      if (companyBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(company_);
       } else {
-        return companiesBuilder_.getMessageList();
+        return companyBuilder_.getMessageList();
       }
     }
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Company companies = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Company company = 1;</code>
      */
-    public int getCompaniesCount() {
-      if (companiesBuilder_ == null) {
-        return companies_.size();
+    public int getCompanyCount() {
+      if (companyBuilder_ == null) {
+        return company_.size();
       } else {
-        return companiesBuilder_.getCount();
+        return companyBuilder_.getCount();
       }
     }
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Company companies = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Company company = 1;</code>
      */
-    public com.vv.personal.prom.artifactory.proto.Company getCompanies(int index) {
-      if (companiesBuilder_ == null) {
-        return companies_.get(index);
+    public com.vv.personal.prom.artifactory.proto.Company getCompany(int index) {
+      if (companyBuilder_ == null) {
+        return company_.get(index);
       } else {
-        return companiesBuilder_.getMessage(index);
+        return companyBuilder_.getMessage(index);
       }
     }
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Company companies = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Company company = 1;</code>
      */
-    public Builder setCompanies(
+    public Builder setCompany(
             int index, com.vv.personal.prom.artifactory.proto.Company value) {
-      if (companiesBuilder_ == null) {
+      if (companyBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureCompaniesIsMutable();
-        companies_.set(index, value);
+        ensureCompanyIsMutable();
+        company_.set(index, value);
         onChanged();
       } else {
-        companiesBuilder_.setMessage(index, value);
+        companyBuilder_.setMessage(index, value);
       }
       return this;
     }
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Company companies = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Company company = 1;</code>
      */
-    public Builder setCompanies(
+    public Builder setCompany(
             int index, com.vv.personal.prom.artifactory.proto.Company.Builder builderForValue) {
-      if (companiesBuilder_ == null) {
-        ensureCompaniesIsMutable();
-        companies_.set(index, builderForValue.build());
+      if (companyBuilder_ == null) {
+        ensureCompanyIsMutable();
+        company_.set(index, builderForValue.build());
         onChanged();
       } else {
-        companiesBuilder_.setMessage(index, builderForValue.build());
+        companyBuilder_.setMessage(index, builderForValue.build());
       }
       return this;
     }
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Company companies = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Company company = 1;</code>
      */
-    public Builder addCompanies(com.vv.personal.prom.artifactory.proto.Company value) {
-      if (companiesBuilder_ == null) {
+    public Builder addCompany(com.vv.personal.prom.artifactory.proto.Company value) {
+      if (companyBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureCompaniesIsMutable();
-        companies_.add(value);
+        ensureCompanyIsMutable();
+        company_.add(value);
         onChanged();
       } else {
-        companiesBuilder_.addMessage(value);
+        companyBuilder_.addMessage(value);
       }
       return this;
     }
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Company companies = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Company company = 1;</code>
      */
-    public Builder addCompanies(
+    public Builder addCompany(
             int index, com.vv.personal.prom.artifactory.proto.Company value) {
-      if (companiesBuilder_ == null) {
+      if (companyBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureCompaniesIsMutable();
-        companies_.add(index, value);
+        ensureCompanyIsMutable();
+        company_.add(index, value);
         onChanged();
       } else {
-        companiesBuilder_.addMessage(index, value);
+        companyBuilder_.addMessage(index, value);
       }
       return this;
     }
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Company companies = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Company company = 1;</code>
      */
-    public Builder addCompanies(
+    public Builder addCompany(
             com.vv.personal.prom.artifactory.proto.Company.Builder builderForValue) {
-      if (companiesBuilder_ == null) {
-        ensureCompaniesIsMutable();
-        companies_.add(builderForValue.build());
+      if (companyBuilder_ == null) {
+        ensureCompanyIsMutable();
+        company_.add(builderForValue.build());
         onChanged();
       } else {
-        companiesBuilder_.addMessage(builderForValue.build());
+        companyBuilder_.addMessage(builderForValue.build());
       }
       return this;
     }
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Company companies = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Company company = 1;</code>
      */
-    public Builder addCompanies(
+    public Builder addCompany(
             int index, com.vv.personal.prom.artifactory.proto.Company.Builder builderForValue) {
-      if (companiesBuilder_ == null) {
-        ensureCompaniesIsMutable();
-        companies_.add(index, builderForValue.build());
+      if (companyBuilder_ == null) {
+        ensureCompanyIsMutable();
+        company_.add(index, builderForValue.build());
         onChanged();
       } else {
-        companiesBuilder_.addMessage(index, builderForValue.build());
+        companyBuilder_.addMessage(index, builderForValue.build());
       }
       return this;
     }
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Company companies = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Company company = 1;</code>
      */
-    public Builder addAllCompanies(
+    public Builder addAllCompany(
             java.lang.Iterable<? extends com.vv.personal.prom.artifactory.proto.Company> values) {
-      if (companiesBuilder_ == null) {
-        ensureCompaniesIsMutable();
+      if (companyBuilder_ == null) {
+        ensureCompanyIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-                values, companies_);
+                values, company_);
         onChanged();
       } else {
-        companiesBuilder_.addAllMessages(values);
+        companyBuilder_.addAllMessages(values);
       }
       return this;
     }
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Company companies = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Company company = 1;</code>
      */
-    public Builder clearCompanies() {
-      if (companiesBuilder_ == null) {
-        companies_ = java.util.Collections.emptyList();
+    public Builder clearCompany() {
+      if (companyBuilder_ == null) {
+        company_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
-        companiesBuilder_.clear();
+        companyBuilder_.clear();
       }
       return this;
     }
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Company companies = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Company company = 1;</code>
      */
-    public Builder removeCompanies(int index) {
-      if (companiesBuilder_ == null) {
-        ensureCompaniesIsMutable();
-        companies_.remove(index);
+    public Builder removeCompany(int index) {
+      if (companyBuilder_ == null) {
+        ensureCompanyIsMutable();
+        company_.remove(index);
         onChanged();
       } else {
-        companiesBuilder_.remove(index);
+        companyBuilder_.remove(index);
       }
       return this;
     }
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Company companies = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Company company = 1;</code>
      */
-    public com.vv.personal.prom.artifactory.proto.Company.Builder getCompaniesBuilder(
+    public com.vv.personal.prom.artifactory.proto.Company.Builder getCompanyBuilder(
             int index) {
-      return getCompaniesFieldBuilder().getBuilder(index);
+      return getCompanyFieldBuilder().getBuilder(index);
     }
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Company companies = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Company company = 1;</code>
      */
-    public com.vv.personal.prom.artifactory.proto.CompanyOrBuilder getCompaniesOrBuilder(
+    public com.vv.personal.prom.artifactory.proto.CompanyOrBuilder getCompanyOrBuilder(
             int index) {
-      if (companiesBuilder_ == null) {
-        return companies_.get(index);
+      if (companyBuilder_ == null) {
+        return company_.get(index);
       } else {
-        return companiesBuilder_.getMessageOrBuilder(index);
+        return companyBuilder_.getMessageOrBuilder(index);
       }
     }
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Company companies = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Company company = 1;</code>
      */
     public java.util.List<? extends com.vv.personal.prom.artifactory.proto.CompanyOrBuilder>
-    getCompaniesOrBuilderList() {
-      if (companiesBuilder_ != null) {
-        return companiesBuilder_.getMessageOrBuilderList();
+    getCompanyOrBuilderList() {
+      if (companyBuilder_ != null) {
+        return companyBuilder_.getMessageOrBuilderList();
       } else {
-        return java.util.Collections.unmodifiableList(companies_);
+        return java.util.Collections.unmodifiableList(company_);
       }
     }
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Company companies = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Company company = 1;</code>
      */
-    public com.vv.personal.prom.artifactory.proto.Company.Builder addCompaniesBuilder() {
-      return getCompaniesFieldBuilder().addBuilder(
+    public com.vv.personal.prom.artifactory.proto.Company.Builder addCompanyBuilder() {
+      return getCompanyFieldBuilder().addBuilder(
               com.vv.personal.prom.artifactory.proto.Company.getDefaultInstance());
     }
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Company companies = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Company company = 1;</code>
      */
-    public com.vv.personal.prom.artifactory.proto.Company.Builder addCompaniesBuilder(
+    public com.vv.personal.prom.artifactory.proto.Company.Builder addCompanyBuilder(
             int index) {
-      return getCompaniesFieldBuilder().addBuilder(
+      return getCompanyFieldBuilder().addBuilder(
               index, com.vv.personal.prom.artifactory.proto.Company.getDefaultInstance());
     }
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Company companies = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Company company = 1;</code>
      */
     public java.util.List<com.vv.personal.prom.artifactory.proto.Company.Builder>
-    getCompaniesBuilderList() {
-      return getCompaniesFieldBuilder().getBuilderList();
+    getCompanyBuilderList() {
+      return getCompanyFieldBuilder().getBuilderList();
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
             com.vv.personal.prom.artifactory.proto.Company, com.vv.personal.prom.artifactory.proto.Company.Builder, com.vv.personal.prom.artifactory.proto.CompanyOrBuilder>
-    getCompaniesFieldBuilder() {
-      if (companiesBuilder_ == null) {
-        companiesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+    getCompanyFieldBuilder() {
+      if (companyBuilder_ == null) {
+        companyBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
                 com.vv.personal.prom.artifactory.proto.Company, com.vv.personal.prom.artifactory.proto.Company.Builder, com.vv.personal.prom.artifactory.proto.CompanyOrBuilder>(
-                companies_,
+                company_,
                 ((bitField0_ & 0x00000001) == 0x00000001),
                 getParentForChildren(),
                 isClean());
-        companies_ = null;
+        company_ = null;
       }
-      return companiesBuilder_;
+      return companyBuilder_;
     }
 
     @java.lang.Override
@@ -800,7 +800,7 @@ public final class CompanyList extends
 
     @java.lang.Override
     public final Builder mergeUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
+        final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
 

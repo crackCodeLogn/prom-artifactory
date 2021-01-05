@@ -8,30 +8,30 @@ public interface CustomerListOrBuilder extends
         com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customers = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customer = 1;</code>
      */
     java.util.List<com.vv.personal.prom.artifactory.proto.Customer>
-    getCustomersList();
+    getCustomerList();
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customers = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customer = 1;</code>
      */
-    com.vv.personal.prom.artifactory.proto.Customer getCustomers(int index);
+    com.vv.personal.prom.artifactory.proto.Customer getCustomer(int index);
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customers = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customer = 1;</code>
      */
-    int getCustomersCount();
+    int getCustomerCount();
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customers = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customer = 1;</code>
      */
     java.util.List<? extends com.vv.personal.prom.artifactory.proto.CustomerOrBuilder>
-    getCustomersOrBuilderList();
+    getCustomerOrBuilderList();
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customers = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Customer customer = 1;</code>
      */
-    com.vv.personal.prom.artifactory.proto.CustomerOrBuilder getCustomersOrBuilder(
+    com.vv.personal.prom.artifactory.proto.CustomerOrBuilder getCustomerOrBuilder(
             int index);
 }

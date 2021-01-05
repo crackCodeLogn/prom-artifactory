@@ -128,20 +128,6 @@ public final class Component extends
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  @java.lang.Override
-  public int hashCode() {
-    if (memoizedHashCode != 0) {
-      return memoizedHashCode;
-    }
-    int hash = 41;
-    hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + SUPPORTEDCOMPONENTS_FIELD_NUMBER;
-    hash = (53 * hash) + supportedComponents_;
-    hash = (29 * hash) + unknownFields.hashCode();
-    memoizedHashCode = hash;
-    return hash;
-  }
-
   public static com.vv.personal.prom.artifactory.proto.Component parseFrom(byte[] data)
           throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
@@ -226,14 +212,6 @@ public final class Component extends
     return supportedComponents_;
   }
 
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-
-  public static Builder newBuilder(com.vv.personal.prom.artifactory.proto.Component prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-
   /**
    * <code>.com.vv.personal.prom.artifactory.proto.SupportedComponents supportedComponents = 1;</code>
    */
@@ -241,6 +219,14 @@ public final class Component extends
     @SuppressWarnings("deprecation")
     com.vv.personal.prom.artifactory.proto.SupportedComponents result = com.vv.personal.prom.artifactory.proto.SupportedComponents.valueOf(supportedComponents_);
     return result == null ? com.vv.personal.prom.artifactory.proto.SupportedComponents.UNRECOGNIZED : result;
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(com.vv.personal.prom.artifactory.proto.Component prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
   @java.lang.Override
@@ -284,8 +270,23 @@ public final class Component extends
   }
 
   @java.lang.Override
+  public int hashCode() {
+    if (memoizedHashCode != 0) {
+      return memoizedHashCode;
+    }
+    int hash = 41;
+    hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + SUPPORTEDCOMPONENTS_FIELD_NUMBER;
+    hash = (53 * hash) + supportedComponents_;
+    hash = (29 * hash) + unknownFields.hashCode();
+    memoizedHashCode = hash;
+    return hash;
+  }
+
+  @java.lang.Override
   public Builder newBuilderForType() {
-    return newBuilder(); }
+    return newBuilder();
+  }
 
   @java.lang.Override
   public Builder toBuilder() {
@@ -319,14 +320,14 @@ public final class Component extends
           com.vv.personal.prom.artifactory.proto.ComponentOrBuilder {
     private int supportedComponents_ = 0;
 
-    private Builder(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      super(parent);
+    // Construct using com.vv.personal.prom.artifactory.proto.Component.newBuilder()
+    private Builder() {
       maybeForceBuilderInitialization();
     }
 
-    // Construct using com.vv.personal.prom.artifactory.proto.Component.newBuilder()
-    private Builder() {
+    private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      super(parent);
       maybeForceBuilderInitialization();
     }
 

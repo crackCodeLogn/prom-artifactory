@@ -21,9 +21,9 @@ public final class MakeProto {
     java.lang.String[] descriptorData = {
             "\n\nMake.proto\022&com.vv.personal.prom.artif" +
                     "actory.proto\"(\n\004Make\022\016\n\006makeId\030\001 \001(\005\022\020\n\010" +
-                    "makeName\030\002 \001(\t\"G\n\010MakeList\022;\n\005makes\030\001 \003(" +
-                    "\0132,.com.vv.personal.prom.artifactory.pro" +
-                    "to.MakeB\rB\tMakeProtoP\001b\006proto3"
+                    "makeName\030\002 \001(\t\"F\n\010MakeList\022:\n\004make\030\001 \003(\013" +
+                    "2,.com.vv.personal.prom.artifactory.prot" +
+                    "o.MakeB\rB\tMakeProtoP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
             new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -48,7 +48,7 @@ public final class MakeProto {
     internal_static_com_vv_personal_prom_artifactory_proto_MakeList_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_com_vv_personal_prom_artifactory_proto_MakeList_descriptor,
-            new java.lang.String[]{"Makes",});
+            new java.lang.String[]{"Make",});
   }
 
   private MakeProto() {

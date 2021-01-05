@@ -113,6 +113,16 @@ public final class Make extends
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
+  @java.lang.Override
+  public final boolean isInitialized() {
+    byte isInitialized = memoizedIsInitialized;
+    if (isInitialized == 1) return true;
+    if (isInitialized == 0) return false;
+
+    memoizedIsInitialized = 1;
+    return true;
+  }
+
   public static com.vv.personal.prom.artifactory.proto.Make parseFrom(
           com.google.protobuf.ByteString data)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -129,6 +139,22 @@ public final class Make extends
   public static com.vv.personal.prom.artifactory.proto.Make parseFrom(byte[] data)
           throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
+  }
+
+  @java.lang.Override
+  public int hashCode() {
+    if (memoizedHashCode != 0) {
+      return memoizedHashCode;
+    }
+    int hash = 41;
+    hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + MAKEID_FIELD_NUMBER;
+    hash = (53 * hash) + getMakeId();
+    hash = (37 * hash) + MAKENAME_FIELD_NUMBER;
+    hash = (53 * hash) + getMakeName().hashCode();
+    hash = (29 * hash) + unknownFields.hashCode();
+    memoizedHashCode = hash;
+    return hash;
   }
 
   public static com.vv.personal.prom.artifactory.proto.Make parseFrom(
@@ -256,16 +282,6 @@ public final class Make extends
   }
 
   @java.lang.Override
-  public final boolean isInitialized() {
-    byte isInitialized = memoizedIsInitialized;
-    if (isInitialized == 1) return true;
-    if (isInitialized == 0) return false;
-
-    memoizedIsInitialized = 1;
-    return true;
-  }
-
-  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
           throws java.io.IOException {
     if (makeId_ != 0) {
@@ -315,25 +331,8 @@ public final class Make extends
   }
 
   @java.lang.Override
-  public int hashCode() {
-    if (memoizedHashCode != 0) {
-      return memoizedHashCode;
-    }
-    int hash = 41;
-    hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + MAKEID_FIELD_NUMBER;
-    hash = (53 * hash) + getMakeId();
-    hash = (37 * hash) + MAKENAME_FIELD_NUMBER;
-    hash = (53 * hash) + getMakeName().hashCode();
-    hash = (29 * hash) + unknownFields.hashCode();
-    memoizedHashCode = hash;
-    return hash;
-  }
-
-  @java.lang.Override
   public Builder newBuilderForType() {
-    return newBuilder();
-  }
+    return newBuilder(); }
 
   @java.lang.Override
   public Builder toBuilder() {
@@ -496,22 +495,11 @@ public final class Make extends
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.vv.personal.prom.artifactory.proto.Make) {
-        return mergeFrom((com.vv.personal.prom.artifactory.proto.Make) other);
+        return mergeFrom((com.vv.personal.prom.artifactory.proto.Make)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
-    }
-
-    /**
-     * <pre>
-     * assuming that there'll never be need to go to long
-     * </pre>
-     *
-     * <code>int32 makeId = 1;</code>
-     */
-    public int getMakeId() {
-      return makeId_;
     }
 
     @java.lang.Override
@@ -535,7 +523,18 @@ public final class Make extends
 
     /**
      * <pre>
-     *assuming that there'll never be need to go to long
+     * assuming that there'll never be need to go to long
+     * </pre>
+     *
+     * <code>int32 makeId = 1;</code>
+     */
+    public int getMakeId() {
+      return makeId_;
+    }
+
+    /**
+     * <pre>
+     * assuming that there'll never be need to go to long
      * </pre>
      *
      * <code>int32 makeId = 1;</code>

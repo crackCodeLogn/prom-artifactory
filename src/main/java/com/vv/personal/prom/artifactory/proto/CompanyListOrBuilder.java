@@ -8,30 +8,30 @@ public interface CompanyListOrBuilder extends
         com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Company companies = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Company company = 1;</code>
      */
     java.util.List<com.vv.personal.prom.artifactory.proto.Company>
-    getCompaniesList();
+    getCompanyList();
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Company companies = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Company company = 1;</code>
      */
-    com.vv.personal.prom.artifactory.proto.Company getCompanies(int index);
+    com.vv.personal.prom.artifactory.proto.Company getCompany(int index);
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Company companies = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Company company = 1;</code>
      */
-    int getCompaniesCount();
+    int getCompanyCount();
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Company companies = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Company company = 1;</code>
      */
     java.util.List<? extends com.vv.personal.prom.artifactory.proto.CompanyOrBuilder>
-    getCompaniesOrBuilderList();
+    getCompanyOrBuilderList();
 
     /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Company companies = 1;</code>
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Company company = 1;</code>
      */
-    com.vv.personal.prom.artifactory.proto.CompanyOrBuilder getCompaniesOrBuilder(
+    com.vv.personal.prom.artifactory.proto.CompanyOrBuilder getCompanyOrBuilder(
             int index);
 }
