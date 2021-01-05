@@ -42,22 +42,6 @@ public final class Component extends
   private int supportedComponents_;
   private byte memoizedIsInitialized = -1;
 
-  /**
-   * <code>.com.vv.personal.prom.artifactory.proto.SupportedComponents supportedComponents = 1;</code>
-   */
-  public int getSupportedComponentsValue() {
-    return supportedComponents_;
-  }
-
-  /**
-   * <code>.com.vv.personal.prom.artifactory.proto.SupportedComponents supportedComponents = 1;</code>
-   */
-  public com.vv.personal.prom.artifactory.proto.SupportedComponents getSupportedComponents() {
-    @SuppressWarnings("deprecation")
-    com.vv.personal.prom.artifactory.proto.SupportedComponents result = com.vv.personal.prom.artifactory.proto.SupportedComponents.valueOf(supportedComponents_);
-    return result == null ? com.vv.personal.prom.artifactory.proto.SupportedComponents.UNRECOGNIZED : result;
-  }
-
   private Component(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -103,16 +87,6 @@ public final class Component extends
     }
   }
 
-  @java.lang.Override
-  public final boolean isInitialized() {
-    byte isInitialized = memoizedIsInitialized;
-    if (isInitialized == 1) return true;
-    if (isInitialized == 0) return false;
-
-    memoizedIsInitialized = 1;
-    return true;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor
   getDescriptor() {
     return com.vv.personal.prom.artifactory.proto.ComponentProto.internal_static_com_vv_personal_prom_artifactory_proto_Component_descriptor;
@@ -124,8 +98,31 @@ public final class Component extends
     return PARSER.parseFrom(data);
   }
 
+  @java.lang.Override
+  public final boolean isInitialized() {
+    byte isInitialized = memoizedIsInitialized;
+    if (isInitialized == 1) return true;
+    if (isInitialized == 0) return false;
+
+    memoizedIsInitialized = 1;
+    return true;
+  }
+
   public static com.vv.personal.prom.artifactory.proto.Component parseFrom(
           java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data, extensionRegistry);
+  }
+
+  public static com.vv.personal.prom.artifactory.proto.Component parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data);
+  }
+
+  public static com.vv.personal.prom.artifactory.proto.Component parseFrom(
+          com.google.protobuf.ByteString data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
@@ -143,19 +140,6 @@ public final class Component extends
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
-  }
-
-  public static com.vv.personal.prom.artifactory.proto.Component parseFrom(
-          com.google.protobuf.ByteString data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data);
-  }
-
-  public static com.vv.personal.prom.artifactory.proto.Component parseFrom(
-          com.google.protobuf.ByteString data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data, extensionRegistry);
   }
 
   public static com.vv.personal.prom.artifactory.proto.Component parseFrom(byte[] data)
@@ -213,14 +197,6 @@ public final class Component extends
             .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-
-  public static Builder newBuilder(com.vv.personal.prom.artifactory.proto.Component prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-
   public static com.vv.personal.prom.artifactory.proto.Component getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
@@ -241,6 +217,30 @@ public final class Component extends
     return com.vv.personal.prom.artifactory.proto.ComponentProto.internal_static_com_vv_personal_prom_artifactory_proto_Component_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                     com.vv.personal.prom.artifactory.proto.Component.class, com.vv.personal.prom.artifactory.proto.Component.Builder.class);
+  }
+
+  /**
+   * <code>.com.vv.personal.prom.artifactory.proto.SupportedComponents supportedComponents = 1;</code>
+   */
+  public int getSupportedComponentsValue() {
+    return supportedComponents_;
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(com.vv.personal.prom.artifactory.proto.Component prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  /**
+   * <code>.com.vv.personal.prom.artifactory.proto.SupportedComponents supportedComponents = 1;</code>
+   */
+  public com.vv.personal.prom.artifactory.proto.SupportedComponents getSupportedComponents() {
+    @SuppressWarnings("deprecation")
+    com.vv.personal.prom.artifactory.proto.SupportedComponents result = com.vv.personal.prom.artifactory.proto.SupportedComponents.valueOf(supportedComponents_);
+    return result == null ? com.vv.personal.prom.artifactory.proto.SupportedComponents.UNRECOGNIZED : result;
   }
 
   @java.lang.Override
@@ -319,14 +319,14 @@ public final class Component extends
           com.vv.personal.prom.artifactory.proto.ComponentOrBuilder {
     private int supportedComponents_ = 0;
 
-    // Construct using com.vv.personal.prom.artifactory.proto.Component.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
-
     private Builder(
             com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    // Construct using com.vv.personal.prom.artifactory.proto.Component.newBuilder()
+    private Builder() {
       maybeForceBuilderInitialization();
     }
 
@@ -440,7 +440,7 @@ public final class Component extends
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.vv.personal.prom.artifactory.proto.Component) {
-        return mergeFrom((com.vv.personal.prom.artifactory.proto.Component) other);
+        return mergeFrom((com.vv.personal.prom.artifactory.proto.Component)other);
       } else {
         super.mergeFrom(other);
         return this;

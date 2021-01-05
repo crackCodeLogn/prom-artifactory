@@ -8,44 +8,51 @@ package com.vv.personal.prom.artifactory.proto;
  * to bulk send problems
  * </pre>
  * <p>
- * Protobuf type {@code com.vv.personal.prom.artifactory.proto.Problems}
+ * Protobuf type {@code com.vv.personal.prom.artifactory.proto.ProblemList}
  */
-public final class Problems extends
+public final class ProblemList extends
         com.google.protobuf.GeneratedMessageV3 implements
-        // @@protoc_insertion_point(message_implements:com.vv.personal.prom.artifactory.proto.Problems)
-        ProblemsOrBuilder {
+        // @@protoc_insertion_point(message_implements:com.vv.personal.prom.artifactory.proto.ProblemList)
+        ProblemListOrBuilder {
   public static final int PROBLEMS_FIELD_NUMBER = 1;
   private static final long serialVersionUID = 0L;
-  // @@protoc_insertion_point(class_scope:com.vv.personal.prom.artifactory.proto.Problems)
-  private static final com.vv.personal.prom.artifactory.proto.Problems DEFAULT_INSTANCE;
-  private static final com.google.protobuf.Parser<Problems>
-          PARSER = new com.google.protobuf.AbstractParser<Problems>() {
+  // @@protoc_insertion_point(class_scope:com.vv.personal.prom.artifactory.proto.ProblemList)
+  private static final com.vv.personal.prom.artifactory.proto.ProblemList DEFAULT_INSTANCE;
+  private static final com.google.protobuf.Parser<ProblemList>
+          PARSER = new com.google.protobuf.AbstractParser<ProblemList>() {
     @java.lang.Override
-    public Problems parsePartialFrom(
+    public ProblemList parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-      return new Problems(input, extensionRegistry);
+      return new ProblemList(input, extensionRegistry);
     }
   };
 
   static {
-    DEFAULT_INSTANCE = new com.vv.personal.prom.artifactory.proto.Problems();
+    DEFAULT_INSTANCE = new com.vv.personal.prom.artifactory.proto.ProblemList();
   }
 
   private java.util.List<com.vv.personal.prom.artifactory.proto.Problem> problems_;
   private byte memoizedIsInitialized = -1;
 
-  // Use Problems.newBuilder() to construct.
-  private Problems(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use ProblemList.newBuilder() to construct.
+  private ProblemList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private Problems() {
+  private ProblemList() {
     problems_ = java.util.Collections.emptyList();
   }
 
-  private Problems(
+  /**
+   * <code>repeated .com.vv.personal.prom.artifactory.proto.Problem problems = 1;</code>
+   */
+  public java.util.List<com.vv.personal.prom.artifactory.proto.Problem> getProblemsList() {
+    return problems_;
+  }
+
+  private ProblemList(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -96,137 +103,6 @@ public final class Problems extends
     }
   }
 
-  public static final com.google.protobuf.Descriptors.Descriptor
-  getDescriptor() {
-    return com.vv.personal.prom.artifactory.proto.ProblemProto.internal_static_com_vv_personal_prom_artifactory_proto_Problems_descriptor;
-  }
-
-  public static com.vv.personal.prom.artifactory.proto.Problems parseFrom(
-          java.nio.ByteBuffer data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data);
-  }
-
-  public static com.vv.personal.prom.artifactory.proto.Problems parseFrom(
-          java.nio.ByteBuffer data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data, extensionRegistry);
-  }
-
-  public static com.vv.personal.prom.artifactory.proto.Problems parseFrom(
-          com.google.protobuf.ByteString data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data);
-  }
-
-  public static com.vv.personal.prom.artifactory.proto.Problems parseFrom(
-          com.google.protobuf.ByteString data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data, extensionRegistry);
-  }
-
-  public static com.vv.personal.prom.artifactory.proto.Problems parseFrom(byte[] data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data);
-  }
-
-  public static com.vv.personal.prom.artifactory.proto.Problems parseFrom(
-          byte[] data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data, extensionRegistry);
-  }
-
-  public static com.vv.personal.prom.artifactory.proto.Problems parseFrom(java.io.InputStream input)
-          throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
-  }
-
-  public static com.vv.personal.prom.artifactory.proto.Problems parseFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public static com.vv.personal.prom.artifactory.proto.Problems parseDelimitedFrom(java.io.InputStream input)
-          throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input);
-  }
-
-  public static com.vv.personal.prom.artifactory.proto.Problems parseDelimitedFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public static com.vv.personal.prom.artifactory.proto.Problems parseFrom(
-          com.google.protobuf.CodedInputStream input)
-          throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
-  }
-
-  public static com.vv.personal.prom.artifactory.proto.Problems parseFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-
-  public static Builder newBuilder(com.vv.personal.prom.artifactory.proto.Problems prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-
-  public static com.vv.personal.prom.artifactory.proto.Problems getDefaultInstance() {
-    return DEFAULT_INSTANCE;
-  }
-
-  public static com.google.protobuf.Parser<Problems> parser() {
-    return PARSER;
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
-    return this.unknownFields;
-  }
-
-  @java.lang.Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-  internalGetFieldAccessorTable() {
-    return com.vv.personal.prom.artifactory.proto.ProblemProto.internal_static_com_vv_personal_prom_artifactory_proto_Problems_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                    com.vv.personal.prom.artifactory.proto.Problems.class, com.vv.personal.prom.artifactory.proto.Problems.Builder.class);
-  }
-
-  /**
-   * <code>repeated .com.vv.personal.prom.artifactory.proto.Problem problems = 1;</code>
-   */
-  public java.util.List<com.vv.personal.prom.artifactory.proto.Problem> getProblemsList() {
-    return problems_;
-  }
-
-  /**
-   * <code>repeated .com.vv.personal.prom.artifactory.proto.Problem problems = 1;</code>
-   */
-  public java.util.List<? extends com.vv.personal.prom.artifactory.proto.ProblemOrBuilder>
-  getProblemsOrBuilderList() {
-    return problems_;
-  }
-
   /**
    * <code>repeated .com.vv.personal.prom.artifactory.proto.Problem problems = 1;</code>
    */
@@ -241,12 +117,15 @@ public final class Problems extends
     return problems_.get(index);
   }
 
-  /**
-   * <code>repeated .com.vv.personal.prom.artifactory.proto.Problem problems = 1;</code>
-   */
-  public com.vv.personal.prom.artifactory.proto.ProblemOrBuilder getProblemsOrBuilder(
-          int index) {
-    return problems_.get(index);
+  public static final com.google.protobuf.Descriptors.Descriptor
+  getDescriptor() {
+    return com.vv.personal.prom.artifactory.proto.ProblemProto.internal_static_com_vv_personal_prom_artifactory_proto_ProblemList_descriptor;
+  }
+
+  public static com.vv.personal.prom.artifactory.proto.ProblemList parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data);
   }
 
   @java.lang.Override
@@ -257,6 +136,143 @@ public final class Problems extends
 
     memoizedIsInitialized = 1;
     return true;
+  }
+
+  public static com.vv.personal.prom.artifactory.proto.ProblemList parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data, extensionRegistry);
+  }
+
+  public static com.vv.personal.prom.artifactory.proto.ProblemList parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data);
+  }
+
+  public static com.vv.personal.prom.artifactory.proto.ProblemList parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data, extensionRegistry);
+  }
+
+  @java.lang.Override
+  public int hashCode() {
+    if (memoizedHashCode != 0) {
+      return memoizedHashCode;
+    }
+    int hash = 41;
+    hash = (19 * hash) + getDescriptor().hashCode();
+    if (getProblemsCount() > 0) {
+      hash = (37 * hash) + PROBLEMS_FIELD_NUMBER;
+      hash = (53 * hash) + getProblemsList().hashCode();
+    }
+    hash = (29 * hash) + unknownFields.hashCode();
+    memoizedHashCode = hash;
+    return hash;
+  }
+
+  public static com.vv.personal.prom.artifactory.proto.ProblemList parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data);
+  }
+
+  public static com.vv.personal.prom.artifactory.proto.ProblemList parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data, extensionRegistry);
+  }
+
+  public static com.vv.personal.prom.artifactory.proto.ProblemList parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+  }
+
+  public static com.vv.personal.prom.artifactory.proto.ProblemList parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+  }
+
+  public static com.vv.personal.prom.artifactory.proto.ProblemList parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+  }
+
+  public static com.vv.personal.prom.artifactory.proto.ProblemList parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+  }
+
+  public static com.vv.personal.prom.artifactory.proto.ProblemList parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+  }
+
+  public static com.vv.personal.prom.artifactory.proto.ProblemList parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(com.vv.personal.prom.artifactory.proto.ProblemList prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  public static com.vv.personal.prom.artifactory.proto.ProblemList getDefaultInstance() {
+    return DEFAULT_INSTANCE;
+  }
+
+  public static com.google.protobuf.Parser<ProblemList> parser() {
+    return PARSER;
+  }
+
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet
+  getUnknownFields() {
+    return this.unknownFields;
+  }
+
+  @java.lang.Override
+  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  internalGetFieldAccessorTable() {
+    return com.vv.personal.prom.artifactory.proto.ProblemProto.internal_static_com_vv_personal_prom_artifactory_proto_ProblemList_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                    com.vv.personal.prom.artifactory.proto.ProblemList.class, com.vv.personal.prom.artifactory.proto.ProblemList.Builder.class);
+  }
+
+  /**
+   * <code>repeated .com.vv.personal.prom.artifactory.proto.Problem problems = 1;</code>
+   */
+  public java.util.List<? extends com.vv.personal.prom.artifactory.proto.ProblemOrBuilder>
+  getProblemsOrBuilderList() {
+    return problems_;
+  }
+
+  /**
+   * <code>repeated .com.vv.personal.prom.artifactory.proto.Problem problems = 1;</code>
+   */
+  public com.vv.personal.prom.artifactory.proto.ProblemOrBuilder getProblemsOrBuilder(
+          int index) {
+    return problems_.get(index);
   }
 
   @java.lang.Override
@@ -288,10 +304,10 @@ public final class Problems extends
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.vv.personal.prom.artifactory.proto.Problems)) {
+    if (!(obj instanceof com.vv.personal.prom.artifactory.proto.ProblemList)) {
       return super.equals(obj);
     }
-    com.vv.personal.prom.artifactory.proto.Problems other = (com.vv.personal.prom.artifactory.proto.Problems) obj;
+    com.vv.personal.prom.artifactory.proto.ProblemList other = (com.vv.personal.prom.artifactory.proto.ProblemList) obj;
 
     boolean result = true;
     result = result && getProblemsList()
@@ -301,25 +317,8 @@ public final class Problems extends
   }
 
   @java.lang.Override
-  public int hashCode() {
-    if (memoizedHashCode != 0) {
-      return memoizedHashCode;
-    }
-    int hash = 41;
-    hash = (19 * hash) + getDescriptor().hashCode();
-    if (getProblemsCount() > 0) {
-      hash = (37 * hash) + PROBLEMS_FIELD_NUMBER;
-      hash = (53 * hash) + getProblemsList().hashCode();
-    }
-    hash = (29 * hash) + unknownFields.hashCode();
-    memoizedHashCode = hash;
-    return hash;
-  }
-
-  @java.lang.Override
   public Builder newBuilderForType() {
-    return newBuilder();
-  }
+    return newBuilder(); }
 
   @java.lang.Override
   public Builder toBuilder() {
@@ -335,12 +334,12 @@ public final class Problems extends
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<Problems> getParserForType() {
+  public com.google.protobuf.Parser<ProblemList> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.vv.personal.prom.artifactory.proto.Problems getDefaultInstanceForType() {
+  public com.vv.personal.prom.artifactory.proto.ProblemList getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 
@@ -349,49 +348,28 @@ public final class Problems extends
    * to bulk send problems
    * </pre>
    * <p>
-   * Protobuf type {@code com.vv.personal.prom.artifactory.proto.Problems}
+   * Protobuf type {@code com.vv.personal.prom.artifactory.proto.ProblemList}
    */
   public static final class Builder extends
           com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-          // @@protoc_insertion_point(builder_implements:com.vv.personal.prom.artifactory.proto.Problems)
-          com.vv.personal.prom.artifactory.proto.ProblemsOrBuilder {
+          // @@protoc_insertion_point(builder_implements:com.vv.personal.prom.artifactory.proto.ProblemList)
+          com.vv.personal.prom.artifactory.proto.ProblemListOrBuilder {
     private int bitField0_;
     private java.util.List<com.vv.personal.prom.artifactory.proto.Problem> problems_ =
             java.util.Collections.emptyList();
     private com.google.protobuf.RepeatedFieldBuilderV3<
             com.vv.personal.prom.artifactory.proto.Problem, com.vv.personal.prom.artifactory.proto.Problem.Builder, com.vv.personal.prom.artifactory.proto.ProblemOrBuilder> problemsBuilder_;
 
-    // Construct using com.vv.personal.prom.artifactory.proto.Problems.newBuilder()
+    // Construct using com.vv.personal.prom.artifactory.proto.ProblemList.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
-
-    private Builder(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    public static final com.google.protobuf.Descriptors.Descriptor
-    getDescriptor() {
-      return com.vv.personal.prom.artifactory.proto.ProblemProto.internal_static_com_vv_personal_prom_artifactory_proto_Problems_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-    internalGetFieldAccessorTable() {
-      return com.vv.personal.prom.artifactory.proto.ProblemProto.internal_static_com_vv_personal_prom_artifactory_proto_Problems_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                      com.vv.personal.prom.artifactory.proto.Problems.class, com.vv.personal.prom.artifactory.proto.Problems.Builder.class);
-    }
-
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
         getProblemsFieldBuilder();
       }
     }
-
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -404,20 +382,44 @@ public final class Problems extends
       return this;
     }
 
+    private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+    getDescriptor() {
+      return com.vv.personal.prom.artifactory.proto.ProblemProto.internal_static_com_vv_personal_prom_artifactory_proto_ProblemList_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    internalGetFieldAccessorTable() {
+      return com.vv.personal.prom.artifactory.proto.ProblemProto.internal_static_com_vv_personal_prom_artifactory_proto_ProblemList_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                      com.vv.personal.prom.artifactory.proto.ProblemList.class, com.vv.personal.prom.artifactory.proto.ProblemList.Builder.class);
+    }
+
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
     getDescriptorForType() {
-      return com.vv.personal.prom.artifactory.proto.ProblemProto.internal_static_com_vv_personal_prom_artifactory_proto_Problems_descriptor;
+      return com.vv.personal.prom.artifactory.proto.ProblemProto.internal_static_com_vv_personal_prom_artifactory_proto_ProblemList_descriptor;
     }
 
     @java.lang.Override
-    public com.vv.personal.prom.artifactory.proto.Problems getDefaultInstanceForType() {
-      return com.vv.personal.prom.artifactory.proto.Problems.getDefaultInstance();
+    public Builder clone() {
+      return super.clone();
     }
 
     @java.lang.Override
-    public com.vv.personal.prom.artifactory.proto.Problems build() {
-      com.vv.personal.prom.artifactory.proto.Problems result = buildPartial();
+    public com.vv.personal.prom.artifactory.proto.ProblemList getDefaultInstanceForType() {
+      return com.vv.personal.prom.artifactory.proto.ProblemList.getDefaultInstance();
+    }
+
+    @java.lang.Override
+    public com.vv.personal.prom.artifactory.proto.ProblemList build() {
+      com.vv.personal.prom.artifactory.proto.ProblemList result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -425,8 +427,8 @@ public final class Problems extends
     }
 
     @java.lang.Override
-    public com.vv.personal.prom.artifactory.proto.Problems buildPartial() {
-      com.vv.personal.prom.artifactory.proto.Problems result = new com.vv.personal.prom.artifactory.proto.Problems(this);
+    public com.vv.personal.prom.artifactory.proto.ProblemList buildPartial() {
+      com.vv.personal.prom.artifactory.proto.ProblemList result = new com.vv.personal.prom.artifactory.proto.ProblemList(this);
       int from_bitField0_ = bitField0_;
       if (problemsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -439,11 +441,6 @@ public final class Problems extends
       }
       onBuilt();
       return result;
-    }
-
-    @java.lang.Override
-    public Builder clone() {
-      return super.clone();
     }
 
     @java.lang.Override
@@ -473,6 +470,11 @@ public final class Problems extends
     }
 
     @java.lang.Override
+    public final boolean isInitialized() {
+      return true;
+    }
+
+    @java.lang.Override
     public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
@@ -481,16 +483,16 @@ public final class Problems extends
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.vv.personal.prom.artifactory.proto.Problems) {
-        return mergeFrom((com.vv.personal.prom.artifactory.proto.Problems) other);
+      if (other instanceof com.vv.personal.prom.artifactory.proto.ProblemList) {
+        return mergeFrom((com.vv.personal.prom.artifactory.proto.ProblemList) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.vv.personal.prom.artifactory.proto.Problems other) {
-      if (other == com.vv.personal.prom.artifactory.proto.Problems.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.vv.personal.prom.artifactory.proto.ProblemList other) {
+      if (other == com.vv.personal.prom.artifactory.proto.ProblemList.getDefaultInstance()) return this;
       if (problemsBuilder_ == null) {
         if (!other.problems_.isEmpty()) {
           if (problems_.isEmpty()) {
@@ -523,20 +525,15 @@ public final class Problems extends
     }
 
     @java.lang.Override
-    public final boolean isInitialized() {
-      return true;
-    }
-
-    @java.lang.Override
     public Builder mergeFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-      com.vv.personal.prom.artifactory.proto.Problems parsedMessage = null;
+      com.vv.personal.prom.artifactory.proto.ProblemList parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.vv.personal.prom.artifactory.proto.Problems) e.getUnfinishedMessage();
+        parsedMessage = (com.vv.personal.prom.artifactory.proto.ProblemList) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -550,7 +547,7 @@ public final class Problems extends
       if (!((bitField0_ & 0x00000001) == 0x00000001)) {
         problems_ = new java.util.ArrayList<com.vv.personal.prom.artifactory.proto.Problem>(problems_);
         bitField0_ |= 0x00000001;
-      }
+       }
     }
 
     /**
@@ -563,7 +560,6 @@ public final class Problems extends
         return problemsBuilder_.getMessageList();
       }
     }
-
     /**
      * <code>repeated .com.vv.personal.prom.artifactory.proto.Problem problems = 1;</code>
      */
@@ -574,7 +570,6 @@ public final class Problems extends
         return problemsBuilder_.getCount();
       }
     }
-
     /**
      * <code>repeated .com.vv.personal.prom.artifactory.proto.Problem problems = 1;</code>
      */
@@ -618,7 +613,6 @@ public final class Problems extends
       }
       return this;
     }
-
     /**
      * <code>repeated .com.vv.personal.prom.artifactory.proto.Problem problems = 1;</code>
      */
@@ -699,7 +693,6 @@ public final class Problems extends
       }
       return this;
     }
-
     /**
      * <code>repeated .com.vv.personal.prom.artifactory.proto.Problem problems = 1;</code>
      */
@@ -713,7 +706,6 @@ public final class Problems extends
       }
       return this;
     }
-
     /**
      * <code>repeated .com.vv.personal.prom.artifactory.proto.Problem problems = 1;</code>
      */
@@ -813,7 +805,7 @@ public final class Problems extends
     }
 
 
-    // @@protoc_insertion_point(builder_scope:com.vv.personal.prom.artifactory.proto.Problems)
+    // @@protoc_insertion_point(builder_scope:com.vv.personal.prom.artifactory.proto.ProblemList)
   }
 
 }

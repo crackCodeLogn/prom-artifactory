@@ -3,8 +3,8 @@
 
 package com.vv.personal.prom.artifactory.proto;
 
-public interface ProblemsOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:com.vv.personal.prom.artifactory.proto.Problems)
+public interface ProblemListOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:com.vv.personal.prom.artifactory.proto.ProblemList)
         com.google.protobuf.MessageOrBuilder {
 
     /**
