@@ -17,6 +17,10 @@ public final class ComponentList extends
     super(builder);
   }
 
+  private ComponentList() {
+    component_ = java.util.Collections.emptyList();
+  }
+
   private static final long serialVersionUID = 0L;
   // @@protoc_insertion_point(class_scope:com.vv.personal.prom.artifactory.proto.ComponentList)
   private static final com.vv.personal.prom.artifactory.proto.ComponentList DEFAULT_INSTANCE;
@@ -38,8 +42,11 @@ public final class ComponentList extends
   private java.util.List<com.vv.personal.prom.artifactory.proto.Component> component_;
   private byte memoizedIsInitialized = -1;
 
-  private ComponentList() {
-    component_ = java.util.Collections.emptyList();
+  /**
+   * <code>repeated .com.vv.personal.prom.artifactory.proto.Component component = 1;</code>
+   */
+  public java.util.List<com.vv.personal.prom.artifactory.proto.Component> getComponentList() {
+    return component_;
   }
 
   private ComponentList(
@@ -93,6 +100,20 @@ public final class ComponentList extends
     }
   }
 
+  /**
+   * <code>repeated .com.vv.personal.prom.artifactory.proto.Component component = 1;</code>
+   */
+  public int getComponentCount() {
+    return component_.size();
+  }
+
+  /**
+   * <code>repeated .com.vv.personal.prom.artifactory.proto.Component component = 1;</code>
+   */
+  public com.vv.personal.prom.artifactory.proto.Component getComponent(int index) {
+    return component_.get(index);
+  }
+
   public static final com.google.protobuf.Descriptors.Descriptor
   getDescriptor() {
     return com.vv.personal.prom.artifactory.proto.ComponentProto.internal_static_com_vv_personal_prom_artifactory_proto_ComponentList_descriptor;
@@ -102,6 +123,16 @@ public final class ComponentList extends
           java.nio.ByteBuffer data)
           throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
+  }
+
+  @java.lang.Override
+  public final boolean isInitialized() {
+    byte isInitialized = memoizedIsInitialized;
+    if (isInitialized == 1) return true;
+    if (isInitialized == 0) return false;
+
+    memoizedIsInitialized = 1;
+    return true;
   }
 
   public static com.vv.personal.prom.artifactory.proto.ComponentList parseFrom(
@@ -122,6 +153,22 @@ public final class ComponentList extends
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
+  }
+
+  @java.lang.Override
+  public int hashCode() {
+    if (memoizedHashCode != 0) {
+      return memoizedHashCode;
+    }
+    int hash = 41;
+    hash = (19 * hash) + getDescriptor().hashCode();
+    if (getComponentCount() > 0) {
+      hash = (37 * hash) + COMPONENT_FIELD_NUMBER;
+      hash = (53 * hash) + getComponentList().hashCode();
+    }
+    hash = (29 * hash) + unknownFields.hashCode();
+    memoizedHashCode = hash;
+    return hash;
   }
 
   public static com.vv.personal.prom.artifactory.proto.ComponentList parseFrom(byte[] data)
@@ -179,6 +226,14 @@ public final class ComponentList extends
             .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(com.vv.personal.prom.artifactory.proto.ComponentList prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
   public static com.vv.personal.prom.artifactory.proto.ComponentList getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
@@ -204,13 +259,6 @@ public final class ComponentList extends
   /**
    * <code>repeated .com.vv.personal.prom.artifactory.proto.Component component = 1;</code>
    */
-  public java.util.List<com.vv.personal.prom.artifactory.proto.Component> getComponentList() {
-    return component_;
-  }
-
-  /**
-   * <code>repeated .com.vv.personal.prom.artifactory.proto.Component component = 1;</code>
-   */
   public java.util.List<? extends com.vv.personal.prom.artifactory.proto.ComponentOrBuilder>
   getComponentOrBuilderList() {
     return component_;
@@ -219,41 +267,9 @@ public final class ComponentList extends
   /**
    * <code>repeated .com.vv.personal.prom.artifactory.proto.Component component = 1;</code>
    */
-  public int getComponentCount() {
-    return component_.size();
-  }
-
-  /**
-   * <code>repeated .com.vv.personal.prom.artifactory.proto.Component component = 1;</code>
-   */
-  public com.vv.personal.prom.artifactory.proto.Component getComponent(int index) {
-    return component_.get(index);
-  }
-
-  /**
-   * <code>repeated .com.vv.personal.prom.artifactory.proto.Component component = 1;</code>
-   */
   public com.vv.personal.prom.artifactory.proto.ComponentOrBuilder getComponentOrBuilder(
           int index) {
     return component_.get(index);
-  }
-
-  @java.lang.Override
-  public final boolean isInitialized() {
-    byte isInitialized = memoizedIsInitialized;
-    if (isInitialized == 1) return true;
-    if (isInitialized == 0) return false;
-
-    memoizedIsInitialized = 1;
-    return true;
-  }
-
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-
-  public static Builder newBuilder(com.vv.personal.prom.artifactory.proto.ComponentList prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
   @java.lang.Override
@@ -283,7 +299,7 @@ public final class ComponentList extends
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-      return true;
+     return true;
     }
     if (!(obj instanceof com.vv.personal.prom.artifactory.proto.ComponentList)) {
       return super.equals(obj);
@@ -295,22 +311,6 @@ public final class ComponentList extends
             .equals(other.getComponentList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
-  }
-
-  @java.lang.Override
-  public int hashCode() {
-    if (memoizedHashCode != 0) {
-      return memoizedHashCode;
-    }
-    int hash = 41;
-    hash = (19 * hash) + getDescriptor().hashCode();
-    if (getComponentCount() > 0) {
-      hash = (37 * hash) + COMPONENT_FIELD_NUMBER;
-      hash = (53 * hash) + getComponentList().hashCode();
-    }
-    hash = (29 * hash) + unknownFields.hashCode();
-    memoizedHashCode = hash;
-    return hash;
   }
 
   @java.lang.Override
@@ -357,6 +357,23 @@ public final class ComponentList extends
     private Builder() {
       maybeForceBuilderInitialization();
     }
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3
+              .alwaysUseFieldBuilders) {
+        getComponentFieldBuilder();
+      }
+    }
+    @java.lang.Override
+    public Builder clear() {
+      super.clear();
+      if (componentBuilder_ == null) {
+        component_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      } else {
+        componentBuilder_.clear();
+      }
+      return this;
+    }
 
     private Builder(
             com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
@@ -378,50 +395,6 @@ public final class ComponentList extends
     }
 
     @java.lang.Override
-    public com.vv.personal.prom.artifactory.proto.ComponentList getDefaultInstanceForType() {
-      return com.vv.personal.prom.artifactory.proto.ComponentList.getDefaultInstance();
-    }
-
-    @java.lang.Override
-    public com.vv.personal.prom.artifactory.proto.ComponentList build() {
-      com.vv.personal.prom.artifactory.proto.ComponentList result = buildPartial();
-      if (!result.isInitialized()) {
-        throw newUninitializedMessageException(result);
-      }
-      return result;
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-        getComponentFieldBuilder();
-      }
-    }
-
-    @java.lang.Override
-    public Builder clone() {
-      return super.clone();
-    }
-
-    @java.lang.Override
-    public Builder clear() {
-      super.clear();
-      if (componentBuilder_ == null) {
-        component_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      } else {
-        componentBuilder_.clear();
-      }
-      return this;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-    getDescriptorForType() {
-      return com.vv.personal.prom.artifactory.proto.ComponentProto.internal_static_com_vv_personal_prom_artifactory_proto_ComponentList_descriptor;
-    }
-
-    @java.lang.Override
     public com.vv.personal.prom.artifactory.proto.ComponentList buildPartial() {
       com.vv.personal.prom.artifactory.proto.ComponentList result = new com.vv.personal.prom.artifactory.proto.ComponentList(this);
       int from_bitField0_ = bitField0_;
@@ -439,6 +412,31 @@ public final class ComponentList extends
     }
 
     @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor
+    getDescriptorForType() {
+      return com.vv.personal.prom.artifactory.proto.ComponentProto.internal_static_com_vv_personal_prom_artifactory_proto_ComponentList_descriptor;
+    }
+
+    @java.lang.Override
+    public com.vv.personal.prom.artifactory.proto.ComponentList getDefaultInstanceForType() {
+      return com.vv.personal.prom.artifactory.proto.ComponentList.getDefaultInstance();
+    }
+
+    @java.lang.Override
+    public com.vv.personal.prom.artifactory.proto.ComponentList build() {
+      com.vv.personal.prom.artifactory.proto.ComponentList result = buildPartial();
+      if (!result.isInitialized()) {
+        throw newUninitializedMessageException(result);
+      }
+      return result;
+    }
+
+    @java.lang.Override
+    public Builder clone() {
+      return super.clone();
+    }
+
+    @java.lang.Override
     public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
@@ -449,6 +447,16 @@ public final class ComponentList extends
     public Builder clearField(
             com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
+    }
+
+    @java.lang.Override
+    public Builder mergeFrom(com.google.protobuf.Message other) {
+      if (other instanceof com.vv.personal.prom.artifactory.proto.ComponentList) {
+        return mergeFrom((com.vv.personal.prom.artifactory.proto.ComponentList) other);
+      } else {
+        super.mergeFrom(other);
+        return this;
+      }
     }
 
     @java.lang.Override
@@ -465,25 +473,10 @@ public final class ComponentList extends
     }
 
     @java.lang.Override
-    public final boolean isInitialized() {
-      return true;
-    }
-
-    @java.lang.Override
     public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
       return super.addRepeatedField(field, value);
-    }
-
-    @java.lang.Override
-    public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.vv.personal.prom.artifactory.proto.ComponentList) {
-        return mergeFrom((com.vv.personal.prom.artifactory.proto.ComponentList)other);
-      } else {
-        super.mergeFrom(other);
-        return this;
-      }
     }
 
     public Builder mergeFrom(com.vv.personal.prom.artifactory.proto.ComponentList other) {
@@ -520,6 +513,11 @@ public final class ComponentList extends
     }
 
     @java.lang.Override
+    public final boolean isInitialized() {
+      return true;
+    }
+
+    @java.lang.Override
     public Builder mergeFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -542,7 +540,7 @@ public final class ComponentList extends
       if (!((bitField0_ & 0x00000001) == 0x00000001)) {
         component_ = new java.util.ArrayList<com.vv.personal.prom.artifactory.proto.Component>(component_);
         bitField0_ |= 0x00000001;
-      }
+       }
     }
 
     /**
@@ -555,7 +553,6 @@ public final class ComponentList extends
         return componentBuilder_.getMessageList();
       }
     }
-
     /**
      * <code>repeated .com.vv.personal.prom.artifactory.proto.Component component = 1;</code>
      */
@@ -566,7 +563,6 @@ public final class ComponentList extends
         return componentBuilder_.getCount();
       }
     }
-
     /**
      * <code>repeated .com.vv.personal.prom.artifactory.proto.Component component = 1;</code>
      */
@@ -610,7 +606,6 @@ public final class ComponentList extends
       }
       return this;
     }
-
     /**
      * <code>repeated .com.vv.personal.prom.artifactory.proto.Component component = 1;</code>
      */
@@ -691,7 +686,6 @@ public final class ComponentList extends
       }
       return this;
     }
-
     /**
      * <code>repeated .com.vv.personal.prom.artifactory.proto.Component component = 1;</code>
      */
@@ -705,7 +699,6 @@ public final class ComponentList extends
       }
       return this;
     }
-
     /**
      * <code>repeated .com.vv.personal.prom.artifactory.proto.Component component = 1;</code>
      */

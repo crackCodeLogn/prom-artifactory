@@ -8,12 +8,17 @@ public interface ComponentOrBuilder extends
         com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.com.vv.personal.prom.artifactory.proto.SupportedComponents supportedComponents = 1;</code>
+     * <code>int32 componentId = 1;</code>
+     */
+    int getComponentId();
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.SupportedComponents supportedComponents = 2;</code>
      */
     int getSupportedComponentsValue();
 
     /**
-     * <code>.com.vv.personal.prom.artifactory.proto.SupportedComponents supportedComponents = 1;</code>
+     * <code>.com.vv.personal.prom.artifactory.proto.SupportedComponents supportedComponents = 2;</code>
      */
     com.vv.personal.prom.artifactory.proto.SupportedComponents getSupportedComponents();
 }
