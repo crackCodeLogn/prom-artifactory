@@ -17,6 +17,11 @@ public final class MakeList extends
     super(builder);
   }
 
+  private MakeList() {
+    make_ = java.util.Collections.emptyList();
+  }
+
+  public static final int AUTH_FIELD_NUMBER = 2;
   private static final long serialVersionUID = 0L;
   // @@protoc_insertion_point(class_scope:com.vv.personal.prom.artifactory.proto.MakeList)
   private static final com.vv.personal.prom.artifactory.proto.MakeList DEFAULT_INSTANCE;
@@ -35,12 +40,33 @@ public final class MakeList extends
     DEFAULT_INSTANCE = new com.vv.personal.prom.artifactory.proto.MakeList();
   }
 
+  private int bitField0_;
   private java.util.List<com.vv.personal.prom.artifactory.proto.Make> make_;
-  private byte memoizedIsInitialized = -1;
 
-  private MakeList() {
-    make_ = java.util.Collections.emptyList();
+  /**
+   * <code>repeated .com.vv.personal.prom.artifactory.proto.Make make = 1;</code>
+   */
+  public java.util.List<com.vv.personal.prom.artifactory.proto.Make> getMakeList() {
+    return make_;
   }
+
+  private com.vv.personal.prom.artifactory.proto.Auth auth_;
+
+  /**
+   * <code>repeated .com.vv.personal.prom.artifactory.proto.Make make = 1;</code>
+   */
+  public int getMakeCount() {
+    return make_.size();
+  }
+
+  /**
+   * <code>repeated .com.vv.personal.prom.artifactory.proto.Make make = 1;</code>
+   */
+  public com.vv.personal.prom.artifactory.proto.Make getMake(int index) {
+    return make_.get(index);
+  }
+
+  private byte memoizedIsInitialized = -1;
 
   private MakeList(
           com.google.protobuf.CodedInputStream input,
@@ -68,6 +94,19 @@ public final class MakeList extends
             }
             make_.add(
                     input.readMessage(com.vv.personal.prom.artifactory.proto.Make.parser(), extensionRegistry));
+            break;
+          }
+          case 18: {
+            com.vv.personal.prom.artifactory.proto.Auth.Builder subBuilder = null;
+            if (auth_ != null) {
+              subBuilder = auth_.toBuilder();
+            }
+            auth_ = input.readMessage(com.vv.personal.prom.artifactory.proto.Auth.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(auth_);
+              auth_ = subBuilder.buildPartial();
+            }
+
             break;
           }
           default: {
@@ -122,6 +161,16 @@ public final class MakeList extends
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
+  }
+
+  @java.lang.Override
+  public final boolean isInitialized() {
+    byte isInitialized = memoizedIsInitialized;
+    if (isInitialized == 1) return true;
+    if (isInitialized == 0) return false;
+
+    memoizedIsInitialized = 1;
+    return true;
   }
 
   public static com.vv.personal.prom.artifactory.proto.MakeList parseFrom(byte[] data)
@@ -179,6 +228,14 @@ public final class MakeList extends
             .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(com.vv.personal.prom.artifactory.proto.MakeList prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
   public static com.vv.personal.prom.artifactory.proto.MakeList getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
@@ -204,30 +261,9 @@ public final class MakeList extends
   /**
    * <code>repeated .com.vv.personal.prom.artifactory.proto.Make make = 1;</code>
    */
-  public java.util.List<com.vv.personal.prom.artifactory.proto.Make> getMakeList() {
-    return make_;
-  }
-
-  /**
-   * <code>repeated .com.vv.personal.prom.artifactory.proto.Make make = 1;</code>
-   */
   public java.util.List<? extends com.vv.personal.prom.artifactory.proto.MakeOrBuilder>
   getMakeOrBuilderList() {
     return make_;
-  }
-
-  /**
-   * <code>repeated .com.vv.personal.prom.artifactory.proto.Make make = 1;</code>
-   */
-  public int getMakeCount() {
-    return make_.size();
-  }
-
-  /**
-   * <code>repeated .com.vv.personal.prom.artifactory.proto.Make make = 1;</code>
-   */
-  public com.vv.personal.prom.artifactory.proto.Make getMake(int index) {
-    return make_.get(index);
   }
 
   /**
@@ -238,22 +274,25 @@ public final class MakeList extends
     return make_.get(index);
   }
 
-  @java.lang.Override
-  public final boolean isInitialized() {
-    byte isInitialized = memoizedIsInitialized;
-    if (isInitialized == 1) return true;
-    if (isInitialized == 0) return false;
-
-    memoizedIsInitialized = 1;
-    return true;
+  /**
+   * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 2;</code>
+   */
+  public boolean hasAuth() {
+    return auth_ != null;
   }
 
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
+  /**
+   * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 2;</code>
+   */
+  public com.vv.personal.prom.artifactory.proto.Auth getAuth() {
+    return auth_ == null ? com.vv.personal.prom.artifactory.proto.Auth.getDefaultInstance() : auth_;
   }
 
-  public static Builder newBuilder(com.vv.personal.prom.artifactory.proto.MakeList prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  /**
+   * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 2;</code>
+   */
+  public com.vv.personal.prom.artifactory.proto.AuthOrBuilder getAuthOrBuilder() {
+    return getAuth();
   }
 
   @java.lang.Override
@@ -261,6 +300,9 @@ public final class MakeList extends
           throws java.io.IOException {
     for (int i = 0; i < make_.size(); i++) {
       output.writeMessage(1, make_.get(i));
+    }
+    if (auth_ != null) {
+      output.writeMessage(2, getAuth());
     }
     unknownFields.writeTo(output);
   }
@@ -274,6 +316,10 @@ public final class MakeList extends
     for (int i = 0; i < make_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
               .computeMessageSize(1, make_.get(i));
+    }
+    if (auth_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+              .computeMessageSize(2, getAuth());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -293,6 +339,11 @@ public final class MakeList extends
     boolean result = true;
     result = result && getMakeList()
             .equals(other.getMakeList());
+    result = result && (hasAuth() == other.hasAuth());
+    if (hasAuth()) {
+      result = result && getAuth()
+              .equals(other.getAuth());
+    }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -308,14 +359,17 @@ public final class MakeList extends
       hash = (37 * hash) + MAKE_FIELD_NUMBER;
       hash = (53 * hash) + getMakeList().hashCode();
     }
+    if (hasAuth()) {
+      hash = (37 * hash) + AUTH_FIELD_NUMBER;
+      hash = (53 * hash) + getAuth().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() {
-    return newBuilder(); }
+  public Builder newBuilderForType() { return newBuilder(); }
 
   @java.lang.Override
   public Builder toBuilder() {
@@ -352,6 +406,17 @@ public final class MakeList extends
             java.util.Collections.emptyList();
     private com.google.protobuf.RepeatedFieldBuilderV3<
             com.vv.personal.prom.artifactory.proto.Make, com.vv.personal.prom.artifactory.proto.Make.Builder, com.vv.personal.prom.artifactory.proto.MakeOrBuilder> makeBuilder_;
+    private com.vv.personal.prom.artifactory.proto.Auth auth_ = null;
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3
+              .alwaysUseFieldBuilders) {
+        getMakeFieldBuilder();
+      }
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.vv.personal.prom.artifactory.proto.Auth, com.vv.personal.prom.artifactory.proto.Auth.Builder, com.vv.personal.prom.artifactory.proto.AuthOrBuilder> authBuilder_;
 
     // Construct using com.vv.personal.prom.artifactory.proto.MakeList.newBuilder()
     private Builder() {
@@ -378,6 +443,30 @@ public final class MakeList extends
     }
 
     @java.lang.Override
+    public Builder clear() {
+      super.clear();
+      if (makeBuilder_ == null) {
+        make_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      } else {
+        makeBuilder_.clear();
+      }
+      if (authBuilder_ == null) {
+        auth_ = null;
+      } else {
+        auth_ = null;
+        authBuilder_ = null;
+      }
+      return this;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor
+    getDescriptorForType() {
+      return com.vv.personal.prom.artifactory.proto.MakeProto.internal_static_com_vv_personal_prom_artifactory_proto_MakeList_descriptor;
+    }
+
+    @java.lang.Override
     public com.vv.personal.prom.artifactory.proto.MakeList getDefaultInstanceForType() {
       return com.vv.personal.prom.artifactory.proto.MakeList.getDefaultInstance();
     }
@@ -391,40 +480,11 @@ public final class MakeList extends
       return result;
     }
 
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-        getMakeFieldBuilder();
-      }
-    }
-
-    @java.lang.Override
-    public Builder clone() {
-      return super.clone();
-    }
-
-    @java.lang.Override
-    public Builder clear() {
-      super.clear();
-      if (makeBuilder_ == null) {
-        make_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      } else {
-        makeBuilder_.clear();
-      }
-      return this;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-    getDescriptorForType() {
-      return com.vv.personal.prom.artifactory.proto.MakeProto.internal_static_com_vv_personal_prom_artifactory_proto_MakeList_descriptor;
-    }
-
     @java.lang.Override
     public com.vv.personal.prom.artifactory.proto.MakeList buildPartial() {
       com.vv.personal.prom.artifactory.proto.MakeList result = new com.vv.personal.prom.artifactory.proto.MakeList(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (makeBuilder_ == null) {
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
           make_ = java.util.Collections.unmodifiableList(make_);
@@ -434,8 +494,29 @@ public final class MakeList extends
       } else {
         result.make_ = makeBuilder_.build();
       }
+      if (authBuilder_ == null) {
+        result.auth_ = auth_;
+      } else {
+        result.auth_ = authBuilder_.build();
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    @java.lang.Override
+    public Builder clone() {
+      return super.clone();
+    }
+
+    @java.lang.Override
+    public Builder mergeFrom(com.google.protobuf.Message other) {
+      if (other instanceof com.vv.personal.prom.artifactory.proto.MakeList) {
+        return mergeFrom((com.vv.personal.prom.artifactory.proto.MakeList) other);
+      } else {
+        super.mergeFrom(other);
+        return this;
+      }
     }
 
     @java.lang.Override
@@ -465,25 +546,10 @@ public final class MakeList extends
     }
 
     @java.lang.Override
-    public final boolean isInitialized() {
-      return true;
-    }
-
-    @java.lang.Override
     public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
       return super.addRepeatedField(field, value);
-    }
-
-    @java.lang.Override
-    public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.vv.personal.prom.artifactory.proto.MakeList) {
-        return mergeFrom((com.vv.personal.prom.artifactory.proto.MakeList)other);
-      } else {
-        super.mergeFrom(other);
-        return this;
-      }
     }
 
     public Builder mergeFrom(com.vv.personal.prom.artifactory.proto.MakeList other) {
@@ -514,35 +580,17 @@ public final class MakeList extends
           }
         }
       }
+      if (other.hasAuth()) {
+        mergeAuth(other.getAuth());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
     @java.lang.Override
-    public Builder mergeFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-      com.vv.personal.prom.artifactory.proto.MakeList parsedMessage = null;
-      try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.vv.personal.prom.artifactory.proto.MakeList) e.getUnfinishedMessage();
-        throw e.unwrapIOException();
-      } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
-      return this;
-    }
-
-    private void ensureMakeIsMutable() {
-      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-        make_ = new java.util.ArrayList<com.vv.personal.prom.artifactory.proto.Make>(make_);
-        bitField0_ |= 0x00000001;
-      }
+    public final boolean isInitialized() {
+      return true;
     }
 
     /**
@@ -578,6 +626,49 @@ public final class MakeList extends
       }
     }
 
+    @java.lang.Override
+    public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      com.vv.personal.prom.artifactory.proto.MakeList parsedMessage = null;
+      try {
+        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        parsedMessage = (com.vv.personal.prom.artifactory.proto.MakeList) e.getUnfinishedMessage();
+        throw e.unwrapIOException();
+      } finally {
+        if (parsedMessage != null) {
+          mergeFrom(parsedMessage);
+        }
+      }
+      return this;
+    }
+
+    private void ensureMakeIsMutable() {
+      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+        make_ = new java.util.ArrayList<com.vv.personal.prom.artifactory.proto.Make>(make_);
+        bitField0_ |= 0x00000001;
+      }
+    }
+
+    /**
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Make make = 1;</code>
+     */
+    public Builder addMake(com.vv.personal.prom.artifactory.proto.Make value) {
+      if (makeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMakeIsMutable();
+        make_.add(value);
+        onChanged();
+      } else {
+        makeBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
     /**
      * <code>repeated .com.vv.personal.prom.artifactory.proto.Make make = 1;</code>
      */
@@ -607,23 +698,6 @@ public final class MakeList extends
         onChanged();
       } else {
         makeBuilder_.setMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-
-    /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Make make = 1;</code>
-     */
-    public Builder addMake(com.vv.personal.prom.artifactory.proto.Make value) {
-      if (makeBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureMakeIsMutable();
-        make_.add(value);
-        onChanged();
-      } else {
-        makeBuilder_.addMessage(value);
       }
       return this;
     }
@@ -664,6 +738,34 @@ public final class MakeList extends
     /**
      * <code>repeated .com.vv.personal.prom.artifactory.proto.Make make = 1;</code>
      */
+    public Builder clearMake() {
+      if (makeBuilder_ == null) {
+        make_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+      } else {
+        makeBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Make make = 1;</code>
+     */
+    public Builder removeMake(int index) {
+      if (makeBuilder_ == null) {
+        ensureMakeIsMutable();
+        make_.remove(index);
+        onChanged();
+      } else {
+        makeBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Make make = 1;</code>
+     */
     public Builder addMake(
             int index, com.vv.personal.prom.artifactory.proto.Make.Builder builderForValue) {
       if (makeBuilder_ == null) {
@@ -688,34 +790,6 @@ public final class MakeList extends
         onChanged();
       } else {
         makeBuilder_.addAllMessages(values);
-      }
-      return this;
-    }
-
-    /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Make make = 1;</code>
-     */
-    public Builder clearMake() {
-      if (makeBuilder_ == null) {
-        make_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-      } else {
-        makeBuilder_.clear();
-      }
-      return this;
-    }
-
-    /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Make make = 1;</code>
-     */
-    public Builder removeMake(int index) {
-      if (makeBuilder_ == null) {
-        ensureMakeIsMutable();
-        make_.remove(index);
-        onChanged();
-      } else {
-        makeBuilder_.remove(index);
       }
       return this;
     }
@@ -790,6 +864,128 @@ public final class MakeList extends
         make_ = null;
       }
       return makeBuilder_;
+    }
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 2;</code>
+     */
+    public boolean hasAuth() {
+      return authBuilder_ != null || auth_ != null;
+    }
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 2;</code>
+     */
+    public com.vv.personal.prom.artifactory.proto.Auth getAuth() {
+      if (authBuilder_ == null) {
+        return auth_ == null ? com.vv.personal.prom.artifactory.proto.Auth.getDefaultInstance() : auth_;
+      } else {
+        return authBuilder_.getMessage();
+      }
+    }
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 2;</code>
+     */
+    public Builder setAuth(com.vv.personal.prom.artifactory.proto.Auth value) {
+      if (authBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        auth_ = value;
+        onChanged();
+      } else {
+        authBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 2;</code>
+     */
+    public Builder setAuth(
+            com.vv.personal.prom.artifactory.proto.Auth.Builder builderForValue) {
+      if (authBuilder_ == null) {
+        auth_ = builderForValue.build();
+        onChanged();
+      } else {
+        authBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 2;</code>
+     */
+    public Builder mergeAuth(com.vv.personal.prom.artifactory.proto.Auth value) {
+      if (authBuilder_ == null) {
+        if (auth_ != null) {
+          auth_ =
+                  com.vv.personal.prom.artifactory.proto.Auth.newBuilder(auth_).mergeFrom(value).buildPartial();
+        } else {
+          auth_ = value;
+        }
+        onChanged();
+      } else {
+        authBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 2;</code>
+     */
+    public Builder clearAuth() {
+      if (authBuilder_ == null) {
+        auth_ = null;
+        onChanged();
+      } else {
+        auth_ = null;
+        authBuilder_ = null;
+      }
+
+      return this;
+    }
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 2;</code>
+     */
+    public com.vv.personal.prom.artifactory.proto.Auth.Builder getAuthBuilder() {
+
+      onChanged();
+      return getAuthFieldBuilder().getBuilder();
+    }
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 2;</code>
+     */
+    public com.vv.personal.prom.artifactory.proto.AuthOrBuilder getAuthOrBuilder() {
+      if (authBuilder_ != null) {
+        return authBuilder_.getMessageOrBuilder();
+      } else {
+        return auth_ == null ?
+                com.vv.personal.prom.artifactory.proto.Auth.getDefaultInstance() : auth_;
+      }
+    }
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.vv.personal.prom.artifactory.proto.Auth, com.vv.personal.prom.artifactory.proto.Auth.Builder, com.vv.personal.prom.artifactory.proto.AuthOrBuilder>
+    getAuthFieldBuilder() {
+      if (authBuilder_ == null) {
+        authBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                com.vv.personal.prom.artifactory.proto.Auth, com.vv.personal.prom.artifactory.proto.Auth.Builder, com.vv.personal.prom.artifactory.proto.AuthOrBuilder>(
+                getAuth(),
+                getParentForChildren(),
+                isClean());
+        auth_ = null;
+      }
+      return authBuilder_;
     }
 
     @java.lang.Override

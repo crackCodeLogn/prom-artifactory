@@ -23,10 +23,12 @@ public final class Customer extends
     lastName_ = "";
     contactNumbers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
+
   public static final int FIRSTNAME_FIELD_NUMBER = 2;
   public static final int LASTNAME_FIELD_NUMBER = 3;
   public static final int CONTACTNUMBERS_FIELD_NUMBER = 4;
   public static final int COMPANY_FIELD_NUMBER = 5;
+  public static final int AUTH_FIELD_NUMBER = 6;
   private static final long serialVersionUID = 0L;
   // @@protoc_insertion_point(class_scope:com.vv.personal.prom.artifactory.proto.Customer)
   private static final com.vv.personal.prom.artifactory.proto.Customer DEFAULT_INSTANCE;
@@ -41,17 +43,6 @@ public final class Customer extends
     }
   };
 
-  /**
-   * <pre>
-   * assuming that there'll never be need to go to long
-   * </pre>
-   *
-   * <code>int32 customerId = 1;</code>
-   */
-  public int getCustomerId() {
-    return customerId_;
-  }
-
   static {
     DEFAULT_INSTANCE = new com.vv.personal.prom.artifactory.proto.Customer();
   }
@@ -62,6 +53,7 @@ public final class Customer extends
   private volatile java.lang.Object lastName_;
   private com.google.protobuf.LazyStringList contactNumbers_;
   private com.vv.personal.prom.artifactory.proto.Company company_;
+  private com.vv.personal.prom.artifactory.proto.Auth auth_;
   private byte memoizedIsInitialized = -1;
 
   private Customer(
@@ -122,6 +114,19 @@ public final class Customer extends
 
             break;
           }
+          case 50: {
+            com.vv.personal.prom.artifactory.proto.Auth.Builder subBuilder = null;
+            if (auth_ != null) {
+              subBuilder = auth_.toBuilder();
+            }
+            auth_ = input.readMessage(com.vv.personal.prom.artifactory.proto.Auth.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(auth_);
+              auth_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                     input, unknownFields, extensionRegistry, tag)) {
@@ -156,20 +161,6 @@ public final class Customer extends
     return PARSER.parseFrom(data);
   }
 
-  /**
-   * <code>repeated string contactNumbers = 4;</code>
-   */
-  public int getContactNumbersCount() {
-    return contactNumbers_.size();
-  }
-
-  /**
-   * <code>repeated string contactNumbers = 4;</code>
-   */
-  public java.lang.String getContactNumbers(int index) {
-    return contactNumbers_.get(index);
-  }
-
   public static com.vv.personal.prom.artifactory.proto.Customer parseFrom(
           java.nio.ByteBuffer data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -195,6 +186,17 @@ public final class Customer extends
     return PARSER.parseFrom(data);
   }
 
+  /**
+   * <pre>
+   * usually the need for this use-case is 121 =&gt; customer to company
+   * </pre>
+   *
+   * <code>.com.vv.personal.prom.artifactory.proto.Company company = 5;</code>
+   */
+  public boolean hasCompany() {
+    return company_ != null;
+  }
+
   public static com.vv.personal.prom.artifactory.proto.Customer parseFrom(
           byte[] data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -214,16 +216,6 @@ public final class Customer extends
           throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
             .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  @java.lang.Override
-  public final boolean isInitialized() {
-    byte isInitialized = memoizedIsInitialized;
-    if (isInitialized == 1) return true;
-    if (isInitialized == 0) return false;
-
-    memoizedIsInitialized = 1;
-    return true;
   }
 
   public static com.vv.personal.prom.artifactory.proto.Customer parseDelimitedFrom(java.io.InputStream input)
@@ -283,6 +275,17 @@ public final class Customer extends
     return com.vv.personal.prom.artifactory.proto.CustomerProto.internal_static_com_vv_personal_prom_artifactory_proto_Customer_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                     com.vv.personal.prom.artifactory.proto.Customer.class, com.vv.personal.prom.artifactory.proto.Customer.Builder.class);
+  }
+
+  /**
+   * <pre>
+   * assuming that there'll never be need to go to long
+   * </pre>
+   *
+   * <code>int32 customerId = 1;</code>
+   */
+  public int getCustomerId() {
+    return customerId_;
   }
 
   /**
@@ -362,6 +365,20 @@ public final class Customer extends
   /**
    * <code>repeated string contactNumbers = 4;</code>
    */
+  public int getContactNumbersCount() {
+    return contactNumbers_.size();
+  }
+
+  /**
+   * <code>repeated string contactNumbers = 4;</code>
+   */
+  public java.lang.String getContactNumbers(int index) {
+    return contactNumbers_.get(index);
+  }
+
+  /**
+   * <code>repeated string contactNumbers = 4;</code>
+   */
   public com.google.protobuf.ByteString
   getContactNumbersBytes(int index) {
     return contactNumbers_.getByteString(index);
@@ -370,17 +387,6 @@ public final class Customer extends
   /**
    * <pre>
    *usually the need for this use-case is 121 =&gt; customer to company
-   * </pre>
-   *
-   * <code>.com.vv.personal.prom.artifactory.proto.Company company = 5;</code>
-   */
-  public boolean hasCompany() {
-    return company_ != null;
-  }
-
-  /**
-   * <pre>
-   * usually the need for this use-case is 121 =&gt; customer to company
    * </pre>
    *
    * <code>.com.vv.personal.prom.artifactory.proto.Company company = 5;</code>
@@ -400,6 +406,37 @@ public final class Customer extends
     return getCompany();
   }
 
+  /**
+   * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 6;</code>
+   */
+  public boolean hasAuth() {
+    return auth_ != null;
+  }
+
+  /**
+   * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 6;</code>
+   */
+  public com.vv.personal.prom.artifactory.proto.Auth getAuth() {
+    return auth_ == null ? com.vv.personal.prom.artifactory.proto.Auth.getDefaultInstance() : auth_;
+  }
+
+  /**
+   * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 6;</code>
+   */
+  public com.vv.personal.prom.artifactory.proto.AuthOrBuilder getAuthOrBuilder() {
+    return getAuth();
+  }
+
+  @java.lang.Override
+  public final boolean isInitialized() {
+    byte isInitialized = memoizedIsInitialized;
+    if (isInitialized == 1) return true;
+    if (isInitialized == 0) return false;
+
+    memoizedIsInitialized = 1;
+    return true;
+  }
+
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
           throws java.io.IOException {
@@ -417,6 +454,9 @@ public final class Customer extends
     }
     if (company_ != null) {
       output.writeMessage(5, getCompany());
+    }
+    if (auth_ != null) {
+      output.writeMessage(6, getAuth());
     }
     unknownFields.writeTo(output);
   }
@@ -447,7 +487,11 @@ public final class Customer extends
     }
     if (company_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, getCompany());
+              .computeMessageSize(5, getCompany());
+    }
+    if (auth_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+              .computeMessageSize(6, getAuth());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -478,6 +522,11 @@ public final class Customer extends
       result = result && getCompany()
               .equals(other.getCompany());
     }
+    result = result && (hasAuth() == other.hasAuth());
+    if (hasAuth()) {
+      result = result && getAuth()
+              .equals(other.getAuth());
+    }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -503,14 +552,17 @@ public final class Customer extends
       hash = (37 * hash) + COMPANY_FIELD_NUMBER;
       hash = (53 * hash) + getCompany().hashCode();
     }
+    if (hasAuth()) {
+      hash = (37 * hash) + AUTH_FIELD_NUMBER;
+      hash = (53 * hash) + getAuth().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() {
-    return newBuilder();
+  public Builder newBuilderForType() { return newBuilder();
   }
 
   @java.lang.Override
@@ -548,57 +600,16 @@ public final class Customer extends
     private java.lang.Object firstName_ = "";
     private java.lang.Object lastName_ = "";
     private com.google.protobuf.LazyStringList contactNumbers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-
-    @java.lang.Override
-    public Builder clear() {
-      super.clear();
-      customerId_ = 0;
-
-      firstName_ = "";
-
-      lastName_ = "";
-
-      contactNumbers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
-      if (companyBuilder_ == null) {
-        company_ = null;
-      } else {
-        company_ = null;
-        companyBuilder_ = null;
-      }
-      return this;
-    }
-
     private com.vv.personal.prom.artifactory.proto.Company company_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.vv.personal.prom.artifactory.proto.Company, com.vv.personal.prom.artifactory.proto.Company.Builder, com.vv.personal.prom.artifactory.proto.CompanyOrBuilder> companyBuilder_;
+    private com.vv.personal.prom.artifactory.proto.Auth auth_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.vv.personal.prom.artifactory.proto.Auth, com.vv.personal.prom.artifactory.proto.Auth.Builder, com.vv.personal.prom.artifactory.proto.AuthOrBuilder> authBuilder_;
 
     // Construct using com.vv.personal.prom.artifactory.proto.Customer.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
-    }
-
-    @java.lang.Override
-    public com.vv.personal.prom.artifactory.proto.Customer buildPartial() {
-      com.vv.personal.prom.artifactory.proto.Customer result = new com.vv.personal.prom.artifactory.proto.Customer(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.customerId_ = customerId_;
-      result.firstName_ = firstName_;
-      result.lastName_ = lastName_;
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        contactNumbers_ = contactNumbers_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
-      }
-      result.contactNumbers_ = contactNumbers_;
-      if (companyBuilder_ == null) {
-        result.company_ = company_;
-      } else {
-        result.company_ = companyBuilder_.build();
-      }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
     }
 
     @java.lang.Override
@@ -632,6 +643,32 @@ public final class Customer extends
     }
 
     @java.lang.Override
+    public Builder clear() {
+      super.clear();
+      customerId_ = 0;
+
+      firstName_ = "";
+
+      lastName_ = "";
+
+      contactNumbers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      if (companyBuilder_ == null) {
+        company_ = null;
+      } else {
+        company_ = null;
+        companyBuilder_ = null;
+      }
+      if (authBuilder_ == null) {
+        auth_ = null;
+      } else {
+        auth_ = null;
+        authBuilder_ = null;
+      }
+      return this;
+    }
+
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
     getDescriptorForType() {
       return com.vv.personal.prom.artifactory.proto.CustomerProto.internal_static_com_vv_personal_prom_artifactory_proto_Customer_descriptor;
@@ -652,8 +689,31 @@ public final class Customer extends
     }
 
     @java.lang.Override
-    public final boolean isInitialized() {
-      return true;
+    public com.vv.personal.prom.artifactory.proto.Customer buildPartial() {
+      com.vv.personal.prom.artifactory.proto.Customer result = new com.vv.personal.prom.artifactory.proto.Customer(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      result.customerId_ = customerId_;
+      result.firstName_ = firstName_;
+      result.lastName_ = lastName_;
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        contactNumbers_ = contactNumbers_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      }
+      result.contactNumbers_ = contactNumbers_;
+      if (companyBuilder_ == null) {
+        result.company_ = company_;
+      } else {
+        result.company_ = companyBuilder_.build();
+      }
+      if (authBuilder_ == null) {
+        result.auth_ = auth_;
+      } else {
+        result.auth_ = authBuilder_.build();
+      }
+      result.bitField0_ = to_bitField0_;
+      onBuilt();
+      return result;
     }
 
     @java.lang.Override
@@ -692,7 +752,7 @@ public final class Customer extends
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.vv.personal.prom.artifactory.proto.Customer) {
-        return mergeFrom((com.vv.personal.prom.artifactory.proto.Customer) other);
+        return mergeFrom((com.vv.personal.prom.artifactory.proto.Customer)other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -725,9 +785,17 @@ public final class Customer extends
       if (other.hasCompany()) {
         mergeCompany(other.getCompany());
       }
+      if (other.hasAuth()) {
+        mergeAuth(other.getAuth());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
+    }
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      return true;
     }
 
     @java.lang.Override
@@ -751,7 +819,7 @@ public final class Customer extends
 
     /**
      * <pre>
-     * assuming that there'll never be need to go to long
+     *assuming that there'll never be need to go to long
      * </pre>
      *
      * <code>int32 customerId = 1;</code>
@@ -776,7 +844,7 @@ public final class Customer extends
 
     /**
      * <pre>
-     *assuming that there'll never be need to go to long
+     * assuming that there'll never be need to go to long
      * </pre>
      *
      * <code>int32 customerId = 1;</code>
@@ -786,6 +854,22 @@ public final class Customer extends
       customerId_ = 0;
       onChanged();
       return this;
+    }
+
+    /**
+     * <code>string lastName = 3;</code>
+     */
+    public java.lang.String getLastName() {
+      java.lang.Object ref = lastName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        lastName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
 
     /**
@@ -863,36 +947,6 @@ public final class Customer extends
     /**
      * <code>string lastName = 3;</code>
      */
-    public java.lang.String getLastName() {
-      java.lang.Object ref = lastName_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        lastName_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-
-    /**
-     * <code>string lastName = 3;</code>
-     */
-    public Builder setLastName(
-            java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-
-      lastName_ = value;
-      onChanged();
-      return this;
-    }
-
-    /**
-     * <code>string lastName = 3;</code>
-     */
     public com.google.protobuf.ByteString
     getLastNameBytes() {
       java.lang.Object ref = lastName_;
@@ -914,8 +968,36 @@ public final class Customer extends
             com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+      }
+      checkByteStringIsUtf8(value);
+
+      lastName_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     * <code>repeated string contactNumbers = 4;</code>
+     */
+    public int getContactNumbersCount() {
+      return contactNumbers_.size();
+    }
+
+    /**
+     * <code>repeated string contactNumbers = 4;</code>
+     */
+    public java.lang.String getContactNumbers(int index) {
+      return contactNumbers_.get(index);
+    }
+
+    /**
+     * <code>string lastName = 3;</code>
+     */
+    public Builder setLastName(
+            java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
 
       lastName_ = value;
       onChanged();
@@ -950,15 +1032,11 @@ public final class Customer extends
     /**
      * <code>repeated string contactNumbers = 4;</code>
      */
-    public int getContactNumbersCount() {
-      return contactNumbers_.size();
-    }
-
-    /**
-     * <code>repeated string contactNumbers = 4;</code>
-     */
-    public java.lang.String getContactNumbers(int index) {
-      return contactNumbers_.get(index);
+    public Builder clearContactNumbers() {
+      contactNumbers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
     }
 
     /**
@@ -989,46 +1067,9 @@ public final class Customer extends
     public Builder addContactNumbers(
             java.lang.String value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-      ensureContactNumbersIsMutable();
-      contactNumbers_.add(value);
-      onChanged();
-      return this;
-    }
-
-    /**
-     * <code>repeated string contactNumbers = 4;</code>
-     */
-    public Builder addAllContactNumbers(
-            java.lang.Iterable<java.lang.String> values) {
-      ensureContactNumbersIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, contactNumbers_);
-      onChanged();
-      return this;
-    }
-
-    /**
-     * <code>repeated string contactNumbers = 4;</code>
-     */
-    public Builder clearContactNumbers() {
-      contactNumbers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
-      onChanged();
-      return this;
-    }
-
-    /**
-     * <code>repeated string contactNumbers = 4;</code>
-     */
-    public Builder addContactNumbersBytes(
-            com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
+    throw new NullPointerException();
   }
-  checkByteStringIsUtf8(value);
-      ensureContactNumbersIsMutable();
+  ensureContactNumbersIsMutable();
       contactNumbers_.add(value);
       onChanged();
       return this;
@@ -1079,23 +1120,17 @@ public final class Customer extends
     }
 
     /**
-     * <pre>
-     * usually the need for this use-case is 121 =&gt; customer to company
-     * </pre>
-     *
-     * <code>.com.vv.personal.prom.artifactory.proto.Company company = 5;</code>
+     * <code>repeated string contactNumbers = 4;</code>
      */
-    public Builder setCompany(
-            com.vv.personal.prom.artifactory.proto.Company.Builder builderForValue) {
-      if (companyBuilder_ == null) {
-        company_ = builderForValue.build();
-        onChanged();
-      } else {
-        companyBuilder_.setMessage(builderForValue.build());
-      }
-
+    public Builder addAllContactNumbers(
+            java.lang.Iterable<java.lang.String> values) {
+      ensureContactNumbersIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, contactNumbers_);
+      onChanged();
       return this;
     }
+
     /**
      * <pre>
      *usually the need for this use-case is 121 =&gt; customer to company
@@ -1136,6 +1171,41 @@ public final class Customer extends
 
       return this;
     }
+
+    /**
+     * <code>repeated string contactNumbers = 4;</code>
+     */
+    public Builder addContactNumbersBytes(
+            com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureContactNumbersIsMutable();
+      contactNumbers_.add(value);
+      onChanged();
+      return this;
+    }
+
+    /**
+     * <pre>
+     * usually the need for this use-case is 121 =&gt; customer to company
+     * </pre>
+     *
+     * <code>.com.vv.personal.prom.artifactory.proto.Company company = 5;</code>
+     */
+    public Builder setCompany(
+            com.vv.personal.prom.artifactory.proto.Company.Builder builderForValue) {
+      if (companyBuilder_ == null) {
+        company_ = builderForValue.build();
+        onChanged();
+      } else {
+        companyBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+
     /**
      * <pre>
      *usually the need for this use-case is 121 =&gt; customer to company
@@ -1148,6 +1218,7 @@ public final class Customer extends
       onChanged();
       return getCompanyFieldBuilder().getBuilder();
     }
+
     /**
      * <pre>
      *usually the need for this use-case is 121 =&gt; customer to company
@@ -1184,15 +1255,138 @@ public final class Customer extends
       }
       return companyBuilder_;
     }
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 6;</code>
+     */
+    public boolean hasAuth() {
+      return authBuilder_ != null || auth_ != null;
+    }
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 6;</code>
+     */
+    public com.vv.personal.prom.artifactory.proto.Auth getAuth() {
+      if (authBuilder_ == null) {
+        return auth_ == null ? com.vv.personal.prom.artifactory.proto.Auth.getDefaultInstance() : auth_;
+      } else {
+        return authBuilder_.getMessage();
+      }
+    }
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 6;</code>
+     */
+    public Builder setAuth(com.vv.personal.prom.artifactory.proto.Auth value) {
+      if (authBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        auth_ = value;
+        onChanged();
+      } else {
+        authBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 6;</code>
+     */
+    public Builder setAuth(
+            com.vv.personal.prom.artifactory.proto.Auth.Builder builderForValue) {
+      if (authBuilder_ == null) {
+        auth_ = builderForValue.build();
+        onChanged();
+      } else {
+        authBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 6;</code>
+     */
+    public Builder mergeAuth(com.vv.personal.prom.artifactory.proto.Auth value) {
+      if (authBuilder_ == null) {
+        if (auth_ != null) {
+          auth_ =
+                  com.vv.personal.prom.artifactory.proto.Auth.newBuilder(auth_).mergeFrom(value).buildPartial();
+        } else {
+          auth_ = value;
+        }
+        onChanged();
+      } else {
+        authBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 6;</code>
+     */
+    public Builder clearAuth() {
+      if (authBuilder_ == null) {
+        auth_ = null;
+        onChanged();
+      } else {
+        auth_ = null;
+        authBuilder_ = null;
+      }
+
+      return this;
+    }
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 6;</code>
+     */
+    public com.vv.personal.prom.artifactory.proto.Auth.Builder getAuthBuilder() {
+
+      onChanged();
+      return getAuthFieldBuilder().getBuilder();
+    }
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 6;</code>
+     */
+    public com.vv.personal.prom.artifactory.proto.AuthOrBuilder getAuthOrBuilder() {
+      if (authBuilder_ != null) {
+        return authBuilder_.getMessageOrBuilder();
+      } else {
+        return auth_ == null ?
+                com.vv.personal.prom.artifactory.proto.Auth.getDefaultInstance() : auth_;
+      }
+    }
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.vv.personal.prom.artifactory.proto.Auth, com.vv.personal.prom.artifactory.proto.Auth.Builder, com.vv.personal.prom.artifactory.proto.AuthOrBuilder>
+    getAuthFieldBuilder() {
+      if (authBuilder_ == null) {
+        authBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                com.vv.personal.prom.artifactory.proto.Auth, com.vv.personal.prom.artifactory.proto.Auth.Builder, com.vv.personal.prom.artifactory.proto.AuthOrBuilder>(
+                getAuth(),
+                getParentForChildren(),
+                isClean());
+        auth_ = null;
+      }
+      return authBuilder_;
+    }
+
     @java.lang.Override
     public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
     @java.lang.Override
     public final Builder mergeUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
 

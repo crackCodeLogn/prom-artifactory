@@ -10,6 +10,7 @@ message Customer {
   string lastName = 3;
   repeated string contactNumbers = 4;
   Company company = 5; //usually the need for this use-case is 121 => customer to company
+  Auth auth = 6;
 }
 
 message Company {
@@ -17,12 +18,20 @@ message Company {
   string companyName = 2;
   string companyContactPerson = 3; //could be the owner as well, but can be left empty.
   repeated string contactNumbers = 4; //can be left empty.
+  Auth auth = 5;
 }
 
 message CustomerList {
   repeated Customer customer = 1;
+  Auth auth = 2;
 }
 
 message CompanyList {
   repeated Company company = 1;
+  Auth auth = 2;
+}
+
+message Auth {
+  string cred = 1;
+  bool isAuthorized = 2;
 }

@@ -14,21 +14,30 @@ public final class ComponentProto {
   static final
   com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internal_static_com_vv_personal_prom_artifactory_proto_ComponentList_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+          internal_static_com_vv_personal_prom_artifactory_proto_Auth_descriptor;
+  static final
+  com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internal_static_com_vv_personal_prom_artifactory_proto_Auth_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.FileDescriptor
           descriptor;
 
   static {
     java.lang.String[] descriptorData = {
             "\n\017Component.proto\022&com.vv.personal.prom." +
-                    "artifactory.proto\"z\n\tComponent\022\023\n\013compon" +
-                    "entId\030\001 \001(\005\022X\n\023supportedComponents\030\002 \001(\016" +
-                    "2;.com.vv.personal.prom.artifactory.prot" +
-                    "o.SupportedComponents\"U\n\rComponentList\022D" +
-                    "\n\tcomponent\030\001 \003(\01321.com.vv.personal.prom" +
-                    ".artifactory.proto.Component*E\n\023Supporte" +
-                    "dComponents\022\006\n\002LT\020\000\022\006\n\002MB\020\001\022\006\n\002SP\020\002\022\006\n\002S" +
-                    "V\020\003\022\006\n\002SW\020\004\022\006\n\002RD\020\005B\022B\016ComponentProtoP\001b" +
-                    "\006proto3"
+                    "artifactory.proto\"\266\001\n\tComponent\022\023\n\013compo" +
+                    "nentId\030\001 \001(\005\022X\n\023supportedComponents\030\002 \001(" +
+                    "\0162;.com.vv.personal.prom.artifactory.pro" +
+                    "to.SupportedComponents\022:\n\004auth\030\003 \001(\0132,.c" +
+                    "om.vv.personal.prom.artifactory.proto.Au" +
+                    "th\"\221\001\n\rComponentList\022D\n\tcomponent\030\001 \003(\0132" +
+                    "1.com.vv.personal.prom.artifactory.proto" +
+                    ".Component\022:\n\004auth\030\002 \001(\0132,.com.vv.person" +
+                    "al.prom.artifactory.proto.Auth\"*\n\004Auth\022\014" +
+                    "\n\004cred\030\001 \001(\t\022\024\n\014isAuthorized\030\002 \001(\010*E\n\023Su" +
+                    "pportedComponents\022\006\n\002LT\020\000\022\006\n\002MB\020\001\022\006\n\002SP\020" +
+                    "\002\022\006\n\002SV\020\003\022\006\n\002SW\020\004\022\006\n\002RD\020\005B\022B\016ComponentPr" +
+                    "otoP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
             new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -47,13 +56,19 @@ public final class ComponentProto {
     internal_static_com_vv_personal_prom_artifactory_proto_Component_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_com_vv_personal_prom_artifactory_proto_Component_descriptor,
-            new java.lang.String[]{"ComponentId", "SupportedComponents",});
+            new java.lang.String[]{"ComponentId", "SupportedComponents", "Auth",});
     internal_static_com_vv_personal_prom_artifactory_proto_ComponentList_descriptor =
             getDescriptor().getMessageTypes().get(1);
     internal_static_com_vv_personal_prom_artifactory_proto_ComponentList_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_com_vv_personal_prom_artifactory_proto_ComponentList_descriptor,
-            new java.lang.String[]{"Component",});
+            new java.lang.String[]{"Component", "Auth",});
+    internal_static_com_vv_personal_prom_artifactory_proto_Auth_descriptor =
+            getDescriptor().getMessageTypes().get(2);
+    internal_static_com_vv_personal_prom_artifactory_proto_Auth_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_com_vv_personal_prom_artifactory_proto_Auth_descriptor,
+            new java.lang.String[]{"Cred", "IsAuthorized",});
   }
 
   private ComponentProto() {

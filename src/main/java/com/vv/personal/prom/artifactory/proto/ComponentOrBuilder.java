@@ -21,4 +21,19 @@ public interface ComponentOrBuilder extends
      * <code>.com.vv.personal.prom.artifactory.proto.SupportedComponents supportedComponents = 2;</code>
      */
     com.vv.personal.prom.artifactory.proto.SupportedComponents getSupportedComponents();
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 3;</code>
+     */
+    boolean hasAuth();
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 3;</code>
+     */
+    com.vv.personal.prom.artifactory.proto.Auth getAuth();
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 3;</code>
+     */
+    com.vv.personal.prom.artifactory.proto.AuthOrBuilder getAuthOrBuilder();
 }

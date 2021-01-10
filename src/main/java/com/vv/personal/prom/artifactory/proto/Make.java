@@ -23,6 +23,7 @@ public final class Make extends
   }
 
   public static final int MAKENAME_FIELD_NUMBER = 2;
+  public static final int AUTH_FIELD_NUMBER = 3;
   private static final long serialVersionUID = 0L;
   // @@protoc_insertion_point(class_scope:com.vv.personal.prom.artifactory.proto.Make)
   private static final com.vv.personal.prom.artifactory.proto.Make DEFAULT_INSTANCE;
@@ -43,6 +44,7 @@ public final class Make extends
 
   private int makeId_;
   private volatile java.lang.Object makeName_;
+  private com.vv.personal.prom.artifactory.proto.Auth auth_;
   private byte memoizedIsInitialized = -1;
 
   private Make(
@@ -73,6 +75,19 @@ public final class Make extends
             java.lang.String s = input.readStringRequireUtf8();
 
             makeName_ = s;
+            break;
+          }
+          case 26: {
+            com.vv.personal.prom.artifactory.proto.Auth.Builder subBuilder = null;
+            if (auth_ != null) {
+              subBuilder = auth_.toBuilder();
+            }
+            auth_ = input.readMessage(com.vv.personal.prom.artifactory.proto.Auth.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(auth_);
+              auth_ = subBuilder.buildPartial();
+            }
+
             break;
           }
           default: {
@@ -113,16 +128,6 @@ public final class Make extends
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  @java.lang.Override
-  public final boolean isInitialized() {
-    byte isInitialized = memoizedIsInitialized;
-    if (isInitialized == 1) return true;
-    if (isInitialized == 0) return false;
-
-    memoizedIsInitialized = 1;
-    return true;
-  }
-
   public static com.vv.personal.prom.artifactory.proto.Make parseFrom(
           com.google.protobuf.ByteString data)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -139,22 +144,6 @@ public final class Make extends
   public static com.vv.personal.prom.artifactory.proto.Make parseFrom(byte[] data)
           throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
-  }
-
-  @java.lang.Override
-  public int hashCode() {
-    if (memoizedHashCode != 0) {
-      return memoizedHashCode;
-    }
-    int hash = 41;
-    hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + MAKEID_FIELD_NUMBER;
-    hash = (53 * hash) + getMakeId();
-    hash = (37 * hash) + MAKENAME_FIELD_NUMBER;
-    hash = (53 * hash) + getMakeName().hashCode();
-    hash = (29 * hash) + unknownFields.hashCode();
-    memoizedHashCode = hash;
-    return hash;
   }
 
   public static com.vv.personal.prom.artifactory.proto.Make parseFrom(
@@ -281,6 +270,37 @@ public final class Make extends
     }
   }
 
+  /**
+   * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 3;</code>
+   */
+  public boolean hasAuth() {
+    return auth_ != null;
+  }
+
+  /**
+   * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 3;</code>
+   */
+  public com.vv.personal.prom.artifactory.proto.Auth getAuth() {
+    return auth_ == null ? com.vv.personal.prom.artifactory.proto.Auth.getDefaultInstance() : auth_;
+  }
+
+  /**
+   * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 3;</code>
+   */
+  public com.vv.personal.prom.artifactory.proto.AuthOrBuilder getAuthOrBuilder() {
+    return getAuth();
+  }
+
+  @java.lang.Override
+  public final boolean isInitialized() {
+    byte isInitialized = memoizedIsInitialized;
+    if (isInitialized == 1) return true;
+    if (isInitialized == 0) return false;
+
+    memoizedIsInitialized = 1;
+    return true;
+  }
+
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
           throws java.io.IOException {
@@ -289,6 +309,9 @@ public final class Make extends
     }
     if (!getMakeNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, makeName_);
+    }
+    if (auth_ != null) {
+      output.writeMessage(3, getAuth());
     }
     unknownFields.writeTo(output);
   }
@@ -305,6 +328,10 @@ public final class Make extends
     }
     if (!getMakeNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, makeName_);
+    }
+    if (auth_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+              .computeMessageSize(3, getAuth());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -326,13 +353,39 @@ public final class Make extends
             == other.getMakeId());
     result = result && getMakeName()
             .equals(other.getMakeName());
+    result = result && (hasAuth() == other.hasAuth());
+    if (hasAuth()) {
+      result = result && getAuth()
+              .equals(other.getAuth());
+    }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
 
   @java.lang.Override
+  public int hashCode() {
+    if (memoizedHashCode != 0) {
+      return memoizedHashCode;
+    }
+    int hash = 41;
+    hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + MAKEID_FIELD_NUMBER;
+    hash = (53 * hash) + getMakeId();
+    hash = (37 * hash) + MAKENAME_FIELD_NUMBER;
+    hash = (53 * hash) + getMakeName().hashCode();
+    if (hasAuth()) {
+      hash = (37 * hash) + AUTH_FIELD_NUMBER;
+      hash = (53 * hash) + getAuth().hashCode();
+    }
+    hash = (29 * hash) + unknownFields.hashCode();
+    memoizedHashCode = hash;
+    return hash;
+  }
+
+  @java.lang.Override
   public Builder newBuilderForType() {
-    return newBuilder(); }
+    return newBuilder();
+  }
 
   @java.lang.Override
   public Builder toBuilder() {
@@ -372,30 +425,21 @@ public final class Make extends
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      super(parent);
-      maybeForceBuilderInitialization();
-    }
+    private com.vv.personal.prom.artifactory.proto.Auth auth_ = null;
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
       }
     }
-    @java.lang.Override
-    public Builder clear() {
-      super.clear();
-      makeId_ = 0;
 
-      makeName_ = "";
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.vv.personal.prom.artifactory.proto.Auth, com.vv.personal.prom.artifactory.proto.Auth.Builder, com.vv.personal.prom.artifactory.proto.AuthOrBuilder> authBuilder_;
 
-      return this;
-    }
-
-    public static final com.google.protobuf.Descriptors.Descriptor
-    getDescriptor() {
-      return com.vv.personal.prom.artifactory.proto.MakeProto.internal_static_com_vv_personal_prom_artifactory_proto_Make_descriptor;
+    private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      super(parent);
+      maybeForceBuilderInitialization();
     }
 
     @java.lang.Override
@@ -412,13 +456,9 @@ public final class Make extends
       return result;
     }
 
-    @java.lang.Override
-    public com.vv.personal.prom.artifactory.proto.Make buildPartial() {
-      com.vv.personal.prom.artifactory.proto.Make result = new com.vv.personal.prom.artifactory.proto.Make(this);
-      result.makeId_ = makeId_;
-      result.makeName_ = makeName_;
-      onBuilt();
-      return result;
+    public static final com.google.protobuf.Descriptors.Descriptor
+    getDescriptor() {
+      return com.vv.personal.prom.artifactory.proto.MakeProto.internal_static_com_vv_personal_prom_artifactory_proto_Make_descriptor;
     }
 
     @java.lang.Override
@@ -435,9 +475,39 @@ public final class Make extends
     }
 
     @java.lang.Override
+    public Builder clear() {
+      super.clear();
+      makeId_ = 0;
+
+      makeName_ = "";
+
+      if (authBuilder_ == null) {
+        auth_ = null;
+      } else {
+        auth_ = null;
+        authBuilder_ = null;
+      }
+      return this;
+    }
+
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
     getDescriptorForType() {
       return com.vv.personal.prom.artifactory.proto.MakeProto.internal_static_com_vv_personal_prom_artifactory_proto_Make_descriptor;
+    }
+
+    @java.lang.Override
+    public com.vv.personal.prom.artifactory.proto.Make buildPartial() {
+      com.vv.personal.prom.artifactory.proto.Make result = new com.vv.personal.prom.artifactory.proto.Make(this);
+      result.makeId_ = makeId_;
+      result.makeName_ = makeName_;
+      if (authBuilder_ == null) {
+        result.auth_ = auth_;
+      } else {
+        result.auth_ = authBuilder_.build();
+      }
+      onBuilt();
+      return result;
     }
 
     @java.lang.Override
@@ -460,29 +530,15 @@ public final class Make extends
     }
 
     @java.lang.Override
+    public final boolean isInitialized() {
+      return true;
+    }
+
+    @java.lang.Override
     public Builder setRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             int index, java.lang.Object value) {
       return super.setRepeatedField(field, index, value);
-    }
-
-    public Builder mergeFrom(com.vv.personal.prom.artifactory.proto.Make other) {
-      if (other == com.vv.personal.prom.artifactory.proto.Make.getDefaultInstance()) return this;
-      if (other.getMakeId() != 0) {
-        setMakeId(other.getMakeId());
-      }
-      if (!other.getMakeName().isEmpty()) {
-        makeName_ = other.makeName_;
-        onChanged();
-      }
-      this.mergeUnknownFields(other.unknownFields);
-      onChanged();
-      return this;
-    }
-
-    @java.lang.Override
-    public final boolean isInitialized() {
-      return true;
     }
 
     @java.lang.Override
@@ -495,11 +551,28 @@ public final class Make extends
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.vv.personal.prom.artifactory.proto.Make) {
-        return mergeFrom((com.vv.personal.prom.artifactory.proto.Make)other);
+        return mergeFrom((com.vv.personal.prom.artifactory.proto.Make) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
+    }
+
+    public Builder mergeFrom(com.vv.personal.prom.artifactory.proto.Make other) {
+      if (other == com.vv.personal.prom.artifactory.proto.Make.getDefaultInstance()) return this;
+      if (other.getMakeId() != 0) {
+        setMakeId(other.getMakeId());
+      }
+      if (!other.getMakeName().isEmpty()) {
+        makeName_ = other.makeName_;
+        onChanged();
+      }
+      if (other.hasAuth()) {
+        mergeAuth(other.getAuth());
+      }
+      this.mergeUnknownFields(other.unknownFields);
+      onChanged();
+      return this;
     }
 
     @java.lang.Override
@@ -523,7 +596,7 @@ public final class Make extends
 
     /**
      * <pre>
-     * assuming that there'll never be need to go to long
+     *assuming that there'll never be need to go to long
      * </pre>
      *
      * <code>int32 makeId = 1;</code>
@@ -534,7 +607,7 @@ public final class Make extends
 
     /**
      * <pre>
-     * assuming that there'll never be need to go to long
+     *assuming that there'll never be need to go to long
      * </pre>
      *
      * <code>int32 makeId = 1;</code>
@@ -630,6 +703,128 @@ public final class Make extends
       makeName_ = getDefaultInstance().getMakeName();
       onChanged();
       return this;
+    }
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 3;</code>
+     */
+    public boolean hasAuth() {
+      return authBuilder_ != null || auth_ != null;
+    }
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 3;</code>
+     */
+    public com.vv.personal.prom.artifactory.proto.Auth getAuth() {
+      if (authBuilder_ == null) {
+        return auth_ == null ? com.vv.personal.prom.artifactory.proto.Auth.getDefaultInstance() : auth_;
+      } else {
+        return authBuilder_.getMessage();
+      }
+    }
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 3;</code>
+     */
+    public Builder setAuth(com.vv.personal.prom.artifactory.proto.Auth value) {
+      if (authBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        auth_ = value;
+        onChanged();
+      } else {
+        authBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 3;</code>
+     */
+    public Builder setAuth(
+            com.vv.personal.prom.artifactory.proto.Auth.Builder builderForValue) {
+      if (authBuilder_ == null) {
+        auth_ = builderForValue.build();
+        onChanged();
+      } else {
+        authBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 3;</code>
+     */
+    public Builder mergeAuth(com.vv.personal.prom.artifactory.proto.Auth value) {
+      if (authBuilder_ == null) {
+        if (auth_ != null) {
+          auth_ =
+                  com.vv.personal.prom.artifactory.proto.Auth.newBuilder(auth_).mergeFrom(value).buildPartial();
+        } else {
+          auth_ = value;
+        }
+        onChanged();
+      } else {
+        authBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 3;</code>
+     */
+    public Builder clearAuth() {
+      if (authBuilder_ == null) {
+        auth_ = null;
+        onChanged();
+      } else {
+        auth_ = null;
+        authBuilder_ = null;
+      }
+
+      return this;
+    }
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 3;</code>
+     */
+    public com.vv.personal.prom.artifactory.proto.Auth.Builder getAuthBuilder() {
+
+      onChanged();
+      return getAuthFieldBuilder().getBuilder();
+    }
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 3;</code>
+     */
+    public com.vv.personal.prom.artifactory.proto.AuthOrBuilder getAuthOrBuilder() {
+      if (authBuilder_ != null) {
+        return authBuilder_.getMessageOrBuilder();
+      } else {
+        return auth_ == null ?
+                com.vv.personal.prom.artifactory.proto.Auth.getDefaultInstance() : auth_;
+      }
+    }
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.vv.personal.prom.artifactory.proto.Auth, com.vv.personal.prom.artifactory.proto.Auth.Builder, com.vv.personal.prom.artifactory.proto.AuthOrBuilder>
+    getAuthFieldBuilder() {
+      if (authBuilder_ == null) {
+        authBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                com.vv.personal.prom.artifactory.proto.Auth, com.vv.personal.prom.artifactory.proto.Auth.Builder, com.vv.personal.prom.artifactory.proto.AuthOrBuilder>(
+                getAuth(),
+                getParentForChildren(),
+                isClean());
+        auth_ = null;
+      }
+      return authBuilder_;
     }
 
     @java.lang.Override

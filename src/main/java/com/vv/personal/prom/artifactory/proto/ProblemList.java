@@ -21,6 +21,11 @@ public final class ProblemList extends
     super(builder);
   }
 
+  private ProblemList() {
+    problem_ = java.util.Collections.emptyList();
+  }
+
+  public static final int AUTH_FIELD_NUMBER = 2;
   private static final long serialVersionUID = 0L;
   // @@protoc_insertion_point(class_scope:com.vv.personal.prom.artifactory.proto.ProblemList)
   private static final com.vv.personal.prom.artifactory.proto.ProblemList DEFAULT_INSTANCE;
@@ -39,12 +44,33 @@ public final class ProblemList extends
     DEFAULT_INSTANCE = new com.vv.personal.prom.artifactory.proto.ProblemList();
   }
 
+  private int bitField0_;
   private java.util.List<com.vv.personal.prom.artifactory.proto.Problem> problem_;
-  private byte memoizedIsInitialized = -1;
 
-  private ProblemList() {
-    problem_ = java.util.Collections.emptyList();
+  /**
+   * <code>repeated .com.vv.personal.prom.artifactory.proto.Problem problem = 1;</code>
+   */
+  public java.util.List<com.vv.personal.prom.artifactory.proto.Problem> getProblemList() {
+    return problem_;
   }
+
+  private com.vv.personal.prom.artifactory.proto.Auth auth_;
+
+  /**
+   * <code>repeated .com.vv.personal.prom.artifactory.proto.Problem problem = 1;</code>
+   */
+  public int getProblemCount() {
+    return problem_.size();
+  }
+
+  /**
+   * <code>repeated .com.vv.personal.prom.artifactory.proto.Problem problem = 1;</code>
+   */
+  public com.vv.personal.prom.artifactory.proto.Problem getProblem(int index) {
+    return problem_.get(index);
+  }
+
+  private byte memoizedIsInitialized = -1;
 
   private ProblemList(
           com.google.protobuf.CodedInputStream input,
@@ -72,6 +98,19 @@ public final class ProblemList extends
             }
             problem_.add(
                     input.readMessage(com.vv.personal.prom.artifactory.proto.Problem.parser(), extensionRegistry));
+            break;
+          }
+          case 18: {
+            com.vv.personal.prom.artifactory.proto.Auth.Builder subBuilder = null;
+            if (auth_ != null) {
+              subBuilder = auth_.toBuilder();
+            }
+            auth_ = input.readMessage(com.vv.personal.prom.artifactory.proto.Auth.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(auth_);
+              auth_ = subBuilder.buildPartial();
+            }
+
             break;
           }
           default: {
@@ -126,16 +165,6 @@ public final class ProblemList extends
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
-  }
-
-  @java.lang.Override
-  public final boolean isInitialized() {
-    byte isInitialized = memoizedIsInitialized;
-    if (isInitialized == 1) return true;
-    if (isInitialized == 0) return false;
-
-    memoizedIsInitialized = 1;
-    return true;
   }
 
   public static com.vv.personal.prom.artifactory.proto.ProblemList parseFrom(byte[] data)
@@ -193,6 +222,14 @@ public final class ProblemList extends
             .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(com.vv.personal.prom.artifactory.proto.ProblemList prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
   public static com.vv.personal.prom.artifactory.proto.ProblemList getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
@@ -218,30 +255,9 @@ public final class ProblemList extends
   /**
    * <code>repeated .com.vv.personal.prom.artifactory.proto.Problem problem = 1;</code>
    */
-  public java.util.List<com.vv.personal.prom.artifactory.proto.Problem> getProblemList() {
-    return problem_;
-  }
-
-  /**
-   * <code>repeated .com.vv.personal.prom.artifactory.proto.Problem problem = 1;</code>
-   */
   public java.util.List<? extends com.vv.personal.prom.artifactory.proto.ProblemOrBuilder>
   getProblemOrBuilderList() {
     return problem_;
-  }
-
-  /**
-   * <code>repeated .com.vv.personal.prom.artifactory.proto.Problem problem = 1;</code>
-   */
-  public int getProblemCount() {
-    return problem_.size();
-  }
-
-  /**
-   * <code>repeated .com.vv.personal.prom.artifactory.proto.Problem problem = 1;</code>
-   */
-  public com.vv.personal.prom.artifactory.proto.Problem getProblem(int index) {
-    return problem_.get(index);
   }
 
   /**
@@ -252,12 +268,35 @@ public final class ProblemList extends
     return problem_.get(index);
   }
 
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
+  /**
+   * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 2;</code>
+   */
+  public boolean hasAuth() {
+    return auth_ != null;
   }
 
-  public static Builder newBuilder(com.vv.personal.prom.artifactory.proto.ProblemList prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  /**
+   * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 2;</code>
+   */
+  public com.vv.personal.prom.artifactory.proto.Auth getAuth() {
+    return auth_ == null ? com.vv.personal.prom.artifactory.proto.Auth.getDefaultInstance() : auth_;
+  }
+
+  /**
+   * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 2;</code>
+   */
+  public com.vv.personal.prom.artifactory.proto.AuthOrBuilder getAuthOrBuilder() {
+    return getAuth();
+  }
+
+  @java.lang.Override
+  public final boolean isInitialized() {
+    byte isInitialized = memoizedIsInitialized;
+    if (isInitialized == 1) return true;
+    if (isInitialized == 0) return false;
+
+    memoizedIsInitialized = 1;
+    return true;
   }
 
   @java.lang.Override
@@ -265,6 +304,9 @@ public final class ProblemList extends
           throws java.io.IOException {
     for (int i = 0; i < problem_.size(); i++) {
       output.writeMessage(1, problem_.get(i));
+    }
+    if (auth_ != null) {
+      output.writeMessage(2, getAuth());
     }
     unknownFields.writeTo(output);
   }
@@ -278,6 +320,10 @@ public final class ProblemList extends
     for (int i = 0; i < problem_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
               .computeMessageSize(1, problem_.get(i));
+    }
+    if (auth_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+              .computeMessageSize(2, getAuth());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -297,6 +343,11 @@ public final class ProblemList extends
     boolean result = true;
     result = result && getProblemList()
             .equals(other.getProblemList());
+    result = result && (hasAuth() == other.hasAuth());
+    if (hasAuth()) {
+      result = result && getAuth()
+              .equals(other.getAuth());
+    }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -312,15 +363,17 @@ public final class ProblemList extends
       hash = (37 * hash) + PROBLEM_FIELD_NUMBER;
       hash = (53 * hash) + getProblemList().hashCode();
     }
+    if (hasAuth()) {
+      hash = (37 * hash) + AUTH_FIELD_NUMBER;
+      hash = (53 * hash) + getAuth().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() {
-    return newBuilder();
-  }
+  public Builder newBuilderForType() { return newBuilder(); }
 
   @java.lang.Override
   public Builder toBuilder() {
@@ -359,14 +412,24 @@ public final class ProblemList extends
     private int bitField0_;
     private java.util.List<com.vv.personal.prom.artifactory.proto.Problem> problem_ =
             java.util.Collections.emptyList();
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.vv.personal.prom.artifactory.proto.Problem, com.vv.personal.prom.artifactory.proto.Problem.Builder, com.vv.personal.prom.artifactory.proto.ProblemOrBuilder> problemBuilder_;
+    private com.vv.personal.prom.artifactory.proto.Auth auth_ = null;
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3
+              .alwaysUseFieldBuilders) {
+        getProblemFieldBuilder();
+      }
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.vv.personal.prom.artifactory.proto.Auth, com.vv.personal.prom.artifactory.proto.Auth.Builder, com.vv.personal.prom.artifactory.proto.AuthOrBuilder> authBuilder_;
 
     // Construct using com.vv.personal.prom.artifactory.proto.ProblemList.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
-
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.vv.personal.prom.artifactory.proto.Problem, com.vv.personal.prom.artifactory.proto.Problem.Builder, com.vv.personal.prom.artifactory.proto.ProblemOrBuilder> problemBuilder_;
 
     private Builder(
             com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
@@ -388,6 +451,35 @@ public final class ProblemList extends
     }
 
     @java.lang.Override
+    public Builder clone() {
+      return super.clone();
+    }
+
+    @java.lang.Override
+    public Builder clear() {
+      super.clear();
+      if (problemBuilder_ == null) {
+        problem_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      } else {
+        problemBuilder_.clear();
+      }
+      if (authBuilder_ == null) {
+        auth_ = null;
+      } else {
+        auth_ = null;
+        authBuilder_ = null;
+      }
+      return this;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor
+    getDescriptorForType() {
+      return com.vv.personal.prom.artifactory.proto.ProblemProto.internal_static_com_vv_personal_prom_artifactory_proto_ProblemList_descriptor;
+    }
+
+    @java.lang.Override
     public com.vv.personal.prom.artifactory.proto.ProblemList getDefaultInstanceForType() {
       return com.vv.personal.prom.artifactory.proto.ProblemList.getDefaultInstance();
     }
@@ -401,35 +493,11 @@ public final class ProblemList extends
       return result;
     }
 
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-        getProblemFieldBuilder();
-      }
-    }
-
-    @java.lang.Override
-    public Builder clear() {
-      super.clear();
-      if (problemBuilder_ == null) {
-        problem_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      } else {
-        problemBuilder_.clear();
-      }
-      return this;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-    getDescriptorForType() {
-      return com.vv.personal.prom.artifactory.proto.ProblemProto.internal_static_com_vv_personal_prom_artifactory_proto_ProblemList_descriptor;
-    }
-
     @java.lang.Override
     public com.vv.personal.prom.artifactory.proto.ProblemList buildPartial() {
       com.vv.personal.prom.artifactory.proto.ProblemList result = new com.vv.personal.prom.artifactory.proto.ProblemList(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (problemBuilder_ == null) {
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
           problem_ = java.util.Collections.unmodifiableList(problem_);
@@ -439,13 +507,24 @@ public final class ProblemList extends
       } else {
         result.problem_ = problemBuilder_.build();
       }
+      if (authBuilder_ == null) {
+        result.auth_ = auth_;
+      } else {
+        result.auth_ = authBuilder_.build();
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
 
     @java.lang.Override
-    public Builder clone() {
-      return super.clone();
+    public Builder mergeFrom(com.google.protobuf.Message other) {
+      if (other instanceof com.vv.personal.prom.artifactory.proto.ProblemList) {
+        return mergeFrom((com.vv.personal.prom.artifactory.proto.ProblemList) other);
+      } else {
+        super.mergeFrom(other);
+        return this;
+      }
     }
 
     @java.lang.Override
@@ -453,6 +532,11 @@ public final class ProblemList extends
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
       return super.setField(field, value);
+    }
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      return true;
     }
 
     @java.lang.Override
@@ -479,16 +563,6 @@ public final class ProblemList extends
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
       return super.addRepeatedField(field, value);
-    }
-
-    @java.lang.Override
-    public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.vv.personal.prom.artifactory.proto.ProblemList) {
-        return mergeFrom((com.vv.personal.prom.artifactory.proto.ProblemList)other);
-      } else {
-        super.mergeFrom(other);
-        return this;
-      }
     }
 
     public Builder mergeFrom(com.vv.personal.prom.artifactory.proto.ProblemList other) {
@@ -519,40 +593,12 @@ public final class ProblemList extends
           }
         }
       }
+      if (other.hasAuth()) {
+        mergeAuth(other.getAuth());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
-    }
-
-    @java.lang.Override
-    public final boolean isInitialized() {
-      return true;
-    }
-
-    @java.lang.Override
-    public Builder mergeFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-      com.vv.personal.prom.artifactory.proto.ProblemList parsedMessage = null;
-      try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.vv.personal.prom.artifactory.proto.ProblemList) e.getUnfinishedMessage();
-        throw e.unwrapIOException();
-      } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
-      return this;
-    }
-
-    private void ensureProblemIsMutable() {
-      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-        problem_ = new java.util.ArrayList<com.vv.personal.prom.artifactory.proto.Problem>(problem_);
-        bitField0_ |= 0x00000001;
-      }
     }
 
     /**
@@ -588,6 +634,49 @@ public final class ProblemList extends
       }
     }
 
+    @java.lang.Override
+    public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      com.vv.personal.prom.artifactory.proto.ProblemList parsedMessage = null;
+      try {
+        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        parsedMessage = (com.vv.personal.prom.artifactory.proto.ProblemList) e.getUnfinishedMessage();
+        throw e.unwrapIOException();
+      } finally {
+        if (parsedMessage != null) {
+          mergeFrom(parsedMessage);
+        }
+      }
+      return this;
+    }
+
+    private void ensureProblemIsMutable() {
+      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+        problem_ = new java.util.ArrayList<com.vv.personal.prom.artifactory.proto.Problem>(problem_);
+        bitField0_ |= 0x00000001;
+      }
+    }
+
+    /**
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Problem problem = 1;</code>
+     */
+    public Builder addProblem(com.vv.personal.prom.artifactory.proto.Problem value) {
+      if (problemBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureProblemIsMutable();
+        problem_.add(value);
+        onChanged();
+      } else {
+        problemBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
     /**
      * <code>repeated .com.vv.personal.prom.artifactory.proto.Problem problem = 1;</code>
      */
@@ -617,23 +706,6 @@ public final class ProblemList extends
         onChanged();
       } else {
         problemBuilder_.setMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-
-    /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Problem problem = 1;</code>
-     */
-    public Builder addProblem(com.vv.personal.prom.artifactory.proto.Problem value) {
-      if (problemBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureProblemIsMutable();
-        problem_.add(value);
-        onChanged();
-      } else {
-        problemBuilder_.addMessage(value);
       }
       return this;
     }
@@ -674,6 +746,34 @@ public final class ProblemList extends
     /**
      * <code>repeated .com.vv.personal.prom.artifactory.proto.Problem problem = 1;</code>
      */
+    public Builder clearProblem() {
+      if (problemBuilder_ == null) {
+        problem_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+      } else {
+        problemBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Problem problem = 1;</code>
+     */
+    public Builder removeProblem(int index) {
+      if (problemBuilder_ == null) {
+        ensureProblemIsMutable();
+        problem_.remove(index);
+        onChanged();
+      } else {
+        problemBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Problem problem = 1;</code>
+     */
     public Builder addProblem(
             int index, com.vv.personal.prom.artifactory.proto.Problem.Builder builderForValue) {
       if (problemBuilder_ == null) {
@@ -698,34 +798,6 @@ public final class ProblemList extends
         onChanged();
       } else {
         problemBuilder_.addAllMessages(values);
-      }
-      return this;
-    }
-
-    /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Problem problem = 1;</code>
-     */
-    public Builder clearProblem() {
-      if (problemBuilder_ == null) {
-        problem_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-      } else {
-        problemBuilder_.clear();
-      }
-      return this;
-    }
-
-    /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Problem problem = 1;</code>
-     */
-    public Builder removeProblem(int index) {
-      if (problemBuilder_ == null) {
-        ensureProblemIsMutable();
-        problem_.remove(index);
-        onChanged();
-      } else {
-        problemBuilder_.remove(index);
       }
       return this;
     }
@@ -800,6 +872,128 @@ public final class ProblemList extends
         problem_ = null;
       }
       return problemBuilder_;
+    }
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 2;</code>
+     */
+    public boolean hasAuth() {
+      return authBuilder_ != null || auth_ != null;
+    }
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 2;</code>
+     */
+    public com.vv.personal.prom.artifactory.proto.Auth getAuth() {
+      if (authBuilder_ == null) {
+        return auth_ == null ? com.vv.personal.prom.artifactory.proto.Auth.getDefaultInstance() : auth_;
+      } else {
+        return authBuilder_.getMessage();
+      }
+    }
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 2;</code>
+     */
+    public Builder setAuth(com.vv.personal.prom.artifactory.proto.Auth value) {
+      if (authBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        auth_ = value;
+        onChanged();
+      } else {
+        authBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 2;</code>
+     */
+    public Builder setAuth(
+            com.vv.personal.prom.artifactory.proto.Auth.Builder builderForValue) {
+      if (authBuilder_ == null) {
+        auth_ = builderForValue.build();
+        onChanged();
+      } else {
+        authBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 2;</code>
+     */
+    public Builder mergeAuth(com.vv.personal.prom.artifactory.proto.Auth value) {
+      if (authBuilder_ == null) {
+        if (auth_ != null) {
+          auth_ =
+                  com.vv.personal.prom.artifactory.proto.Auth.newBuilder(auth_).mergeFrom(value).buildPartial();
+        } else {
+          auth_ = value;
+        }
+        onChanged();
+      } else {
+        authBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 2;</code>
+     */
+    public Builder clearAuth() {
+      if (authBuilder_ == null) {
+        auth_ = null;
+        onChanged();
+      } else {
+        auth_ = null;
+        authBuilder_ = null;
+      }
+
+      return this;
+    }
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 2;</code>
+     */
+    public com.vv.personal.prom.artifactory.proto.Auth.Builder getAuthBuilder() {
+
+      onChanged();
+      return getAuthFieldBuilder().getBuilder();
+    }
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 2;</code>
+     */
+    public com.vv.personal.prom.artifactory.proto.AuthOrBuilder getAuthOrBuilder() {
+      if (authBuilder_ != null) {
+        return authBuilder_.getMessageOrBuilder();
+      } else {
+        return auth_ == null ?
+                com.vv.personal.prom.artifactory.proto.Auth.getDefaultInstance() : auth_;
+      }
+    }
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.vv.personal.prom.artifactory.proto.Auth, com.vv.personal.prom.artifactory.proto.Auth.Builder, com.vv.personal.prom.artifactory.proto.AuthOrBuilder>
+    getAuthFieldBuilder() {
+      if (authBuilder_ == null) {
+        authBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                com.vv.personal.prom.artifactory.proto.Auth, com.vv.personal.prom.artifactory.proto.Auth.Builder, com.vv.personal.prom.artifactory.proto.AuthOrBuilder>(
+                getAuth(),
+                getParentForChildren(),
+                isClean());
+        auth_ = null;
+      }
+      return authBuilder_;
     }
 
     @java.lang.Override

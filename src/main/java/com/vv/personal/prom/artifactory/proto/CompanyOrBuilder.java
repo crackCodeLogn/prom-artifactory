@@ -79,4 +79,19 @@ public interface CompanyOrBuilder extends
      */
     com.google.protobuf.ByteString
     getContactNumbersBytes(int index);
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 5;</code>
+     */
+    boolean hasAuth();
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 5;</code>
+     */
+    com.vv.personal.prom.artifactory.proto.Auth getAuth();
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 5;</code>
+     */
+    com.vv.personal.prom.artifactory.proto.AuthOrBuilder getAuthOrBuilder();
 }

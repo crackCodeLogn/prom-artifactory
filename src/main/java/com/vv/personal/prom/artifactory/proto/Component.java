@@ -17,7 +17,13 @@ public final class Component extends
     super(builder);
   }
 
+  private Component() {
+    componentId_ = 0;
+    supportedComponents_ = 0;
+  }
+
   public static final int SUPPORTEDCOMPONENTS_FIELD_NUMBER = 2;
+  public static final int AUTH_FIELD_NUMBER = 3;
   private static final long serialVersionUID = 0L;
   // @@protoc_insertion_point(class_scope:com.vv.personal.prom.artifactory.proto.Component)
   private static final com.vv.personal.prom.artifactory.proto.Component DEFAULT_INSTANCE;
@@ -36,14 +42,34 @@ public final class Component extends
     DEFAULT_INSTANCE = new com.vv.personal.prom.artifactory.proto.Component();
   }
 
+  /**
+   * <code>int32 componentId = 1;</code>
+   */
+  public int getComponentId() {
+    return componentId_;
+  }
+
   private int componentId_;
   private int supportedComponents_;
-  private byte memoizedIsInitialized = -1;
 
-  private Component() {
-    componentId_ = 0;
-    supportedComponents_ = 0;
+  /**
+   * <code>.com.vv.personal.prom.artifactory.proto.SupportedComponents supportedComponents = 2;</code>
+   */
+  public int getSupportedComponentsValue() {
+    return supportedComponents_;
   }
+
+  /**
+   * <code>.com.vv.personal.prom.artifactory.proto.SupportedComponents supportedComponents = 2;</code>
+   */
+  public com.vv.personal.prom.artifactory.proto.SupportedComponents getSupportedComponents() {
+    @SuppressWarnings("deprecation")
+    com.vv.personal.prom.artifactory.proto.SupportedComponents result = com.vv.personal.prom.artifactory.proto.SupportedComponents.valueOf(supportedComponents_);
+    return result == null ? com.vv.personal.prom.artifactory.proto.SupportedComponents.UNRECOGNIZED : result;
+  }
+
+  private com.vv.personal.prom.artifactory.proto.Auth auth_;
+  private byte memoizedIsInitialized = -1;
 
   private Component(
           com.google.protobuf.CodedInputStream input,
@@ -73,6 +99,19 @@ public final class Component extends
             int rawValue = input.readEnum();
 
             supportedComponents_ = rawValue;
+            break;
+          }
+          case 26: {
+            com.vv.personal.prom.artifactory.proto.Auth.Builder subBuilder = null;
+            if (auth_ != null) {
+              subBuilder = auth_.toBuilder();
+            }
+            auth_ = input.readMessage(com.vv.personal.prom.artifactory.proto.Auth.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(auth_);
+              auth_ = subBuilder.buildPartial();
+            }
+
             break;
           }
           default: {
@@ -111,16 +150,6 @@ public final class Component extends
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
-  }
-
-  @java.lang.Override
-  public final boolean isInitialized() {
-    byte isInitialized = memoizedIsInitialized;
-    if (isInitialized == 1) return true;
-    if (isInitialized == 0) return false;
-
-    memoizedIsInitialized = 1;
-    return true;
   }
 
   public static com.vv.personal.prom.artifactory.proto.Component parseFrom(
@@ -191,6 +220,14 @@ public final class Component extends
             .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(com.vv.personal.prom.artifactory.proto.Component prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
   public static com.vv.personal.prom.artifactory.proto.Component getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
@@ -214,32 +251,34 @@ public final class Component extends
   }
 
   /**
-   * <code>int32 componentId = 1;</code>
+   * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 3;</code>
    */
-  public int getComponentId() {
-    return componentId_;
+  public boolean hasAuth() {
+    return auth_ != null;
   }
 
   /**
-   * <code>.com.vv.personal.prom.artifactory.proto.SupportedComponents supportedComponents = 2;</code>
+   * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 3;</code>
    */
-  public int getSupportedComponentsValue() {
-    return supportedComponents_;
+  public com.vv.personal.prom.artifactory.proto.Auth getAuth() {
+    return auth_ == null ? com.vv.personal.prom.artifactory.proto.Auth.getDefaultInstance() : auth_;
   }
 
   /**
-   * <code>.com.vv.personal.prom.artifactory.proto.SupportedComponents supportedComponents = 2;</code>
+   * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 3;</code>
    */
-  public com.vv.personal.prom.artifactory.proto.SupportedComponents getSupportedComponents() {
-    @SuppressWarnings("deprecation")
-    com.vv.personal.prom.artifactory.proto.SupportedComponents result = com.vv.personal.prom.artifactory.proto.SupportedComponents.valueOf(supportedComponents_);
-    return result == null ? com.vv.personal.prom.artifactory.proto.SupportedComponents.UNRECOGNIZED : result;
+  public com.vv.personal.prom.artifactory.proto.AuthOrBuilder getAuthOrBuilder() {
+    return getAuth();
   }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.vv.personal.prom.artifactory.proto.Component prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+
+  @java.lang.Override
+  public final boolean isInitialized() {
+    byte isInitialized = memoizedIsInitialized;
+    if (isInitialized == 1) return true;
+    if (isInitialized == 0) return false;
+
+    memoizedIsInitialized = 1;
+    return true;
   }
 
   @java.lang.Override
@@ -250,6 +289,9 @@ public final class Component extends
     }
     if (supportedComponents_ != com.vv.personal.prom.artifactory.proto.SupportedComponents.LT.getNumber()) {
       output.writeEnum(2, supportedComponents_);
+    }
+    if (auth_ != null) {
+      output.writeMessage(3, getAuth());
     }
     unknownFields.writeTo(output);
   }
@@ -267,6 +309,10 @@ public final class Component extends
     if (supportedComponents_ != com.vv.personal.prom.artifactory.proto.SupportedComponents.LT.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
               .computeEnumSize(2, supportedComponents_);
+    }
+    if (auth_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+              .computeMessageSize(3, getAuth());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -287,6 +333,11 @@ public final class Component extends
     result = result && (getComponentId()
             == other.getComponentId());
     result = result && supportedComponents_ == other.supportedComponents_;
+    result = result && (hasAuth() == other.hasAuth());
+    if (hasAuth()) {
+      result = result && getAuth()
+              .equals(other.getAuth());
+    }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -302,14 +353,17 @@ public final class Component extends
     hash = (53 * hash) + getComponentId();
     hash = (37 * hash) + SUPPORTEDCOMPONENTS_FIELD_NUMBER;
     hash = (53 * hash) + supportedComponents_;
+    if (hasAuth()) {
+      hash = (37 * hash) + AUTH_FIELD_NUMBER;
+      hash = (53 * hash) + getAuth().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() {
-    return newBuilder(); }
+  public Builder newBuilderForType() { return newBuilder(); }
 
   @java.lang.Override
   public Builder toBuilder() {
@@ -349,11 +403,7 @@ public final class Component extends
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      super(parent);
-      maybeForceBuilderInitialization();
-    }
+    private com.vv.personal.prom.artifactory.proto.Auth auth_ = null;
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
@@ -361,17 +411,13 @@ public final class Component extends
       }
     }
 
-    public static final com.google.protobuf.Descriptors.Descriptor
-    getDescriptor() {
-      return com.vv.personal.prom.artifactory.proto.ComponentProto.internal_static_com_vv_personal_prom_artifactory_proto_Component_descriptor;
-    }
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.vv.personal.prom.artifactory.proto.Auth, com.vv.personal.prom.artifactory.proto.Auth.Builder, com.vv.personal.prom.artifactory.proto.AuthOrBuilder> authBuilder_;
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-    internalGetFieldAccessorTable() {
-      return com.vv.personal.prom.artifactory.proto.ComponentProto.internal_static_com_vv_personal_prom_artifactory_proto_Component_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                      com.vv.personal.prom.artifactory.proto.Component.class, com.vv.personal.prom.artifactory.proto.Component.Builder.class);
+    private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      super(parent);
+      maybeForceBuilderInitialization();
     }
 
     @java.lang.Override
@@ -388,6 +434,19 @@ public final class Component extends
       return result;
     }
 
+    public static final com.google.protobuf.Descriptors.Descriptor
+    getDescriptor() {
+      return com.vv.personal.prom.artifactory.proto.ComponentProto.internal_static_com_vv_personal_prom_artifactory_proto_Component_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    internalGetFieldAccessorTable() {
+      return com.vv.personal.prom.artifactory.proto.ComponentProto.internal_static_com_vv_personal_prom_artifactory_proto_Component_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                      com.vv.personal.prom.artifactory.proto.Component.class, com.vv.personal.prom.artifactory.proto.Component.Builder.class);
+    }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -395,12 +454,13 @@ public final class Component extends
 
       supportedComponents_ = 0;
 
+      if (authBuilder_ == null) {
+        auth_ = null;
+      } else {
+        auth_ = null;
+        authBuilder_ = null;
+      }
       return this;
-    }
-
-    @java.lang.Override
-    public Builder clone() {
-      return super.clone();
     }
 
     @java.lang.Override
@@ -414,8 +474,18 @@ public final class Component extends
       com.vv.personal.prom.artifactory.proto.Component result = new com.vv.personal.prom.artifactory.proto.Component(this);
       result.componentId_ = componentId_;
       result.supportedComponents_ = supportedComponents_;
+      if (authBuilder_ == null) {
+        result.auth_ = auth_;
+      } else {
+        result.auth_ = authBuilder_.build();
+      }
       onBuilt();
       return result;
+    }
+
+    @java.lang.Override
+    public Builder clone() {
+      return super.clone();
     }
 
     @java.lang.Override
@@ -452,11 +522,6 @@ public final class Component extends
     }
 
     @java.lang.Override
-    public final boolean isInitialized() {
-      return true;
-    }
-
-    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.vv.personal.prom.artifactory.proto.Component) {
         return mergeFrom((com.vv.personal.prom.artifactory.proto.Component) other);
@@ -464,6 +529,13 @@ public final class Component extends
         super.mergeFrom(other);
         return this;
       }
+    }
+
+    /**
+     * <code>int32 componentId = 1;</code>
+     */
+    public int getComponentId() {
+      return componentId_;
     }
 
     public Builder mergeFrom(com.vv.personal.prom.artifactory.proto.Component other) {
@@ -474,9 +546,17 @@ public final class Component extends
       if (other.supportedComponents_ != 0) {
         setSupportedComponentsValue(other.getSupportedComponentsValue());
       }
+      if (other.hasAuth()) {
+        mergeAuth(other.getAuth());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
+    }
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      return true;
     }
 
     @java.lang.Override
@@ -497,12 +577,28 @@ public final class Component extends
       }
       return this;
     }
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.SupportedComponents supportedComponents = 2;</code>
+     */
+    public int getSupportedComponentsValue() {
+      return supportedComponents_;
+    }
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.SupportedComponents supportedComponents = 2;</code>
+     */
+    public Builder setSupportedComponentsValue(int value) {
+      supportedComponents_ = value;
+      onChanged();
+      return this;
+    }
 
     /**
-     * <code>int32 componentId = 1;</code>
+     * <code>.com.vv.personal.prom.artifactory.proto.SupportedComponents supportedComponents = 2;</code>
      */
-    public int getComponentId() {
-      return componentId_;
+    public com.vv.personal.prom.artifactory.proto.SupportedComponents getSupportedComponents() {
+      @SuppressWarnings("deprecation")
+      com.vv.personal.prom.artifactory.proto.SupportedComponents result = com.vv.personal.prom.artifactory.proto.SupportedComponents.valueOf(supportedComponents_);
+      return result == null ? com.vv.personal.prom.artifactory.proto.SupportedComponents.UNRECOGNIZED : result;
     }
 
     /**
@@ -528,31 +624,6 @@ public final class Component extends
     /**
      * <code>.com.vv.personal.prom.artifactory.proto.SupportedComponents supportedComponents = 2;</code>
      */
-    public int getSupportedComponentsValue() {
-      return supportedComponents_;
-    }
-
-    /**
-     * <code>.com.vv.personal.prom.artifactory.proto.SupportedComponents supportedComponents = 2;</code>
-     */
-    public Builder setSupportedComponentsValue(int value) {
-      supportedComponents_ = value;
-      onChanged();
-      return this;
-    }
-
-    /**
-     * <code>.com.vv.personal.prom.artifactory.proto.SupportedComponents supportedComponents = 2;</code>
-     */
-    public com.vv.personal.prom.artifactory.proto.SupportedComponents getSupportedComponents() {
-      @SuppressWarnings("deprecation")
-      com.vv.personal.prom.artifactory.proto.SupportedComponents result = com.vv.personal.prom.artifactory.proto.SupportedComponents.valueOf(supportedComponents_);
-      return result == null ? com.vv.personal.prom.artifactory.proto.SupportedComponents.UNRECOGNIZED : result;
-    }
-
-    /**
-     * <code>.com.vv.personal.prom.artifactory.proto.SupportedComponents supportedComponents = 2;</code>
-     */
     public Builder setSupportedComponents(com.vv.personal.prom.artifactory.proto.SupportedComponents value) {
       if (value == null) {
         throw new NullPointerException();
@@ -571,6 +642,128 @@ public final class Component extends
       supportedComponents_ = 0;
       onChanged();
       return this;
+    }
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 3;</code>
+     */
+    public boolean hasAuth() {
+      return authBuilder_ != null || auth_ != null;
+    }
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 3;</code>
+     */
+    public com.vv.personal.prom.artifactory.proto.Auth getAuth() {
+      if (authBuilder_ == null) {
+        return auth_ == null ? com.vv.personal.prom.artifactory.proto.Auth.getDefaultInstance() : auth_;
+      } else {
+        return authBuilder_.getMessage();
+      }
+    }
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 3;</code>
+     */
+    public Builder setAuth(com.vv.personal.prom.artifactory.proto.Auth value) {
+      if (authBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        auth_ = value;
+        onChanged();
+      } else {
+        authBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 3;</code>
+     */
+    public Builder setAuth(
+            com.vv.personal.prom.artifactory.proto.Auth.Builder builderForValue) {
+      if (authBuilder_ == null) {
+        auth_ = builderForValue.build();
+        onChanged();
+      } else {
+        authBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 3;</code>
+     */
+    public Builder mergeAuth(com.vv.personal.prom.artifactory.proto.Auth value) {
+      if (authBuilder_ == null) {
+        if (auth_ != null) {
+          auth_ =
+                  com.vv.personal.prom.artifactory.proto.Auth.newBuilder(auth_).mergeFrom(value).buildPartial();
+        } else {
+          auth_ = value;
+        }
+        onChanged();
+      } else {
+        authBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 3;</code>
+     */
+    public Builder clearAuth() {
+      if (authBuilder_ == null) {
+        auth_ = null;
+        onChanged();
+      } else {
+        auth_ = null;
+        authBuilder_ = null;
+      }
+
+      return this;
+    }
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 3;</code>
+     */
+    public com.vv.personal.prom.artifactory.proto.Auth.Builder getAuthBuilder() {
+
+      onChanged();
+      return getAuthFieldBuilder().getBuilder();
+    }
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 3;</code>
+     */
+    public com.vv.personal.prom.artifactory.proto.AuthOrBuilder getAuthOrBuilder() {
+      if (authBuilder_ != null) {
+        return authBuilder_.getMessageOrBuilder();
+      } else {
+        return auth_ == null ?
+                com.vv.personal.prom.artifactory.proto.Auth.getDefaultInstance() : auth_;
+      }
+    }
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.vv.personal.prom.artifactory.proto.Auth, com.vv.personal.prom.artifactory.proto.Auth.Builder, com.vv.personal.prom.artifactory.proto.AuthOrBuilder>
+    getAuthFieldBuilder() {
+      if (authBuilder_ == null) {
+        authBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                com.vv.personal.prom.artifactory.proto.Auth, com.vv.personal.prom.artifactory.proto.Auth.Builder, com.vv.personal.prom.artifactory.proto.AuthOrBuilder>(
+                getAuth(),
+                getParentForChildren(),
+                isClean());
+        auth_ = null;
+      }
+      return authBuilder_;
     }
 
     @java.lang.Override

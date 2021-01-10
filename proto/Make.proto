@@ -7,8 +7,15 @@ option java_outer_classname = "MakeProto";
 message Make {
   int32 makeId = 1; //assuming that there'll never be need to go to long
   string makeName = 2;
+  Auth auth = 3;
 }
 
 message MakeList {
   repeated Make make = 1;
+  Auth auth = 2;
+}
+
+message Auth {
+  string cred = 1;
+  bool isAuthorized = 2;
 }

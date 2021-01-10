@@ -21,6 +21,7 @@ public final class ComponentList extends
     component_ = java.util.Collections.emptyList();
   }
 
+  public static final int AUTH_FIELD_NUMBER = 2;
   private static final long serialVersionUID = 0L;
   // @@protoc_insertion_point(class_scope:com.vv.personal.prom.artifactory.proto.ComponentList)
   private static final com.vv.personal.prom.artifactory.proto.ComponentList DEFAULT_INSTANCE;
@@ -39,14 +40,23 @@ public final class ComponentList extends
     DEFAULT_INSTANCE = new com.vv.personal.prom.artifactory.proto.ComponentList();
   }
 
+  private int bitField0_;
   private java.util.List<com.vv.personal.prom.artifactory.proto.Component> component_;
+  private com.vv.personal.prom.artifactory.proto.Auth auth_;
   private byte memoizedIsInitialized = -1;
 
   /**
    * <code>repeated .com.vv.personal.prom.artifactory.proto.Component component = 1;</code>
    */
-  public java.util.List<com.vv.personal.prom.artifactory.proto.Component> getComponentList() {
-    return component_;
+  public int getComponentCount() {
+    return component_.size();
+  }
+
+  /**
+   * <code>repeated .com.vv.personal.prom.artifactory.proto.Component component = 1;</code>
+   */
+  public com.vv.personal.prom.artifactory.proto.Component getComponent(int index) {
+    return component_.get(index);
   }
 
   private ComponentList(
@@ -77,6 +87,19 @@ public final class ComponentList extends
                     input.readMessage(com.vv.personal.prom.artifactory.proto.Component.parser(), extensionRegistry));
             break;
           }
+          case 18: {
+            com.vv.personal.prom.artifactory.proto.Auth.Builder subBuilder = null;
+            if (auth_ != null) {
+              subBuilder = auth_.toBuilder();
+            }
+            auth_ = input.readMessage(com.vv.personal.prom.artifactory.proto.Auth.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(auth_);
+              auth_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                     input, unknownFields, extensionRegistry, tag)) {
@@ -100,20 +123,6 @@ public final class ComponentList extends
     }
   }
 
-  /**
-   * <code>repeated .com.vv.personal.prom.artifactory.proto.Component component = 1;</code>
-   */
-  public int getComponentCount() {
-    return component_.size();
-  }
-
-  /**
-   * <code>repeated .com.vv.personal.prom.artifactory.proto.Component component = 1;</code>
-   */
-  public com.vv.personal.prom.artifactory.proto.Component getComponent(int index) {
-    return component_.get(index);
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor
   getDescriptor() {
     return com.vv.personal.prom.artifactory.proto.ComponentProto.internal_static_com_vv_personal_prom_artifactory_proto_ComponentList_descriptor;
@@ -123,16 +132,6 @@ public final class ComponentList extends
           java.nio.ByteBuffer data)
           throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
-  }
-
-  @java.lang.Override
-  public final boolean isInitialized() {
-    byte isInitialized = memoizedIsInitialized;
-    if (isInitialized == 1) return true;
-    if (isInitialized == 0) return false;
-
-    memoizedIsInitialized = 1;
-    return true;
   }
 
   public static com.vv.personal.prom.artifactory.proto.ComponentList parseFrom(
@@ -155,25 +154,19 @@ public final class ComponentList extends
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  @java.lang.Override
-  public int hashCode() {
-    if (memoizedHashCode != 0) {
-      return memoizedHashCode;
-    }
-    int hash = 41;
-    hash = (19 * hash) + getDescriptor().hashCode();
-    if (getComponentCount() > 0) {
-      hash = (37 * hash) + COMPONENT_FIELD_NUMBER;
-      hash = (53 * hash) + getComponentList().hashCode();
-    }
-    hash = (29 * hash) + unknownFields.hashCode();
-    memoizedHashCode = hash;
-    return hash;
-  }
-
   public static com.vv.personal.prom.artifactory.proto.ComponentList parseFrom(byte[] data)
           throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
+  }
+
+  @java.lang.Override
+  public final boolean isInitialized() {
+    byte isInitialized = memoizedIsInitialized;
+    if (isInitialized == 1) return true;
+    if (isInitialized == 0) return false;
+
+    memoizedIsInitialized = 1;
+    return true;
   }
 
   public static com.vv.personal.prom.artifactory.proto.ComponentList parseFrom(
@@ -226,14 +219,6 @@ public final class ComponentList extends
             .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-
-  public static Builder newBuilder(com.vv.personal.prom.artifactory.proto.ComponentList prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-
   public static com.vv.personal.prom.artifactory.proto.ComponentList getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
@@ -259,6 +244,13 @@ public final class ComponentList extends
   /**
    * <code>repeated .com.vv.personal.prom.artifactory.proto.Component component = 1;</code>
    */
+  public java.util.List<com.vv.personal.prom.artifactory.proto.Component> getComponentList() {
+    return component_;
+  }
+
+  /**
+   * <code>repeated .com.vv.personal.prom.artifactory.proto.Component component = 1;</code>
+   */
   public java.util.List<? extends com.vv.personal.prom.artifactory.proto.ComponentOrBuilder>
   getComponentOrBuilderList() {
     return component_;
@@ -272,11 +264,43 @@ public final class ComponentList extends
     return component_.get(index);
   }
 
+  /**
+   * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 2;</code>
+   */
+  public boolean hasAuth() {
+    return auth_ != null;
+  }
+
+  /**
+   * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 2;</code>
+   */
+  public com.vv.personal.prom.artifactory.proto.Auth getAuth() {
+    return auth_ == null ? com.vv.personal.prom.artifactory.proto.Auth.getDefaultInstance() : auth_;
+  }
+
+  /**
+   * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 2;</code>
+   */
+  public com.vv.personal.prom.artifactory.proto.AuthOrBuilder getAuthOrBuilder() {
+    return getAuth();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(com.vv.personal.prom.artifactory.proto.ComponentList prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
           throws java.io.IOException {
     for (int i = 0; i < component_.size(); i++) {
       output.writeMessage(1, component_.get(i));
+    }
+    if (auth_ != null) {
+      output.writeMessage(2, getAuth());
     }
     unknownFields.writeTo(output);
   }
@@ -291,6 +315,10 @@ public final class ComponentList extends
       size += com.google.protobuf.CodedOutputStream
               .computeMessageSize(1, component_.get(i));
     }
+    if (auth_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+              .computeMessageSize(2, getAuth());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -299,7 +327,7 @@ public final class ComponentList extends
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.vv.personal.prom.artifactory.proto.ComponentList)) {
       return super.equals(obj);
@@ -309,13 +337,39 @@ public final class ComponentList extends
     boolean result = true;
     result = result && getComponentList()
             .equals(other.getComponentList());
+    result = result && (hasAuth() == other.hasAuth());
+    if (hasAuth()) {
+      result = result && getAuth()
+              .equals(other.getAuth());
+    }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
 
   @java.lang.Override
+  public int hashCode() {
+    if (memoizedHashCode != 0) {
+      return memoizedHashCode;
+    }
+    int hash = 41;
+    hash = (19 * hash) + getDescriptor().hashCode();
+    if (getComponentCount() > 0) {
+      hash = (37 * hash) + COMPONENT_FIELD_NUMBER;
+      hash = (53 * hash) + getComponentList().hashCode();
+    }
+    if (hasAuth()) {
+      hash = (37 * hash) + AUTH_FIELD_NUMBER;
+      hash = (53 * hash) + getAuth().hashCode();
+    }
+    hash = (29 * hash) + unknownFields.hashCode();
+    memoizedHashCode = hash;
+    return hash;
+  }
+
+  @java.lang.Override
   public Builder newBuilderForType() {
-    return newBuilder(); }
+    return newBuilder();
+  }
 
   @java.lang.Override
   public Builder toBuilder() {
@@ -350,30 +404,25 @@ public final class ComponentList extends
     private int bitField0_;
     private java.util.List<com.vv.personal.prom.artifactory.proto.Component> component_ =
             java.util.Collections.emptyList();
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.vv.personal.prom.artifactory.proto.Component, com.vv.personal.prom.artifactory.proto.Component.Builder, com.vv.personal.prom.artifactory.proto.ComponentOrBuilder> componentBuilder_;
 
     // Construct using com.vv.personal.prom.artifactory.proto.ComponentList.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.vv.personal.prom.artifactory.proto.Component, com.vv.personal.prom.artifactory.proto.Component.Builder, com.vv.personal.prom.artifactory.proto.ComponentOrBuilder> componentBuilder_;
+
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
         getComponentFieldBuilder();
       }
     }
-    @java.lang.Override
-    public Builder clear() {
-      super.clear();
-      if (componentBuilder_ == null) {
-        component_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      } else {
-        componentBuilder_.clear();
-      }
-      return this;
-    }
+
+    private com.vv.personal.prom.artifactory.proto.Auth auth_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.vv.personal.prom.artifactory.proto.Auth, com.vv.personal.prom.artifactory.proto.Auth.Builder, com.vv.personal.prom.artifactory.proto.AuthOrBuilder> authBuilder_;
 
     private Builder(
             com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
@@ -395,20 +444,26 @@ public final class ComponentList extends
     }
 
     @java.lang.Override
-    public com.vv.personal.prom.artifactory.proto.ComponentList buildPartial() {
-      com.vv.personal.prom.artifactory.proto.ComponentList result = new com.vv.personal.prom.artifactory.proto.ComponentList(this);
-      int from_bitField0_ = bitField0_;
+    public Builder clone() {
+      return super.clone();
+    }
+
+    @java.lang.Override
+    public Builder clear() {
+      super.clear();
       if (componentBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          component_ = java.util.Collections.unmodifiableList(component_);
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.component_ = component_;
+        component_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
-        result.component_ = componentBuilder_.build();
+        componentBuilder_.clear();
       }
-      onBuilt();
-      return result;
+      if (authBuilder_ == null) {
+        auth_ = null;
+      } else {
+        auth_ = null;
+        authBuilder_ = null;
+      }
+      return this;
     }
 
     @java.lang.Override
@@ -432,8 +487,27 @@ public final class ComponentList extends
     }
 
     @java.lang.Override
-    public Builder clone() {
-      return super.clone();
+    public com.vv.personal.prom.artifactory.proto.ComponentList buildPartial() {
+      com.vv.personal.prom.artifactory.proto.ComponentList result = new com.vv.personal.prom.artifactory.proto.ComponentList(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (componentBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          component_ = java.util.Collections.unmodifiableList(component_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.component_ = component_;
+      } else {
+        result.component_ = componentBuilder_.build();
+      }
+      if (authBuilder_ == null) {
+        result.auth_ = auth_;
+      } else {
+        result.auth_ = authBuilder_.build();
+      }
+      result.bitField0_ = to_bitField0_;
+      onBuilt();
+      return result;
     }
 
     @java.lang.Override
@@ -450,13 +524,8 @@ public final class ComponentList extends
     }
 
     @java.lang.Override
-    public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.vv.personal.prom.artifactory.proto.ComponentList) {
-        return mergeFrom((com.vv.personal.prom.artifactory.proto.ComponentList) other);
-      } else {
-        super.mergeFrom(other);
-        return this;
-      }
+    public final boolean isInitialized() {
+      return true;
     }
 
     @java.lang.Override
@@ -477,6 +546,56 @@ public final class ComponentList extends
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
       return super.addRepeatedField(field, value);
+    }
+
+    private void ensureComponentIsMutable() {
+      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+        component_ = new java.util.ArrayList<com.vv.personal.prom.artifactory.proto.Component>(component_);
+        bitField0_ |= 0x00000001;
+      }
+    }
+
+    @java.lang.Override
+    public Builder mergeFrom(com.google.protobuf.Message other) {
+      if (other instanceof com.vv.personal.prom.artifactory.proto.ComponentList) {
+        return mergeFrom((com.vv.personal.prom.artifactory.proto.ComponentList) other);
+      } else {
+        super.mergeFrom(other);
+        return this;
+      }
+    }
+
+    /**
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Component component = 1;</code>
+     */
+    public java.util.List<com.vv.personal.prom.artifactory.proto.Component> getComponentList() {
+      if (componentBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(component_);
+      } else {
+        return componentBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Component component = 1;</code>
+     */
+    public int getComponentCount() {
+      if (componentBuilder_ == null) {
+        return component_.size();
+      } else {
+        return componentBuilder_.getCount();
+      }
+    }
+
+    /**
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Component component = 1;</code>
+     */
+    public com.vv.personal.prom.artifactory.proto.Component getComponent(int index) {
+      if (componentBuilder_ == null) {
+        return component_.get(index);
+      } else {
+        return componentBuilder_.getMessage(index);
+      }
     }
 
     public Builder mergeFrom(com.vv.personal.prom.artifactory.proto.ComponentList other) {
@@ -507,14 +626,12 @@ public final class ComponentList extends
           }
         }
       }
+      if (other.hasAuth()) {
+        mergeAuth(other.getAuth());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
-    }
-
-    @java.lang.Override
-    public final boolean isInitialized() {
-      return true;
     }
 
     @java.lang.Override
@@ -536,42 +653,21 @@ public final class ComponentList extends
       return this;
     }
 
-    private void ensureComponentIsMutable() {
-      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-        component_ = new java.util.ArrayList<com.vv.personal.prom.artifactory.proto.Component>(component_);
-        bitField0_ |= 0x00000001;
-       }
-    }
-
     /**
      * <code>repeated .com.vv.personal.prom.artifactory.proto.Component component = 1;</code>
      */
-    public java.util.List<com.vv.personal.prom.artifactory.proto.Component> getComponentList() {
+    public Builder addComponent(com.vv.personal.prom.artifactory.proto.Component value) {
       if (componentBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(component_);
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureComponentIsMutable();
+        component_.add(value);
+        onChanged();
       } else {
-        return componentBuilder_.getMessageList();
+        componentBuilder_.addMessage(value);
       }
-    }
-    /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Component component = 1;</code>
-     */
-    public int getComponentCount() {
-      if (componentBuilder_ == null) {
-        return component_.size();
-      } else {
-        return componentBuilder_.getCount();
-      }
-    }
-    /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Component component = 1;</code>
-     */
-    public com.vv.personal.prom.artifactory.proto.Component getComponent(int index) {
-      if (componentBuilder_ == null) {
-        return component_.get(index);
-      } else {
-        return componentBuilder_.getMessage(index);
-      }
+      return this;
     }
 
     /**
@@ -603,22 +699,6 @@ public final class ComponentList extends
         onChanged();
       } else {
         componentBuilder_.setMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Component component = 1;</code>
-     */
-    public Builder addComponent(com.vv.personal.prom.artifactory.proto.Component value) {
-      if (componentBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureComponentIsMutable();
-        component_.add(value);
-        onChanged();
-      } else {
-        componentBuilder_.addMessage(value);
       }
       return this;
     }
@@ -659,6 +739,34 @@ public final class ComponentList extends
     /**
      * <code>repeated .com.vv.personal.prom.artifactory.proto.Component component = 1;</code>
      */
+    public Builder clearComponent() {
+      if (componentBuilder_ == null) {
+        component_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+      } else {
+        componentBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Component component = 1;</code>
+     */
+    public Builder removeComponent(int index) {
+      if (componentBuilder_ == null) {
+        ensureComponentIsMutable();
+        component_.remove(index);
+        onChanged();
+      } else {
+        componentBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     * <code>repeated .com.vv.personal.prom.artifactory.proto.Component component = 1;</code>
+     */
     public Builder addComponent(
             int index, com.vv.personal.prom.artifactory.proto.Component.Builder builderForValue) {
       if (componentBuilder_ == null) {
@@ -683,32 +791,6 @@ public final class ComponentList extends
         onChanged();
       } else {
         componentBuilder_.addAllMessages(values);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Component component = 1;</code>
-     */
-    public Builder clearComponent() {
-      if (componentBuilder_ == null) {
-        component_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-      } else {
-        componentBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .com.vv.personal.prom.artifactory.proto.Component component = 1;</code>
-     */
-    public Builder removeComponent(int index) {
-      if (componentBuilder_ == null) {
-        ensureComponentIsMutable();
-        component_.remove(index);
-        onChanged();
-      } else {
-        componentBuilder_.remove(index);
       }
       return this;
     }
@@ -785,6 +867,128 @@ public final class ComponentList extends
       return componentBuilder_;
     }
 
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 2;</code>
+     */
+    public boolean hasAuth() {
+      return authBuilder_ != null || auth_ != null;
+    }
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 2;</code>
+     */
+    public com.vv.personal.prom.artifactory.proto.Auth getAuth() {
+      if (authBuilder_ == null) {
+        return auth_ == null ? com.vv.personal.prom.artifactory.proto.Auth.getDefaultInstance() : auth_;
+      } else {
+        return authBuilder_.getMessage();
+      }
+    }
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 2;</code>
+     */
+    public Builder setAuth(com.vv.personal.prom.artifactory.proto.Auth value) {
+      if (authBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        auth_ = value;
+        onChanged();
+      } else {
+        authBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 2;</code>
+     */
+    public Builder setAuth(
+            com.vv.personal.prom.artifactory.proto.Auth.Builder builderForValue) {
+      if (authBuilder_ == null) {
+        auth_ = builderForValue.build();
+        onChanged();
+      } else {
+        authBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 2;</code>
+     */
+    public Builder mergeAuth(com.vv.personal.prom.artifactory.proto.Auth value) {
+      if (authBuilder_ == null) {
+        if (auth_ != null) {
+          auth_ =
+                  com.vv.personal.prom.artifactory.proto.Auth.newBuilder(auth_).mergeFrom(value).buildPartial();
+        } else {
+          auth_ = value;
+        }
+        onChanged();
+      } else {
+        authBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 2;</code>
+     */
+    public Builder clearAuth() {
+      if (authBuilder_ == null) {
+        auth_ = null;
+        onChanged();
+      } else {
+        auth_ = null;
+        authBuilder_ = null;
+      }
+
+      return this;
+    }
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 2;</code>
+     */
+    public com.vv.personal.prom.artifactory.proto.Auth.Builder getAuthBuilder() {
+
+      onChanged();
+      return getAuthFieldBuilder().getBuilder();
+    }
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 2;</code>
+     */
+    public com.vv.personal.prom.artifactory.proto.AuthOrBuilder getAuthOrBuilder() {
+      if (authBuilder_ != null) {
+        return authBuilder_.getMessageOrBuilder();
+      } else {
+        return auth_ == null ?
+                com.vv.personal.prom.artifactory.proto.Auth.getDefaultInstance() : auth_;
+      }
+    }
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.vv.personal.prom.artifactory.proto.Auth, com.vv.personal.prom.artifactory.proto.Auth.Builder, com.vv.personal.prom.artifactory.proto.AuthOrBuilder>
+    getAuthFieldBuilder() {
+      if (authBuilder_ == null) {
+        authBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                com.vv.personal.prom.artifactory.proto.Auth, com.vv.personal.prom.artifactory.proto.Auth.Builder, com.vv.personal.prom.artifactory.proto.AuthOrBuilder>(
+                getAuth(),
+                getParentForChildren(),
+                isClean());
+        auth_ = null;
+      }
+      return authBuilder_;
+    }
+
     @java.lang.Override
     public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -793,7 +997,7 @@ public final class ComponentList extends
 
     @java.lang.Override
     public final Builder mergeUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
 

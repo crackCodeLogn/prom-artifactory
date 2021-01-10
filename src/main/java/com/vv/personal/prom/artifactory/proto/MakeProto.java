@@ -14,16 +14,25 @@ public final class MakeProto {
   static final
   com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internal_static_com_vv_personal_prom_artifactory_proto_MakeList_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+          internal_static_com_vv_personal_prom_artifactory_proto_Auth_descriptor;
+  static final
+  com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internal_static_com_vv_personal_prom_artifactory_proto_Auth_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.FileDescriptor
           descriptor;
 
   static {
     java.lang.String[] descriptorData = {
             "\n\nMake.proto\022&com.vv.personal.prom.artif" +
-                    "actory.proto\"(\n\004Make\022\016\n\006makeId\030\001 \001(\005\022\020\n\010" +
-                    "makeName\030\002 \001(\t\"F\n\010MakeList\022:\n\004make\030\001 \003(\013" +
-                    "2,.com.vv.personal.prom.artifactory.prot" +
-                    "o.MakeB\rB\tMakeProtoP\001b\006proto3"
+                    "actory.proto\"d\n\004Make\022\016\n\006makeId\030\001 \001(\005\022\020\n\010" +
+                    "makeName\030\002 \001(\t\022:\n\004auth\030\003 \001(\0132,.com.vv.pe" +
+                    "rsonal.prom.artifactory.proto.Auth\"\202\001\n\010M" +
+                    "akeList\022:\n\004make\030\001 \003(\0132,.com.vv.personal." +
+                    "prom.artifactory.proto.Make\022:\n\004auth\030\002 \001(" +
+                    "\0132,.com.vv.personal.prom.artifactory.pro" +
+                    "to.Auth\"*\n\004Auth\022\014\n\004cred\030\001 \001(\t\022\024\n\014isAutho" +
+                    "rized\030\002 \001(\010B\rB\tMakeProtoP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
             new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -42,13 +51,19 @@ public final class MakeProto {
     internal_static_com_vv_personal_prom_artifactory_proto_Make_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_com_vv_personal_prom_artifactory_proto_Make_descriptor,
-            new java.lang.String[]{"MakeId", "MakeName",});
+            new java.lang.String[]{"MakeId", "MakeName", "Auth",});
     internal_static_com_vv_personal_prom_artifactory_proto_MakeList_descriptor =
             getDescriptor().getMessageTypes().get(1);
     internal_static_com_vv_personal_prom_artifactory_proto_MakeList_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_com_vv_personal_prom_artifactory_proto_MakeList_descriptor,
-            new java.lang.String[]{"Make",});
+            new java.lang.String[]{"Make", "Auth",});
+    internal_static_com_vv_personal_prom_artifactory_proto_Auth_descriptor =
+            getDescriptor().getMessageTypes().get(2);
+    internal_static_com_vv_personal_prom_artifactory_proto_Auth_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_com_vv_personal_prom_artifactory_proto_Auth_descriptor,
+            new java.lang.String[]{"Cred", "IsAuthorized",});
   }
 
   private MakeProto() {

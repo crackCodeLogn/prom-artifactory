@@ -24,24 +24,36 @@ public final class CustomerProto {
   static final
   com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internal_static_com_vv_personal_prom_artifactory_proto_CompanyList_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+          internal_static_com_vv_personal_prom_artifactory_proto_Auth_descriptor;
+  static final
+  com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internal_static_com_vv_personal_prom_artifactory_proto_Auth_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.FileDescriptor
           descriptor;
 
   static {
     java.lang.String[] descriptorData = {
             "\n\016Customer.proto\022&com.vv.personal.prom.a" +
-                    "rtifactory.proto\"\235\001\n\010Customer\022\022\n\ncustome" +
+                    "rtifactory.proto\"\331\001\n\010Customer\022\022\n\ncustome" +
                     "rId\030\001 \001(\005\022\021\n\tfirstName\030\002 \001(\t\022\020\n\010lastName" +
                     "\030\003 \001(\t\022\026\n\016contactNumbers\030\004 \003(\t\022@\n\007compan" +
                     "y\030\005 \001(\0132/.com.vv.personal.prom.artifacto" +
-                    "ry.proto.Company\"g\n\007Company\022\021\n\tcompanyId" +
-                    "\030\001 \001(\005\022\023\n\013companyName\030\002 \001(\t\022\034\n\024companyCo" +
-                    "ntactPerson\030\003 \001(\t\022\026\n\016contactNumbers\030\004 \003(" +
-                    "\t\"R\n\014CustomerList\022B\n\010customer\030\001 \003(\01320.co" +
-                    "m.vv.personal.prom.artifactory.proto.Cus" +
-                    "tomer\"O\n\013CompanyList\022@\n\007company\030\001 \003(\0132/." +
+                    "ry.proto.Company\022:\n\004auth\030\006 \001(\0132,.com.vv." +
+                    "personal.prom.artifactory.proto.Auth\"\243\001\n" +
+                    "\007Company\022\021\n\tcompanyId\030\001 \001(\005\022\023\n\013companyNa" +
+                    "me\030\002 \001(\t\022\034\n\024companyContactPerson\030\003 \001(\t\022\026" +
+                    "\n\016contactNumbers\030\004 \003(\t\022:\n\004auth\030\005 \001(\0132,.c" +
+                    "om.vv.personal.prom.artifactory.proto.Au" +
+                    "th\"\216\001\n\014CustomerList\022B\n\010customer\030\001 \003(\01320." +
                     "com.vv.personal.prom.artifactory.proto.C" +
-                    "ompanyB\021B\rCustomerProtoP\001b\006proto3"
+                    "ustomer\022:\n\004auth\030\002 \001(\0132,.com.vv.personal." +
+                    "prom.artifactory.proto.Auth\"\213\001\n\013CompanyL" +
+                    "ist\022@\n\007company\030\001 \003(\0132/.com.vv.personal.p" +
+                    "rom.artifactory.proto.Company\022:\n\004auth\030\002 " +
+                    "\001(\0132,.com.vv.personal.prom.artifactory.p" +
+                    "roto.Auth\"*\n\004Auth\022\014\n\004cred\030\001 \001(\t\022\024\n\014isAut" +
+                    "horized\030\002 \001(\010B\021B\rCustomerProtoP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
             new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -60,25 +72,31 @@ public final class CustomerProto {
     internal_static_com_vv_personal_prom_artifactory_proto_Customer_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_com_vv_personal_prom_artifactory_proto_Customer_descriptor,
-            new java.lang.String[]{"CustomerId", "FirstName", "LastName", "ContactNumbers", "Company",});
+            new java.lang.String[]{"CustomerId", "FirstName", "LastName", "ContactNumbers", "Company", "Auth",});
     internal_static_com_vv_personal_prom_artifactory_proto_Company_descriptor =
             getDescriptor().getMessageTypes().get(1);
     internal_static_com_vv_personal_prom_artifactory_proto_Company_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_com_vv_personal_prom_artifactory_proto_Company_descriptor,
-            new java.lang.String[]{"CompanyId", "CompanyName", "CompanyContactPerson", "ContactNumbers",});
+            new java.lang.String[]{"CompanyId", "CompanyName", "CompanyContactPerson", "ContactNumbers", "Auth",});
     internal_static_com_vv_personal_prom_artifactory_proto_CustomerList_descriptor =
             getDescriptor().getMessageTypes().get(2);
     internal_static_com_vv_personal_prom_artifactory_proto_CustomerList_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_com_vv_personal_prom_artifactory_proto_CustomerList_descriptor,
-            new java.lang.String[]{"Customer",});
+            new java.lang.String[]{"Customer", "Auth",});
     internal_static_com_vv_personal_prom_artifactory_proto_CompanyList_descriptor =
             getDescriptor().getMessageTypes().get(3);
     internal_static_com_vv_personal_prom_artifactory_proto_CompanyList_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_com_vv_personal_prom_artifactory_proto_CompanyList_descriptor,
-            new java.lang.String[]{"Company",});
+            new java.lang.String[]{"Company", "Auth",});
+    internal_static_com_vv_personal_prom_artifactory_proto_Auth_descriptor =
+            getDescriptor().getMessageTypes().get(4);
+    internal_static_com_vv_personal_prom_artifactory_proto_Auth_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_com_vv_personal_prom_artifactory_proto_Auth_descriptor,
+            new java.lang.String[]{"Cred", "IsAuthorized",});
   }
 
   private CustomerProto() {

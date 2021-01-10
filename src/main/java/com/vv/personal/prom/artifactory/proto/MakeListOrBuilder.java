@@ -34,4 +34,19 @@ public interface MakeListOrBuilder extends
      */
     com.vv.personal.prom.artifactory.proto.MakeOrBuilder getMakeOrBuilder(
             int index);
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 2;</code>
+     */
+    boolean hasAuth();
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 2;</code>
+     */
+    com.vv.personal.prom.artifactory.proto.Auth getAuth();
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 2;</code>
+     */
+    com.vv.personal.prom.artifactory.proto.AuthOrBuilder getAuthOrBuilder();
 }

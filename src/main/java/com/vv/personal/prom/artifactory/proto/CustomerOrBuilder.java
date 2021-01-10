@@ -86,4 +86,19 @@ public interface CustomerOrBuilder extends
      * <code>.com.vv.personal.prom.artifactory.proto.Company company = 5;</code>
      */
     com.vv.personal.prom.artifactory.proto.CompanyOrBuilder getCompanyOrBuilder();
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 6;</code>
+     */
+    boolean hasAuth();
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 6;</code>
+     */
+    com.vv.personal.prom.artifactory.proto.Auth getAuth();
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 6;</code>
+     */
+    com.vv.personal.prom.artifactory.proto.AuthOrBuilder getAuthOrBuilder();
 }

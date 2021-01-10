@@ -7,8 +7,15 @@ option java_outer_classname = "ProblemProto";
 message Problem {
   int32 problemId = 1; //assuming that there'll never be need to go to long
   string problemName = 2;
+  Auth auth = 3;
 }
 
 message ProblemList {//to bulk send problems
   repeated Problem problem = 1;
+  Auth auth = 2;
+}
+
+message Auth {
+  string cred = 1;
+  bool isAuthorized = 2;
 }

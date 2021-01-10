@@ -26,4 +26,19 @@ public interface ProblemOrBuilder extends
      */
     com.google.protobuf.ByteString
     getProblemNameBytes();
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 3;</code>
+     */
+    boolean hasAuth();
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 3;</code>
+     */
+    com.vv.personal.prom.artifactory.proto.Auth getAuth();
+
+    /**
+     * <code>.com.vv.personal.prom.artifactory.proto.Auth auth = 3;</code>
+     */
+    com.vv.personal.prom.artifactory.proto.AuthOrBuilder getAuthOrBuilder();
 }
